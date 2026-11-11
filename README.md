@@ -41,3 +41,5 @@ RAEN's MCP gateway is listed at `io.github.bshelby88/raen-mcp` on the MCP Regist
 Fleet telemetry is public and unedited: <https://settlement-collector.fly.dev/stats>. We publish real numbers, including zero revenue.
 
 MIT licensed. Not legal or financial advice.
+6. **[x402 Payback Calculator](https://bshelby88.github.io/raen-payback-calculator/)** — see what pay-per-call actually costs vs a flat SaaS subscription at your call volume.
+7. **[x402 Launch Readiness Scorecard](https://bshelby88.github.io/x402-scorecard/)** — shipping your own paid API? Score how agent-ready it is in 60 seconds.
