@@ -27,7 +27,7 @@ Prices marked "see manifest" come from the live manifest — always confirm agai
 ## Recipes
 
 1. **[curl — decode your first 402 challenge](recipes/01-curl-402-decode.md)** — understand the protocol in 60 seconds.
-2. **[Python — generic paid-call client](recipes/02-python-client.md)** — a ~40-line client that fetches the challenge, signs, retries, works for any fleet service. *(Bring your own EIP-3005 signer or use the [x402 SDK](https://github.com/coinbase/x402).)*
+2. **[Python — generic paid-call client](recipes/02-python-client.md)** — a ~40-line client that fetches the challenge, signs, retries, works for any fleet service. *(Bring your own EIP-3009 signer or use the [x402 SDK](https://github.com/coinbase/x402).)*
 3. **[Free first call — charge-and-rebate](recipes/03-free-first-call.md)** — try royal-ruby for net $0 with one extra header. Step-by-step walkthrough with verify-everything links: **[raen-first-call-free](https://bshelby88.github.io/raen-first-call-free/)**.
 4. **[MCP — use the fleet from any MCP client](recipes/04-mcp-gateway.md)** — Bearer-gated gateway at `raen-mcp-gateway.fly.dev/mcp`.
 5. **[dispatch — route intents without a services map](recipes/05-dispatch-router.md)** — one endpoint that picks the right tool.
