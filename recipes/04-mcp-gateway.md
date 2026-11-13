@@ -1,3 +1,7 @@
+---
+permalink: /recipes/04-mcp-gateway.md
+---
+
 # Recipe 04 — MCP: use the fleet from any MCP client
 
 Don't want to hand-roll x402? The RAEN MCP gateway exposes 5 fleet tools over MCP

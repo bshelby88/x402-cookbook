@@ -1,3 +1,7 @@
+---
+permalink: /recipes/01-curl-402-decode.md
+---
+
 # Recipe 01 — curl: decode your first 402 challenge
 
 Understand the x402 protocol in 60 seconds. No wallet needed for this step — you just

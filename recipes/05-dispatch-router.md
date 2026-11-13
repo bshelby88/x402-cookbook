@@ -1,3 +1,7 @@
+---
+permalink: /recipes/05-dispatch-router.md
+---
+
 # Recipe 05 — dispatch: route intents without a services map
 
 One endpoint that reads an agent's natural-language intent and returns the right paid

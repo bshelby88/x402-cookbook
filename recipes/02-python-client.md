@@ -1,3 +1,7 @@
+---
+permalink: /recipes/02-python-client.md
+---
+
 # Recipe 02 — Python: a generic paid-call client
 
 A ~40-line client that works for any RAEN fleet service: fetch the 402 challenge,

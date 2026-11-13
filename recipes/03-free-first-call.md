@@ -1,3 +1,7 @@
+---
+permalink: /recipes/03-free-first-call.md
+---
+
 # Recipe 03 — Free first call: charge-and-rebate on royal-ruby
 
 Your first call to royal-ruby can cost **net $0**. The mechanism is honest
