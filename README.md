@@ -17,7 +17,7 @@ Copy-paste recipes for paying RAEN's 12 x402 services with USDC on Base mainnet 
 | [nft-alpha](https://nft-alpha-x402.fly.dev/.well-known/x402.json) | OpenSea market signals for Base collections | see manifest |
 | [dispatch](https://dispatch-x402.fly.dev/.well-known/x402.json) | NL intent router → picks the right paid fleet service | $0.50 |
 | [escrow](https://escrow-x402.fly.dev/.well-known/x402.json) | Agent-to-agent USDC escrow on Base, 1% fee, timeout-refundable | see manifest |
-| [dispute-forge](https://dispute-forge-x402.fly.dev/.well-known/x402.json) | FCRA-compliant dispute letter + on-chain certificate | $0.75 |
+| [dispute-forge](https://dispute-forge-x402.fly.dev/.well-known/x402.json) | FCRA-compliant dispute letter + on-chain certificate | $0.10 |
 | [vault-pro](https://vault-pro-x402.fly.dev/.well-known/x402.json) | Obsidian project/agent scaffolding markdown | see manifest |
 | [sentry-forge](https://sentry-forge-x402.fly.dev/.well-known/x402.json) | One collection notice → 8 review-ready dispute docs | $5.00 |
 | [settlement-collector](https://settlement-collector.fly.dev/stats) | Fleet telemetry (free, public JSON) | free |
@@ -47,11 +47,12 @@ you settled but got no payload.
 12. **[vault-pro — Obsidian project scaffolding](recipes/12-vault-pro.md)** — $0.05.
 13. **[escrow — agent-to-agent USDC escrow](recipes/13-escrow.md)** — $0.05 create fee, 1% release fee.
 14. **[sentry-forge — 8 dispute docs from one notice](recipes/14-sentry-forge.md)** — $5.00.
-15. **[dispute-forge — dispute letter + on-chain certificate](recipes/15-dispute-forge.md)** — $0.75.
+15. **[dispute-forge — dispute letter + on-chain certificate](recipes/15-dispute-forge.md)** — $0.10.
 16. **[tradingagents — ticker consensus (demo)](recipes/16-tradingagents.md)** — $0.05, synthetic demo payload (disclosed).
 17. **[x402-enterprise — dispute letter via x402-agent-pay facilitator](recipes/17-x402-enterprise.md)** — $0.75.
 18. **[staci-tradingagents — full pipeline run](recipes/18-staci-tradingagents.md)** — $5.00, simulated engine (disclosed).
 19. **[suprapack — search 531 curated agent skills](recipes/19-suprapack.md)** — $0.03.
+20. **[royal-ruby ping — $0.001 alive-check](recipes/20-royal-ruby-ping.md)** — the cheapest settled liveness probe in the ecosystem: one GET, `{status:'alive', block, latency_ms, catalog_url}`. Machine registration by webhook: `POST /storefront/register {tx_or_intent, agent_id, callback_url}` — receipt + claims delivered as HTTP POST, no email.
 
 ## MCP registry
 
