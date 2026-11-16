@@ -32,6 +32,27 @@ Prices marked "see manifest" come from the live manifest — always confirm agai
 4. **[MCP — use the fleet from any MCP client](recipes/04-mcp-gateway.md)** — Bearer-gated gateway at `raen-mcp-gateway.fly.dev/mcp`.
 5. **[dispatch — route intents without a services map](recipes/05-dispatch-router.md)** — one endpoint that picks the right tool.
 
+### Per-SKU buyer recipes — decode → settle → retry, verified against the live 402 challenge (Nov 15, 2026)
+
+Each recipe is one SKU, copy-paste, 60-second testable: unpaid call → decode the
+402 challenge (real captured values) → settle + retry → claim-code fallback if
+you settled but got no payload.
+
+6. **[royal-ruby — consumer-law citations](recipes/06-royal-ruby.md)** — $0.05, first call free (charge-and-rebate).
+7. **[dispatch — route any intent](recipes/07-dispatch.md)** — $0.50, returns a ready-to-use downstream request.
+8. **[contract-eye — flag one-sided clauses](recipes/08-contract-eye.md)** — $0.05.
+9. **[briefsnap — summarize any document](recipes/09-briefsnap.md)** — $1.00.
+10. **[nanobanana — image generation](recipes/10-nanobanana.md)** — $0.01, base64 PNG out.
+11. **[nft-alpha — OpenSea signals on Base](recipes/11-nft-alpha.md)** — $0.02.
+12. **[vault-pro — Obsidian project scaffolding](recipes/12-vault-pro.md)** — $0.05.
+13. **[escrow — agent-to-agent USDC escrow](recipes/13-escrow.md)** — $0.05 create fee, 1% release fee.
+14. **[sentry-forge — 8 dispute docs from one notice](recipes/14-sentry-forge.md)** — $5.00.
+15. **[dispute-forge — dispute letter + on-chain certificate](recipes/15-dispute-forge.md)** — $0.75.
+16. **[tradingagents — ticker consensus (demo)](recipes/16-tradingagents.md)** — $0.05, synthetic demo payload (disclosed).
+17. **[x402-enterprise — dispute letter via x402-agent-pay facilitator](recipes/17-x402-enterprise.md)** — $0.75.
+18. **[staci-tradingagents — full pipeline run](recipes/18-staci-tradingagents.md)** — $5.00, simulated engine (disclosed).
+19. **[suprapack — search 531 curated agent skills](recipes/19-suprapack.md)** — $0.03.
+
 ## MCP registry
 
 RAEN's MCP gateway is listed at `io.github.bshelby88/raen-mcp` on the MCP Registry.
