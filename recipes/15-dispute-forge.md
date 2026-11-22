@@ -6,7 +6,7 @@ permalink: /recipes/15-dispute-forge.md
 
 An FCRA-compliant dispute letter plus a unique SVG certificate of dispute, signed and timestamped.
 
-**Endpoint:** `POST https://dispute-forge-x402.fly.dev/api/dispute-pack` · **Price:** $0.75 USDC on Base (`eip155:8453`, scheme `exact`) · **Challenge below decoded live from this endpoint: 2026-11-15**
+**Endpoint:** `POST https://dispute-forge-x402.fly.dev/api/dispute-pack` · **Price:** $0.10 USDC on Base (`eip155:8453`, scheme `exact`) · **Challenge below decoded live from this endpoint: 2026-11-22**
 
 ## 1. Decode the 402 challenge (the 60-second test)
 

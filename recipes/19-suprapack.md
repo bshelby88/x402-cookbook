@@ -51,6 +51,14 @@ what your challenge says**; amounts are atomic USDC units (6 decimals):
 ]
 ```
 
+> **TRUTH WARNING (decoded live 2026-11-22):** this service's live challenge
+> advertises `https://x402-agent-pay.com/facilitator`, a known third-party
+> dead-end that settles only to its own treasury (`PAYEE_NOT_SERVED_HERE` for
+> every fleet payTo). Override the facilitator client-side to
+> `https://raen-facilitator.fly.dev/facilitator` when paying this SKU; the
+> example above is kept faithful to the live (broken) challenge. Service-side
+> fix is owner-gated (redeploy).
+
 ## 2. Settle and retry
 
 1. **Settle:** pay `amount` of USDC to `payTo` on Base and sign an EIP-3009

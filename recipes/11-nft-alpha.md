@@ -44,12 +44,17 @@ what your challenge says**; amounts are atomic USDC units (6 decimals):
     "maxTimeoutSeconds": 300,
     "extra": {
       "name": "USD Coin",
-      "version": "2",
-      "facilitator": "https://x402-agent-pay.com/facilitator"
+      "version": "2"
     }
   }
 ]
 ```
+
+> **Note (decoded live 2026-11-22):** this service's live challenge advertises
+> **no facilitator** (`extra` carries name+version only) — x402 clients fall
+> back to their default facilitator. Earlier captures naming
+> `x402-agent-pay.com` were stale; that third-party endpoint is a known
+> dead-end (settles only its own treasury).
 
 ## 2. Settle and retry
 

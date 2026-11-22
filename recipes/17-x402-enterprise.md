@@ -45,7 +45,7 @@ what your challenge says**; amounts are atomic USDC units (6 decimals):
     "extra": {
       "name": "USD Coin",
       "version": "2",
-      "facilitator": "https://x402-agent-pay.com/facilitator"
+      "facilitator": "https://raen-facilitator.fly.dev/facilitator"
     }
   }
 ]
@@ -77,8 +77,9 @@ fleet runs a claims desk: check **<https://settlement-collector.fly.dev/storefro
 (format `RAEN-XXXXXXXXXX`).
 
 
-This SKU settles through `https://x402-agent-pay.com/facilitator` (the
-challenge's `extra.facilitator` names it) rather than the fleet's default
-facilitator — the x402 SDK picks this up from the challenge automatically.
+This SKU settles through `https://raen-facilitator.fly.dev/facilitator` (decoded
+live from the challenge 2026-11-22; it serves canonical payTo and the retired
+`0x7861...f1393` as a stranding shield) — the x402 SDK picks this up from the
+challenge automatically.
 
 Next: [Recipe 18 — staci-tradingagents](18-staci-tradingagents.md)

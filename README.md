@@ -58,7 +58,7 @@ you settled but got no payload.
 14. **[sentry-forge — 8 dispute docs from one notice](recipes/14-sentry-forge.md)** — $5.00.
 15. **[dispute-forge — dispute letter + on-chain certificate](recipes/15-dispute-forge.md)** — $0.10.
 16. **[tradingagents — ticker consensus (demo)](recipes/16-tradingagents.md)** — $0.05, synthetic demo payload (disclosed).
-17. **[x402-enterprise — dispute letter via x402-agent-pay facilitator](recipes/17-x402-enterprise.md)** — $0.75.
+17. **[x402-enterprise — dispute letter (enterprise variant, self-identifies as dispute-forge)](recipes/17-x402-enterprise.md)** — $0.75.
 18. **[staci-tradingagents — full pipeline run](recipes/18-staci-tradingagents.md)** — $5.00, simulated engine (disclosed).
 19. **[suprapack — search 531 curated agent skills](recipes/19-suprapack.md)** — $0.03.
 20. **[royal-ruby ping — $0.001 alive-check](recipes/20-royal-ruby-ping.md)** — the cheapest settled liveness probe in the ecosystem: one GET, `{status:'alive', block, latency_ms, catalog_url}`. Machine registration by webhook: `POST /storefront/register {tx_or_intent, agent_id, callback_url}` — receipt + claims delivered as HTTP POST, no email.
