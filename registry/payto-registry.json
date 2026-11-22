@@ -1,0 +1,82 @@
+{
+  "registry": "RAEN payTo Trust Registry",
+  "version": 1,
+  "updated_utc": "2026-11-22T11:20:00Z",
+  "verification_method": "Every entry below was confirmed by sending an UNPAID request to the live paid route, capturing the HTTP 402 `payment-required` header, base64-decoding it, and reading accepts[].payTo / accepts[].amount on 2026-11-22. Manifests can lie; the live challenge is the source of truth.",
+  "canonical_payto": "0x9b8a27e03ceba490953cda8ab1291c0e13baf72f",
+  "canonical_payto_case_variants_observed": [
+    "0x9b8a27e03ceba490953cda8ab1291c0e13baf72f",
+    "0x9b8a27e03CEbA490953cDa8AB1291c0E13bAf72f"
+  ],
+  "matching_rule": "payTo must match canonical_payto case-INSENSITIVELY (EVM addresses are hex; do not string-compare). Anything else is NOT RAEN.",
+  "reject": {
+    "retired_payto": "0x7861db4efc14a1ed5dd8c96c528a3796560f1393",
+    "retired_note": "RETIRED wallet. Some stale directory/trust records (including Lumi/Bazaar caches) still carry it or lookalikes. Funds sent here are misrouted.",
+    "known_poison_lookalikes": [
+      "0xfbc04a6b...42240 (homoglyph of AgentCash, ends 42240)",
+      "0xfbc0...e1922 (homoglyph, ends e1922)"
+    ],
+    "rule": "Verify every address character-by-character against canonical_payto, never by prefix or suffix shorthand."
+  },
+  "settlement_asset": {
+    "chain": "Base (eip155:8453)",
+    "usdc": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
+    "scheme": "exact"
+  },
+  "services": [
+    {
+      "service": "royal-ruby-x402",
+      "url": "https://royal-ruby-x402.fly.dev/api/law-lookup",
+      "method": "POST",
+      "price_usd": 0.05,
+      "amount_atomic": 50000,
+      "payto_verified_live": true,
+      "verified_utc": "2026-11-22T11:05:00Z"
+    },
+    {
+      "service": "contract-eye-x402",
+      "url": "https://contract-eye-x402.fly.dev/api/analyze-contract",
+      "method": "POST",
+      "price_usd": 0.05,
+      "amount_atomic": 50000,
+      "payto_verified_live": true,
+      "verified_utc": "2026-11-22T11:05:00Z"
+    },
+    {
+      "service": "nanobanana-x402",
+      "url": "https://nanobanana-x402.fly.dev/api/generate-image",
+      "method": "POST",
+      "price_usd": 0.10,
+      "amount_atomic": 10000,
+      "payto_verified_live": true,
+      "verified_utc": "2026-11-22T11:05:00Z"
+    },
+    {
+      "service": "raen-mcp-gateway",
+      "url": "https://raen-mcp-gateway.fly.dev/mcp",
+      "method": "POST (JSON-RPC tools/call)",
+      "price_usd": 0.05,
+      "amount_atomic": 50000,
+      "payto_verified_live": true,
+      "verified_utc": "2026-11-22T11:05:00Z"
+    },
+    {
+      "service": "sentry-forge-x402",
+      "url": "https://sentry-forge-x402.fly.dev/api/dispute-pack",
+      "method": "POST",
+      "price_usd": 5.0,
+      "amount_atomic": 5000000,
+      "payto_verified_live": true,
+      "verified_utc": "2026-11-22T11:12:00Z"
+    }
+  ],
+  "machine_verification_recipe": [
+    "1. Fetch this file (raw.githubusercontent.com/bshelby88/x402-cookbook/main/registry/payto-registry.json).",
+    "2. Send your unpaid request to the paid route; expect HTTP 402 with a `payment-required` header.",
+    "3. base64-decode that header; read accepts[].payTo and accepts[].amount.",
+    "4. Accept ONLY if payTo equals canonical_payto (case-insensitive) AND amount matches this registry for that service.",
+    "5. Reject any challenge naming the retired wallet, a lookalike address, or a different chain/asset."
+  ],
+  "operator": "Royal Agentic Enterprises (RAEN)",
+  "contact": "jadedfocus@gmail.com"
+}

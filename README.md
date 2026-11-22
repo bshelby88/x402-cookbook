@@ -24,6 +24,15 @@ Copy-paste recipes for paying RAEN's 12 x402 services with USDC on Base mainnet 
 
 Prices marked "see manifest" come from the live manifest — always confirm against it; it is the source of truth.
 
+## Machine-buyer trust: verify the payTo BEFORE you pay
+
+**[registry/payto-registry.json](registry/payto-registry.json)** — machine-readable
+trust registry. Every entry is confirmed by decoding a LIVE 402 challenge (not the
+manifest). Fetch it, decode your challenge, compare `accepts[].payTo` to
+`canonical_payto` **case-insensitively**. Reject the retired wallet
+`0x7861db4efc14a1ed5dd8c96c528a3796560f1393` and homoglyph lookalikes —
+malicious directories have carried them. Five-line verification recipe is inside the file.
+
 ## Recipes
 
 1. **[curl — decode your first 402 challenge](recipes/01-curl-402-decode.md)** — understand the protocol in 60 seconds.
