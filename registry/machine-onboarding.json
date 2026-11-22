@@ -1,7 +1,7 @@
 {
   "bundle": "RAEN Machine Onboarding Bundle",
-  "version": 1,
-  "updated_utc": "2026-11-22T11:57:46Z",
+  "version": 2,
+  "updated_utc": "2026-11-22T13:06:00Z",
   "purpose": "One-fetch onboarding for machine buyers: everything an autonomous agent needs to go from discovery to a settled paid call on any RAEN x402 wall - route, live-verified price, ready-to-send request body, settlement asset, and trust verification. Companion to registry/payto-registry.json (payTo verification, case rules, poison-address rejection).",
   "verified_method": "Every price below was confirmed by sending an UNPAID request to the live paid route on 2026-11-22, capturing the HTTP 402 payment-required header, base64-decoding it, and reading accepts[].amount. Request bodies are taken from the service's own /.well-known/x402.json advertisement. Live challenge > manifest > this file: if they ever disagree, trust the live 402 and re-fetch this bundle.",
   "settlement": {
@@ -28,7 +28,7 @@
         "method": "POST",
         "price_usd": 0.05,
         "amount_atomic": "50000",
-        "live_402_verified_utc": "2026-11-22T11:55:00Z",
+        "live_402_verified_utc": "2026-11-22T13:00:00Z",
         "example_body": {
           "topic": "credit-report disputes for collection accounts",
           "state": "LA",
@@ -44,8 +44,14 @@
         "VOLUME TIER: add \"bulk\": 100-500 to the body for $0.001/citation (min 100 = $0.10/call); the 402 challenge shows the volume price.",
         "FREE FIRST CALL (charge-and-rebate): first-time wallet sends x-payer-address: <0x address>, pays the normal challenge, full amount rebated after settlement. One per wallet per 30 days. Guide: https://bshelby88.github.io/raen-first-call-free/",
         "PRICE A/B (disclosed): wallets are deterministically bucketed; most see $0.05, a bucket sees $0.03. The challenge you receive is the exact price you pay.",
-        "OUTPUT QUALITY: if LLM enhancement is unavailable, responses are a deterministic statutory baseline (field mode=statutory-baseline) with verified citations - disclosed, not silent."
-      ]
+        "OUTPUT QUALITY: if LLM enhancement is unavailable, responses are a deterministic statutory baseline (field mode=statutory-baseline) with verified citations - disclosed, not silent.",
+        "GET /api/law-lookup also returns a valid canonical 402 challenge (GET-challenge fix live 2026-11-22) - HEAD-friendly clients can probe without a body.",
+        "Lumi re-crawled this domain same-day after the fix (last_quote_check 2026-11-22T12:45:59Z, canonical payTo)."
+      ],
+      "trust_check": {
+        "url": "https://api.lumitrades.io/v1/trust/check?url=https%3A%2F%2Froyal-ruby-x402.fly.dev%2F",
+        "observed_2026_11_22": "domain listing quote-checked (fresh same-day re-crawl, canonical payTo, $0.001 ping tier); root URL itself not exact-listed - verify the live 402 regardless"
+      }
     },
     {
       "service": "contract-eye-x402",
@@ -55,17 +61,24 @@
         "method": "POST",
         "price_usd": 0.05,
         "amount_atomic": "50000",
-        "live_402_verified_utc": "2026-11-22T11:55:00Z",
+        "live_402_verified_utc": "2026-11-22T13:00:00Z",
         "example_body": {
           "text": "This agreement auto-renews every twelve months unless cancelled sixty days prior.",
-          "focus": ["renewal", "liability"]
+          "focus": [
+            "renewal",
+            "liability"
+          ]
         }
       },
       "alias_route": "POST /contract/analyze (same body, same price)",
       "notes": [
         "body.text has a minimum length of 40 characters (advertised schema).",
         "OUTPUT QUALITY: if LLM analysis is unavailable the response is a deterministic rule-based clause scan; response fields method + delivery_mode disclose this - never silent degradation."
-      ]
+      ],
+      "trust_check": {
+        "url": "https://api.lumitrades.io/v1/trust/check?url=https%3A%2F%2Fcontract-eye-x402.fly.dev",
+        "observed_2026_11_22": "warn/check_first - domain listed, exact URL not; live 402 is authoritative"
+      }
     },
     {
       "service": "nanobanana-x402",
@@ -75,7 +88,7 @@
         "method": "POST",
         "price_usd": 0.1,
         "amount_atomic": "10000",
-        "live_402_verified_utc": "2026-11-22T11:55:00Z",
+        "live_402_verified_utc": "2026-11-22T13:00:00Z",
         "example_body": {
           "prompt": "A product hero image for a Telegram breach monitor, neon terminal style",
           "aspectRatio": "16:9"
@@ -94,7 +107,11 @@
       "notes": [
         "prompt minimum length 3; aspectRatio enum: 1:1, 16:9, 9:16, 3:2, 2:3, 4:3, 3:4, 4:5, 5:4, 21:9.",
         "Response carries ok, model, aspectRatio, image_b64, mime_type."
-      ]
+      ],
+      "trust_check": {
+        "url": "https://api.lumitrades.io/v1/trust/check?url=https%3A%2F%2Fnanobanana-x402.fly.dev",
+        "observed_2026_11_22": "warn/check_first - domain listed, exact URL not; live 402 is authoritative"
+      }
     },
     {
       "service": "raen-mcp-gateway",
@@ -104,7 +121,7 @@
         "method": "POST (JSON-RPC tools/call)",
         "price_usd": 0.05,
         "amount_atomic": "50000",
-        "live_402_verified_utc": "2026-11-22T11:56:00Z",
+        "live_402_verified_utc": "2026-11-22T13:00:00Z",
         "example_body": {
           "jsonrpc": "2.0",
           "id": 1,
@@ -122,7 +139,11 @@
       "notes": [
         "tools/call settles $0.05 per call; the 402 challenge on first unpaid call carries the canonical payTo.",
         "Pick tool names from the free tools/list response - do not guess."
-      ]
+      ],
+      "trust_check": {
+        "url": "https://api.lumitrades.io/v1/trust/check?url=https%3A%2F%2Fraen-mcp-gateway.fly.dev%2Fmcp",
+        "observed_2026_11_22": "no_data - not yet in Lumi's ingested catalog (listings refresh only on settled payments); not a negative finding; live 402 is authoritative"
+      }
     },
     {
       "service": "sentry-forge-x402",
@@ -132,7 +153,7 @@
         "method": "POST",
         "price_usd": 5.0,
         "amount_atomic": "5000000",
-        "live_402_verified_utc": "2026-11-22T11:56:00Z",
+        "live_402_verified_utc": "2026-11-22T13:00:00Z",
         "example_body": {
           "customer_name": "Sample Consumer",
           "state": "LA",
@@ -145,7 +166,11 @@
       },
       "notes": [
         "GET and POST both return a valid 402 challenge on this route (GET-challenge fix live since 2026-11-22, commit 46c883b)."
-      ]
+      ],
+      "trust_check": {
+        "url": "https://api.lumitrades.io/v1/trust/check?url=https%3A%2F%2Fsentry-forge-x402.fly.dev",
+        "observed_2026_11_22": "no_data - not yet cataloged; not a negative finding; live 402 is authoritative"
+      }
     }
   ],
   "trust_verification": {
@@ -153,5 +178,11 @@
     "rule": "Verify the live 402 challenge payTo against canonical_payto case-insensitively before paying. Manifests and directories (including Lumi/Bazaar caches) can carry stale or poisoned addresses; the live challenge is the source of truth."
   },
   "operator": "Royal Agentic Enterprises (RAEN)",
-  "contact": "jadedfocus@gmail.com"
+  "contact": "jadedfocus@gmail.com",
+  "self_verify": {
+    "purpose": "Before paying, verify the wall yourself in one command - no directory, registry, or cache trusted.",
+    "command": "curl -s -D - -o /dev/null -X POST <route-url> -H 'Content-Type: application/json' --data-raw '<example_body JSON>' | grep -i payment-required | cut -d' ' -f2- | python -c \"import sys,base64,json;a=json.loads(base64.b64decode(sys.stdin.read().strip()+'=='))['accepts'][0];print(a['scheme'],a['network'],a['payTo'],a['amount'])\"",
+    "pass_criteria": "scheme=exact, network=eip155:8453, payTo=0x9b8a27e03ceba490953cda8ab1291c0e13baf72f (case-insensitive), amount matches the service price below.",
+    "note": "All 6 challenges (5 POST + royal-ruby GET) were re-decoded with this exact recipe on 2026-11-22 and passed."
+  }
 }
