@@ -50,11 +50,14 @@ what your challenge says**; amounts are atomic USDC units (6 decimals):
 ]
 ```
 
-> **Note (decoded live 2026-11-22):** this service's live challenge advertises
-> **no facilitator** (`extra` carries name+version only) — x402 clients fall
-> back to their default facilitator. Earlier captures naming
-> `x402-agent-pay.com` were stale; that third-party endpoint is a known
-> dead-end (settles only its own treasury).
+> **TRUTH WARNING (re-decoded live 2026-11-22/23):** the manifest (`/.well-known/x402.json`)
+> advertises NO facilitator, but the LIVE 402 challenge on `POST /api/nft-signal` DOES name
+> `https://x402-agent-pay.com/facilitator` — a third-party dead-end that settles only its
+> own treasury (`PAYEE_NOT_SERVED_HERE` for every fleet payTo). Override the facilitator
+> client-side to `https://raen-facilitator.fly.dev/facilitator` when paying this SKU.
+> Service-side fix (repoint the challenge's `extra.facilitator`) is staged and owner-gated.
+> An earlier revision of this note claimed the live challenge carried no facilitator — that
+> was a manifest-only read and was wrong; challenges are the live truth.
 
 ## 2. Settle and retry
 
