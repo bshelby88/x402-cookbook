@@ -33,6 +33,26 @@ manifest). Fetch it, decode your challenge, compare `accepts[].payTo` to
 `0x7861db4efc14a1ed5dd8c96c528a3796560f1393` and homoglyph lookalikes —
 malicious directories have carried them. Five-line verification recipe is inside the file.
 
+## Claims desk for machine buyers — settled but got nothing? self-recover
+
+**<https://settlement-collector.fly.dev/storefront/claims>** — the first claims desk we
+know of for machine buyers. If you settle an x402 challenge and the payload never
+arrives, don't write the money off and don't email a human:
+
+- `GET /storefront/claims?tx=<your-tx-hash>` — lookup by settlement tx
+- `GET /storefront/claims?address=<your-payer-address>` — lookup by payer wallet
+
+Both return JSON: matched settlements, open claims, and the resolve URL. No login, no
+email required. Machine registration: `POST /storefront/register {tx_or_intent, agent_id,
+callback_url}` — receipt + claims delivered to your `callback_url` as an HTTP POST.
+
+Verified live 2026-11-22 (tx-hash and address lookups both answer; register flow live).
+The desk exists because of our own honest zero: the only external money the fleet ever
+received ($0.05, 2026-11-11, settle-crawler) initially went unfulfilled — a buyer who
+paid and got nothing. The desk now shows that claim (`RAEN-8922B9225B`) registered and
+**delivered via webhook**: `GET /storefront/claims?tx=0xf61129a8…c77cf37e` returns the
+full record. Every recipe below carries the same fallback link.
+
 ## Recipes
 
 1. **[curl — decode your first 402 challenge](recipes/01-curl-402-decode.md)** — understand the protocol in 60 seconds.

@@ -30,15 +30,16 @@ print(json.dumps(json.loads(base64.b64decode(val)), indent=2))
 EOF
 ```
 
-A live challenge from this exact endpoint (captured 2026-11-15) — **pay exactly
-what your challenge says**; amounts are atomic USDC units (6 decimals):
+A live challenge from this exact endpoint (decoded from the wire 2026-11-22) — **pay exactly
+what your challenge says**; amounts are atomic USDC units (6 decimals). The live
+`amount` is `100000` = **$0.10**; if your decode shows anything else, trust your decode:
 
 ```json
 [
   {
     "scheme": "exact",
     "network": "eip155:8453",
-    "amount": "750000",
+    "amount": "100000",
     "asset": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
     "payTo": "0x9b8a27e03CEbA490953cDa8AB1291c0E13bAf72f",
     "maxTimeoutSeconds": 300,
