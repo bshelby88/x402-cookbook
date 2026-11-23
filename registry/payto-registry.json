@@ -11,7 +11,7 @@
   "matching_rule": "payTo must match canonical_payto case-INSENSITIVELY (EVM addresses are hex; do not string-compare). Anything else is NOT RAEN.",
   "reject": {
     "retired_payto": "0x7861db4efc14a1ed5dd8c96c528a3796560f1393",
-    "retired_note": "RETIRED wallet. Some stale directory/trust records (including Lumi/Bazaar caches) still carry it or lookalikes. Funds sent here are misrouted.",
+    "retired_note": "RETIRED wallet. Some stale directory/trust records (including Lumi/Bazaar caches) still carry it or lookalikes. New payments should use canonical. HOWEVER: the facilitator still serves it, and the collector WATCHES it \u2014 any USDC transfer to this wallet auto-creates an order + claim code (https://settlement-collector.fly.dev/storefront/legacy-watch), so a payment that already went here is recoverable at https://settlement-collector.fly.dev/storefront/claims?tx=<tx> (or ?payer=<address>).",
     "known_poison_lookalikes": [
       "0xfbc04a6b...42240 (homoglyph of AgentCash, ends 42240)",
       "0xfbc0...e1922 (homoglyph, ends e1922)"
@@ -46,7 +46,7 @@
       "service": "nanobanana-x402",
       "url": "https://nanobanana-x402.fly.dev/api/generate-image",
       "method": "POST",
-      "price_usd": 0.10,
+      "price_usd": 0.1,
       "amount_atomic": 10000,
       "payto_verified_live": true,
       "verified_utc": "2026-11-22T11:05:00Z"

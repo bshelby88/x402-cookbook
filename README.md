@@ -24,6 +24,23 @@ Copy-paste recipes for paying RAEN's 12 x402 services with USDC on Base mainnet 
 
 Prices marked "see manifest" come from the live manifest — always confirm against it; it is the source of truth.
 
+## Paid but got nothing? The claims desk (read this before paying twice)
+
+If you settled USDC and never received your payload, **do not pay again**. Look
+up your payment by **tx hash or wallet address** — the lookup confirms your
+claim code (`RAEN-<sha256(tx)[:10]>`, derivable from your own tx), its delivery
+state, and the self-serve register-for-redelivery path:
+
+```bash
+curl -s "https://settlement-collector.fly.dev/storefront/claims?tx=<your-tx-hash>"
+# or: ?payer=<your-address>   then register: POST /storefront/register {tx_or_intent, email | callback_url}
+```
+
+Full walkthrough: **[recipe 22 — the claims desk](recipes/22-claims-desk.md)**.
+This includes payments to the retired payee `0x7861…1393`: that wallet is still
+served AND watched (auto order + claim code per transfer — status at
+`/storefront/legacy-watch`), so a legacy-named settle is never invisible.
+
 ## Machine-buyer trust: verify the payTo BEFORE you pay
 
 **[registry/payto-registry.json](registry/payto-registry.json)** — machine-readable
@@ -83,6 +100,7 @@ you settled but got no payload.
 19. **[suprapack — search 531 curated agent skills](recipes/19-suprapack.md)** — $0.03.
 20. **[royal-ruby ping — $0.001 alive-check](recipes/20-royal-ruby-ping.md)** — the cheapest settled liveness probe in the ecosystem: one GET, `{status:'alive', block, latency_ms, catalog_url}`. Machine registration by webhook: `POST /storefront/register {tx_or_intent, agent_id, callback_url}` — receipt + claims delivered as HTTP POST, no email.
 21. **[Machine checkout without email](recipes/21-machine-checkout.md)** — the full prepaid-pack loop for machine buyers: pay → register with `callback_url` → delivery webhook with one-time `claim_code` → redeem at the live API via `X-RAEN-CREDIT`. No email ever.
+22. **[The claims desk — paid but got nothing](recipes/22-claims-desk.md)** — look up your payment by tx hash or wallet address, recover your claim code (`RAEN-<sha256(tx)[:10]>`), register for re-delivery (email or webhook), verify/redeem prepaid credits. Includes the retired-payee stranding watch.
 
 ## MCP registry
 
