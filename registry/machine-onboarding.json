@@ -1,9 +1,9 @@
 {
   "bundle": "RAEN Machine Onboarding Bundle",
-  "version": 3,
-  "updated_utc": "2026-11-22T13:06:00Z",
+  "version": 4,
+  "updated_utc": "2026-11-23T12:30:00Z",
   "purpose": "One-fetch onboarding for machine buyers: everything an autonomous agent needs to go from discovery to a settled paid call on any RAEN x402 wall - route, live-verified price, ready-to-send request body, settlement asset, and trust verification. Companion to registry/payto-registry.json (payTo verification, case rules, poison-address rejection).",
-  "verified_method": "Every price below was confirmed by sending an UNPAID request to the live paid route on 2026-11-22, capturing the HTTP 402 payment-required header, base64-decoding it, and reading accepts[].amount. Request bodies are taken from the service's own /.well-known/x402.json advertisement. Live challenge > manifest > this file: if they ever disagree, trust the live 402 and re-fetch this bundle.",
+  "verified_method": "Every price below was confirmed by sending an UNPAID request to the live paid route on 2026-11-22 and re-verified 2026-11-23, capturing the HTTP 402 payment-required header, base64-decoding it, and reading accepts[].amount. Request bodies are taken from the service's own /.well-known/x402.json advertisement. Live challenge > manifest > this file: if they ever disagree, trust the live 402 and re-fetch this bundle.",
   "settlement": {
     "protocol": "x402 v2, scheme exact",
     "chain": "Base (eip155:8453)",
@@ -28,7 +28,7 @@
         "method": "POST",
         "price_usd": 0.05,
         "amount_atomic": "50000",
-        "live_402_verified_utc": "2026-11-22T13:00:00Z",
+        "live_402_verified_utc": "2026-11-23T12:00:00Z",
         "example_body": {
           "topic": "credit-report disputes for collection accounts",
           "state": "LA",
@@ -37,7 +37,6 @@
       },
       "free_surfaces": [
         "GET /machine-buyer/qa.json - free machine-buyer Q&A",
-        "POST /api/ping - alive check",
         "POST /api/cold-start-kit - integration bootstrap"
       ],
       "notes": [
@@ -61,7 +60,7 @@
         "method": "POST",
         "price_usd": 0.05,
         "amount_atomic": "50000",
-        "live_402_verified_utc": "2026-11-22T13:00:00Z",
+        "live_402_verified_utc": "2026-11-23T12:00:00Z",
         "example_body": {
           "text": "This agreement auto-renews every twelve months unless cancelled sixty days prior.",
           "focus": [
@@ -86,9 +85,9 @@
       "primary_route": {
         "url": "https://nanobanana-x402.fly.dev/api/generate-image",
         "method": "POST",
-        "price_usd": 0.1,
+        "price_usd": 0.01,
         "amount_atomic": "10000",
-        "live_402_verified_utc": "2026-11-22T13:00:00Z",
+        "live_402_verified_utc": "2026-11-23T12:00:00Z",
         "example_body": {
           "prompt": "A product hero image for a Telegram breach monitor, neon terminal style",
           "aspectRatio": "16:9"
@@ -121,7 +120,7 @@
         "method": "POST (JSON-RPC tools/call)",
         "price_usd": 0.05,
         "amount_atomic": "50000",
-        "live_402_verified_utc": "2026-11-22T13:00:00Z",
+        "live_402_verified_utc": "2026-11-23T12:00:00Z",
         "example_body": {
           "jsonrpc": "2.0",
           "id": 1,
@@ -153,7 +152,7 @@
         "method": "POST",
         "price_usd": 5.0,
         "amount_atomic": "5000000",
-        "live_402_verified_utc": "2026-11-22T13:00:00Z",
+        "live_402_verified_utc": "2026-11-23T12:00:00Z",
         "example_body": {
           "customer_name": "Sample Consumer",
           "state": "LA",
@@ -188,10 +187,33 @@
   "claims_desk": {
     "purpose": "Paid but got nothing? Do not pay again. Every RAEN payment is tracked on-chain, including transfers to the retired payee (stranding watch).",
     "lookup_your_payment": "GET https://settlement-collector.fly.dev/storefront/claims?tx=<your tx hash>  OR  ?payer=<your wallet address>",
-    "claim_code_rule": "RAEN-<sha256(tx)[:10]> uppercase \u2014 derivable from your own tx hash; the lookup confirms it and its state (open | delivered | credit_redeemed | recorded).",
+    "claim_code_rule": "RAEN-<sha256(tx)[:10]> uppercase — derivable from your own tx hash; the lookup confirms it and its state (open | delivered | credit_redeemed | recorded).",
     "register_for_redelivery": "POST https://settlement-collector.fly.dev/storefront/register {tx_or_intent: <tx or payer>, email: <you>} or {tx_or_intent, agent_id, callback_url} for machine webhook delivery; a new registration target re-arms re-delivery.",
-    "prepaid_credit_verify": "GET https://settlement-collector.fly.dev/storefront/credits/<claim code> (redeem: POST .../credits/<code>/redeem) \u2014 one-time; services accept it as X-RAEN-CREDIT instead of a new payment.",
-    "retired_payee_watch": "GET https://settlement-collector.fly.dev/storefront/legacy-watch \u2014 USDC transfers to retired 0x7861db4efc14a1ed5dd8c96c528a3796560f1393 auto-create an order + claim code; the same tx/payer lookup finds them.",
+    "prepaid_credit_verify": "GET https://settlement-collector.fly.dev/storefront/credits/<claim code> (redeem: POST .../credits/<code>/redeem) — one-time; services accept it as X-RAEN-CREDIT instead of a new payment.",
+    "retired_payee_watch": "GET https://settlement-collector.fly.dev/storefront/legacy-watch — USDC transfers to retired 0x7861db4efc14a1ed5dd8c96c528a3796560f1393 auto-create an order + claim code; the same tx/payer lookup finds them.",
     "human_contact": "ops@royalruby.io"
+  },
+  "first_settled_call": {
+    "purpose": "Zero to a settled paid call in one request. The cheapest settled liveness probe we know of in the x402 ecosystem (prove us wrong).",
+    "route": {
+      "url": "https://royal-ruby-x402.fly.dev/api/ping",
+      "method": "POST or GET",
+      "price_usd": 0.001,
+      "amount_atomic": "1000",
+      "live_402_verified_utc": "2026-11-23T12:00:00Z",
+      "example_body": {}
+    },
+    "steps": [
+      "1. curl -s -D - -o /dev/null -X POST https://royal-ruby-x402.fly.dev/api/ping -H 'Content-Type: application/json' -d '{}' -w '%{http_code}' -> expect 402 + payment-required header.",
+      "2. base64-decode the header; verify accepts[].amount == 1000 ($0.001) and payTo == canonical_payto.",
+      "3. Pay per the settlement mechanism and retry with the payment attached. Expect 2xx JSON: {status:'alive', block, latency_ms, catalog...}.",
+      "4. Verify settlement: USDC Transfer of 1000 atomic units to canonical_payto on Base."
+    ],
+    "proven_end_to_end": {
+      "date": "2026-11-22",
+      "tx": "0x03a014da1fe7743809b3e3c6653ea1cebd0030474305bfda1b07508ac7f28cd5",
+      "result": "settled 0.001 USDC on Base (Transfer to canonical payTo, block 61054191), payload returned same-response; full round trip 1067ms",
+      "challenge_decode_note": "verified again unpaid 2026-11-23: amount 1000, canonical payTo"
+    }
   }
 }
