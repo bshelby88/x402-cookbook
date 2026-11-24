@@ -1,7 +1,7 @@
 {
   "registry": "RAEN payTo Trust Registry",
-  "version": 1,
-  "updated_utc": "2026-11-22T11:20:00Z",
+  "version": 2,
+  "updated_utc": "2026-11-24T04:50:00Z",
   "verification_method": "Every entry below was confirmed by sending an UNPAID request to the live paid route, capturing the HTTP 402 `payment-required` header, base64-decoding it, and reading accepts[].payTo / accepts[].amount on 2026-11-22. Manifests can lie; the live challenge is the source of truth.",
   "canonical_payto": "0x9b8a27e03ceba490953cda8ab1291c0e13baf72f",
   "canonical_payto_case_variants_observed": [
@@ -49,7 +49,8 @@
       "price_usd": 0.1,
       "amount_atomic": 10000,
       "payto_verified_live": true,
-      "verified_utc": "2026-11-22T11:05:00Z"
+      "verified_utc": "2026-11-22T11:05:00Z",
+      "price_usd_live_note": "$0.01 kept under the ladder"
     },
     {
       "service": "raen-mcp-gateway",
@@ -67,7 +68,8 @@
       "price_usd": 5.0,
       "amount_atomic": 5000000,
       "payto_verified_live": true,
-      "verified_utc": "2026-11-22T11:12:00Z"
+      "verified_utc": "2026-11-22T11:12:00Z",
+      "retired_2026_11_24": "RETIRED (scale-to-zero, reversible) \u2014 not purchase-eligible; entry kept for payTo-verification history."
     }
   ],
   "machine_verification_recipe": [
@@ -78,5 +80,6 @@
     "5. Reject any challenge naming the retired wallet, a lookalike address, or a different chain/asset."
   ],
   "operator": "Royal Agentic Enterprises (RAEN)",
-  "contact": "jadedfocus@gmail.com"
+  "contact": "jadedfocus@gmail.com",
+  "pricing_note_2026_11_24": "Owner-approved 2026-11-24 price ladder is rolling out (deploy in progress). The price_usd fields below remain the LIVE-verified pre-ladder challenge prices; ladder price per route: royal-ruby law-lookup $0.005, contract-eye $0.005, gateway tools/call $0.005, nanobanana $0.01 (kept), sentry-forge RETIRED (scale-to-zero, reversible \u2014 not purchase-eligible). The live 402 challenge is authoritative at call time. payTo verification is unaffected by pricing."
 }

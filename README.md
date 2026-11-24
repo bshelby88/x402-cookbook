@@ -9,17 +9,17 @@ Copy-paste recipes for paying RAEN's 12 x402 services with USDC on Base mainnet 
 
 | Service | What it does | Price |
 |---|---|---|
-| [royal-ruby](https://royal-ruby-x402.fly.dev/.well-known/x402.json) | US consumer-rights law citation lookup (FCRA/FDCPA/TILA/UDAP). **Free first call** (charge-and-rebate — net $0) | $0.05 |
-| [contract-eye](https://contract-eye-x402.fly.dev/.well-known/x402.json) | Contract risk analysis, flags one-sided clauses | $0.05 |
-| [tradingagents](https://tradingagents-x402.fly.dev/.well-known/x402.json) | Synthetic degraded demo payload (currently in demo mode) | $0.05 |
-| [nanobanana](https://nanobanana-x402.fly.dev/.well-known/x402.json) | Gemini image generation/editing, base64 PNG out | see manifest |
-| [briefsnap](https://briefsnap-x402.fly.dev/.well-known/x402.json) | Document summarization + action items | see manifest |
-| [nft-alpha](https://nft-alpha-x402.fly.dev/.well-known/x402.json) | OpenSea market signals for Base collections | see manifest |
-| [dispatch](https://dispatch-x402.fly.dev/.well-known/x402.json) | NL intent router → picks the right paid fleet service | $0.50 |
-| [escrow](https://escrow-x402.fly.dev/.well-known/x402.json) | Agent-to-agent USDC escrow on Base, 1% fee, timeout-refundable | see manifest |
-| [dispute-forge](https://dispute-forge-x402.fly.dev/.well-known/x402.json) | FCRA-compliant dispute letter + on-chain certificate | $0.10 |
-| [vault-pro](https://vault-pro-x402.fly.dev/.well-known/x402.json) | Obsidian project/agent scaffolding markdown | see manifest |
-| [sentry-forge](https://sentry-forge-x402.fly.dev/.well-known/x402.json) | One collection notice → 8 review-ready dispute docs | $5.00 |
+| [royal-ruby](https://royal-ruby-x402.fly.dev/.well-known/x402.json) | US consumer-rights law citation lookup (FCRA/FDCPA/TILA/UDAP). **Free first call** (charge-and-rebate — net $0) | **$0.005** rolling out (repriced per the owner-approved 2026-11-24 ladder; deploy rolling out — until it lands, your live 402 challenge shows the pre-ladder price and is authoritative) · bulk 10-99 @ $0.002, 100-500 @ $0.001 (floor 10) · $0.001 probe (`/api/ping`, live) |
+| [contract-eye](https://contract-eye-x402.fly.dev/.well-known/x402.json) | Contract risk analysis, flags one-sided clauses | **$0.005** rolling out (repriced per the owner-approved 2026-11-24 ladder; deploy rolling out — until it lands, your live 402 challenge shows the pre-ladder price and is authoritative) · bulk 10-99 @ $0.002, 100+ @ $0.001 · $0.001 probe |
+| [tradingagents](https://tradingagents-x402.fly.dev/.well-known/x402.json) | Synthetic degraded demo payload (currently in demo mode). **RETIRED 2026-11-24** — scale-to-zero (reversible); not purchase-eligible | ~~$0.05~~ RETIRED |
+| [nanobanana](https://nanobanana-x402.fly.dev/.well-known/x402.json) | Gemini image generation/editing, base64 PNG out | **$0.01** (unchanged) · bulk 10+ @ $0.008 · $0.001 liveness ack |
+| [briefsnap](https://briefsnap-x402.fly.dev/.well-known/x402.json) | Document summarization + action items. **RETIRED 2026-11-24** — scale-to-zero (reversible); not purchase-eligible | ~~$1.00-$3.00~~ RETIRED |
+| [nft-alpha](https://nft-alpha-x402.fly.dev/.well-known/x402.json) | OpenSea market signals for Base collections | **$0.005** rolling out (repriced per the owner-approved 2026-11-24 ladder; deploy rolling out — until it lands, your live 402 challenge shows the pre-ladder price and is authoritative) · bulk 10+ @ $0.002 · $0.001 probe |
+| [dispatch](https://dispatch-x402.fly.dev/.well-known/x402.json) | NL intent router → picks the right paid fleet service | **$0.01** rolling out (repriced per the owner-approved 2026-11-24 ladder; deploy rolling out — until it lands, your live 402 challenge shows the pre-ladder price and is authoritative) · bulk 10+ @ $0.005 · $0.001 probe |
+| [escrow](https://escrow-x402.fly.dev/.well-known/x402.json) | Agent-to-agent USDC escrow on Base, 1% fee, timeout-refundable | **$0.005** create fee rolling out (repriced per the owner-approved 2026-11-24 ladder; deploy rolling out — until it lands, your live 402 challenge shows the pre-ladder price and is authoritative) · batch 10+ @ $0.003 · $0.001 probe |
+| [dispute-forge](https://dispute-forge-x402.fly.dev/.well-known/x402.json) | FCRA-compliant dispute letter + on-chain certificate | **$0.01** rolling out (repriced per the owner-approved 2026-11-24 ladder; deploy rolling out — until it lands, your live 402 challenge shows the pre-ladder price and is authoritative) · bulk 10+ @ $0.005 · $0.001 probe |
+| [vault-pro](https://vault-pro-x402.fly.dev/.well-known/x402.json) | Obsidian project/agent scaffolding markdown. **RETIRED 2026-11-24** — scale-to-zero (reversible); not purchase-eligible | ~~$0.05~~ RETIRED |
+| [sentry-forge](https://sentry-forge-x402.fly.dev/.well-known/x402.json) | One collection notice → 8 review-ready dispute docs. **RETIRED 2026-11-24** — scale-to-zero (reversible); not purchase-eligible (human-billed $5.00 held) | ~~$5.00~~ RETIRED |
 | [settlement-collector](https://settlement-collector.fly.dev/stats) | Fleet telemetry (free, public JSON) | free |
 
 Prices marked "see manifest" come from the live manifest — always confirm against it; it is the source of truth.
@@ -84,20 +84,20 @@ Each recipe is one SKU, copy-paste, 60-second testable: unpaid call → decode t
 402 challenge (real captured values) → settle + retry → claim-code fallback if
 you settled but got no payload.
 
-6. **[royal-ruby — consumer-law citations](recipes/06-royal-ruby.md)** — $0.05, first call free (charge-and-rebate).
-7. **[dispatch — route any intent](recipes/07-dispatch.md)** — $0.50, returns a ready-to-use downstream request.
-8. **[contract-eye — flag one-sided clauses](recipes/08-contract-eye.md)** — $0.05.
-9. **[briefsnap — summarize any document](recipes/09-briefsnap.md)** — $1.00.
-10. **[nanobanana — image generation](recipes/10-nanobanana.md)** — $0.01, base64 PNG out.
-11. **[nft-alpha — OpenSea signals on Base](recipes/11-nft-alpha.md)** — $0.02.
-12. **[vault-pro — Obsidian project scaffolding](recipes/12-vault-pro.md)** — $0.05.
-13. **[escrow — agent-to-agent USDC escrow](recipes/13-escrow.md)** — $0.05 create fee, 1% release fee.
-14. **[sentry-forge — 8 dispute docs from one notice](recipes/14-sentry-forge.md)** — $5.00.
-15. **[dispute-forge — dispute letter + on-chain certificate](recipes/15-dispute-forge.md)** — $0.10.
-16. **[tradingagents — ticker consensus (demo)](recipes/16-tradingagents.md)** — $0.05, synthetic demo payload (disclosed).
-17. **[x402-enterprise — dispute letter (enterprise variant, self-identifies as dispute-forge)](recipes/17-x402-enterprise.md)** — $0.75.
-18. **[staci-tradingagents — full pipeline run](recipes/18-staci-tradingagents.md)** — $5.00, simulated engine (disclosed).
-19. **[suprapack — search 531 curated agent skills](recipes/19-suprapack.md)** — $0.03.
+6. **[royal-ruby — consumer-law citations](recipes/06-royal-ruby.md)** — **$0.005** (ladder, rolling out (repriced per the owner-approved 2026-11-24 ladder; deploy rolling out — until it lands, your live 402 challenge shows the pre-ladder price and is authoritative)) with bulk 10-99 @ $0.002 / 100-500 @ $0.001, first call free (charge-and-rebate), $0.001 probe.
+7. **[dispatch — route any intent](recipes/07-dispatch.md)** — **$0.01** (ladder, rolling out (repriced per the owner-approved 2026-11-24 ladder; deploy rolling out — until it lands, your live 402 challenge shows the pre-ladder price and is authoritative)), returns a ready-to-use downstream request.
+8. **[contract-eye — flag one-sided clauses](recipes/08-contract-eye.md)** — **$0.005** (ladder, rolling out (repriced per the owner-approved 2026-11-24 ladder; deploy rolling out — until it lands, your live 402 challenge shows the pre-ladder price and is authoritative)), bulk 10-99 @ $0.002.
+9. **[briefsnap — summarize any document](recipes/09-briefsnap.md)** — **RETIRED 2026-11-24** (scale-to-zero, reversible; was $1.00-$3.00).
+10. **[nanobanana — image generation](recipes/10-nanobanana.md)** — $0.01 (kept — real per-call model cost), bulk 10+ @ $0.008, $0.001 liveness ack, base64 PNG out.
+11. **[nft-alpha — OpenSea signals on Base](recipes/11-nft-alpha.md)** — **$0.005** (ladder, rolling out (repriced per the owner-approved 2026-11-24 ladder; deploy rolling out — until it lands, your live 402 challenge shows the pre-ladder price and is authoritative)), bulk 10+ @ $0.002.
+12. **[vault-pro — Obsidian project scaffolding](recipes/12-vault-pro.md)** — **RETIRED 2026-11-24** (scale-to-zero, reversible; was $0.05).
+13. **[escrow — agent-to-agent USDC escrow](recipes/13-escrow.md)** — **$0.005** create fee (ladder, rolling out (repriced per the owner-approved 2026-11-24 ladder; deploy rolling out — until it lands, your live 402 challenge shows the pre-ladder price and is authoritative)), batch 10+ @ $0.003, 1% release fee.
+14. **[sentry-forge — 8 dispute docs from one notice](recipes/14-sentry-forge.md)** — **RETIRED 2026-11-24** (scale-to-zero, reversible; human-billed $5.00 held).
+15. **[dispute-forge — dispute letter + on-chain certificate](recipes/15-dispute-forge.md)** — **$0.01** (ladder, rolling out (repriced per the owner-approved 2026-11-24 ladder; deploy rolling out — until it lands, your live 402 challenge shows the pre-ladder price and is authoritative)), bulk 10+ @ $0.005, $0.001 probe.
+16. **[tradingagents — ticker consensus (demo)](recipes/16-tradingagents.md)** — **RETIRED 2026-11-24** (scale-to-zero, reversible; ladder would have been $0.005).
+17. **[x402-enterprise — dispute letter (enterprise variant, self-identifies as dispute-forge)](recipes/17-x402-enterprise.md)** — $0.75 **HOLD** (identity-drift decision precedes any repricing).
+18. **[staci-tradingagents — full pipeline run](recipes/18-staci-tradingagents.md)** — **RETIRED 2026-11-24** (scale-to-zero, reversible; was $5.00 human-billed).
+19. **[suprapack — search 531 curated agent skills](recipes/19-suprapack.md)** — **$0.005** (ladder, rolling out (repriced per the owner-approved 2026-11-24 ladder; deploy rolling out — until it lands, your live 402 challenge shows the pre-ladder price and is authoritative)), bulk 10+ @ $0.002, $0.001 probe.
 20. **[royal-ruby ping — $0.001 alive-check](recipes/20-royal-ruby-ping.md)** — the cheapest settled liveness probe in the ecosystem: one GET, `{status:'alive', block, latency_ms, catalog_url}`. Machine registration by webhook: `POST /storefront/register {tx_or_intent, agent_id, callback_url}` — receipt + claims delivered as HTTP POST, no email.
 21. **[Machine checkout without email](recipes/21-machine-checkout.md)** — the full prepaid-pack loop for machine buyers: pay → register with `callback_url` → delivery webhook with one-time `claim_code` → redeem at the live API via `X-RAEN-CREDIT`. No email ever.
 22. **[The claims desk — paid but got nothing](recipes/22-claims-desk.md)** — look up your payment by tx hash or wallet address, recover your claim code (`RAEN-<sha256(tx)[:10]>`), register for re-delivery (email or webhook), verify/redeem prepaid credits. Includes the retired-payee stranding watch.

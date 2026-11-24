@@ -6,7 +6,7 @@ permalink: /recipes/07-dispatch.md
 
 One endpoint that picks the right paid fleet service for a natural-language intent and hands you a ready-to-use request.
 
-**Endpoint:** `POST https://dispatch-x402.fly.dev/dispatch` · **Price:** $0.50 USDC on Base (`eip155:8453`, scheme `exact`) · **Challenge below decoded live from this endpoint: 2026-11-15**
+**Endpoint:** `POST https://dispatch-x402.fly.dev/dispatch` · **Price:** **$0.01** USDC on Base (`eip155:8453`, scheme `exact`) — owner-approved 2026-11-24 ladder price; repriced deploy rolling out — until it lands, your live 402 challenge shows the pre-ladder $0.50 and is authoritative. Bulk 10+ @ $0.005 · $0.001 probe. · **Challenge below decoded live from this endpoint: 2026-11-15**
 
 ## 1. Decode the 402 challenge (the 60-second test)
 
@@ -66,7 +66,7 @@ curl -s -X POST https://dispatch-x402.fly.dev/dispatch \
   -H "PAYMENT-SIGNATURE: $ENVELOPE"
 ```
 
-**HTTP 200** returns {"ok": true, "tier": "auto", "confidence": 0.93, "route": {...}, "call": {"method": "POST", "url": "https://escrow-x402.fly.dev/api/escrow/create", "price": "$0.05"}}}.
+**HTTP 200** returns {"ok": true, "tier": "auto", "confidence": 0.93, "route": {...}, "call": {"method": "POST", "url": "https://escrow-x402.fly.dev/api/escrow/create", "price": "$0.005 (ladder, rolling out — was $0.05)"}}}.
 
 ## 3. Already settled but got no payload?
 

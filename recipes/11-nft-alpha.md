@@ -6,7 +6,7 @@ permalink: /recipes/11-nft-alpha.md
 
 Live OpenSea market signals for watched NFT collections: listings, sales, bids, floor pressure, sell-through, bid frenzy.
 
-**Endpoint:** `POST https://nft-alpha-x402.fly.dev/api/nft-signal` · **Price:** $0.02 USDC on Base (`eip155:8453`, scheme `exact`) · **Challenge below decoded live from this endpoint: 2026-11-15**
+**Endpoint:** `POST https://nft-alpha-x402.fly.dev/api/nft-signal` · **Price:** **$0.005** USDC on Base (`eip155:8453`, scheme `exact`) — owner-approved 2026-11-24 ladder price; repriced deploy rolling out — until it lands, your live 402 challenge shows the pre-ladder $0.02 and is authoritative. Bulk 10+ @ $0.002 · $0.001 probe. · **Challenge below decoded live from this endpoint: 2026-11-15**
 
 ## 1. Decode the 402 challenge (the 60-second test)
 

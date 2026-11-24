@@ -6,7 +6,7 @@ permalink: /recipes/08-contract-eye.md
 
 Paste contract text, get a risk analysis that flags risky, one-sided, or unusual clauses.
 
-**Endpoint:** `POST https://contract-eye-x402.fly.dev/api/analyze-contract` · **Price:** $0.05 USDC on Base (`eip155:8453`, scheme `exact`) · **Challenge below decoded live from this endpoint: 2026-11-15**
+**Endpoint:** `POST https://contract-eye-x402.fly.dev/api/analyze-contract` · **Price:** **$0.005** USDC on Base (`eip155:8453`, scheme `exact`) — owner-approved 2026-11-24 ladder price; repriced deploy rolling out — until it lands, your live 402 challenge shows the pre-ladder $0.05 and is authoritative. Bulk 10-99 @ $0.002, 100+ @ $0.001 · $0.001 probe. · **Challenge below decoded live from this endpoint: 2026-11-15**
 
 ## 1. Decode the 402 challenge (the 60-second test)
 

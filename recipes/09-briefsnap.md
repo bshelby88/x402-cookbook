@@ -4,6 +4,8 @@ permalink: /recipes/09-briefsnap.md
 
 # Recipe 09 — briefsnap: summarize any document
 
+> **RETIRED 2026-11-24 (owner decision):** this service is scaled to zero (reversible). It is no longer purchase-eligible; this recipe is kept for the record, annotated — not deleted. Do not send payments to it.
+
 Instant AI summaries, action-item extraction, and simplified explanations of any document or text.
 
 **Endpoint:** `POST https://briefsnap-x402.fly.dev/api/summarize` · **Price:** $1.00 USDC on Base (`eip155:8453`, scheme `exact`) · **Challenge below decoded live from this endpoint: 2026-11-15**

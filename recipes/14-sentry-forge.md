@@ -2,6 +2,8 @@
 permalink: /recipes/14-sentry-forge.md
 ---
 
+> **RETIRED 2026-11-24 (owner decision):** this service is scaled to zero (reversible). It is no longer purchase-eligible; rows and recipes are kept for the record, annotated — not deleted. Do not send payments to it.
+
 # Recipe 14 — sentry-forge: one collection notice → 8 dispute docs
 
 Turn one third-party debt-collection notice into eight review-ready validation and complaint documents. No subscription.

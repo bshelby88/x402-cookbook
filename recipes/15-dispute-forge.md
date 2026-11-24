@@ -6,7 +6,7 @@ permalink: /recipes/15-dispute-forge.md
 
 An FCRA-compliant dispute letter plus a unique SVG certificate of dispute, signed and timestamped.
 
-**Endpoint:** `POST https://dispute-forge-x402.fly.dev/api/dispute-pack` · **Price:** $0.10 USDC on Base (`eip155:8453`, scheme `exact`) · **Challenge below decoded live from this endpoint: 2026-11-22**
+**Endpoint:** `POST https://dispute-forge-x402.fly.dev/api/dispute-pack` · **Price:** **$0.01** USDC on Base (`eip155:8453`, scheme `exact`) — owner-approved 2026-11-24 ladder price; repriced deploy rolling out — until it lands, your live 402 challenge shows the pre-ladder $0.10 and is authoritative. Bulk 10+ @ $0.005 · $0.001 probe. · **Challenge below decoded live from this endpoint: 2026-11-22**
 
 ## 1. Decode the 402 challenge (the 60-second test)
 
@@ -32,7 +32,7 @@ EOF
 
 A live challenge from this exact endpoint (decoded from the wire 2026-11-22) — **pay exactly
 what your challenge says**; amounts are atomic USDC units (6 decimals). The live
-`amount` is `100000` = **$0.10**; if your decode shows anything else, trust your decode:
+`amount` is `100000` = **$0.10** on the pre-ladder wire (`10000` = $0.01 once the repriced deploy lands); if your decode shows anything else, trust your decode:
 
 ```json
 [

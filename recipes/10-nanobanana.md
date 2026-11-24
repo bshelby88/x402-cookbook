@@ -4,6 +4,8 @@ permalink: /recipes/10-nanobanana.md
 
 # Recipe 10 — nanobanana: generate an image for $0.01
 
+> **Pricing unchanged (2026-11-24 ladder):** single stays $0.01 (real per-call model cost). NEW: bulk 10+ @ $0.008/image and a $0.001 liveness ack (no image bytes) are part of the approved ladder and rolling out.
+
 Gemini image generation from a text prompt — the cheapest paid call on the fleet.
 
 **Endpoint:** `POST https://nanobanana-x402.fly.dev/api/generate-image` · **Price:** $0.01 USDC on Base (`eip155:8453`, scheme `exact`) · **Challenge below decoded live from this endpoint: 2026-11-15**

@@ -6,7 +6,7 @@ permalink: /recipes/17-x402-enterprise.md
 
 The dispute-forge letter + SVG certificate, served from the x402-enterprise deployment. Same protocol, different facilitator.
 
-**Endpoint:** `POST https://x402-enterprise.fly.dev/api/dispute-pack` · **Price:** $0.75 USDC on Base (`eip155:8453`, scheme `exact`) · **Challenge below decoded live from this endpoint: 2026-11-15**
+**Endpoint:** `POST https://x402-enterprise.fly.dev/api/dispute-pack` · **Price:** $0.75 USDC on Base (`eip155:8453`, scheme `exact`) — **HOLD** under the 2026-11-24 ladder (identity-drift decision precedes any repricing); unchanged. · **Challenge below decoded live from this endpoint: 2026-11-15**
 
 ## 1. Decode the 402 challenge (the 60-second test)
 

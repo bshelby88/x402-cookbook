@@ -2,6 +2,8 @@
 permalink: /recipes/18-staci-tradingagents.md
 ---
 
+> **RETIRED 2026-11-24 (owner decision):** this service is scaled to zero (reversible). It is no longer purchase-eligible; rows and recipes are kept for the record, annotated — not deleted. Do not send payments to it.
+
 # Recipe 18 — staci-tradingagents: full BUY/HOLD/SELL pipeline run
 
 The full TradingAgents pipeline shape on one ticker. **Honesty note (from the live manifest):** the analysis engine is not installed in the current container — every response carries `simulated: true` with a reason field; the decision defaults to HOLD. You are paying for the pipeline shape + verifiable receipt, not live market analysis.

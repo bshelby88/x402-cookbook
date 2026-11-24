@@ -2,6 +2,8 @@
 permalink: /recipes/12-vault-pro.md
 ---
 
+> **RETIRED 2026-11-24 (owner decision):** this service is scaled to zero (reversible). It is no longer purchase-eligible; rows and recipes are kept for the record, annotated — not deleted. Do not send payments to it.
+
 # Recipe 12 — vault-pro: scaffold an Obsidian project
 
 Turn a one-line brief into ready-to-paste Obsidian markdown: frontmatter, success criteria, scope, decomposition table.

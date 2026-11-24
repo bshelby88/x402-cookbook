@@ -27,7 +27,7 @@ Live example response (abridged):
     "name": "NFT Alpha — OpenSea market signals",
     "base": "https://nft-alpha-x402.fly.dev",
     "endpoint": "/api/nft-signal",
-    "price": "$0.10"
+    "price": "$0.005 (ladder, rolling out — was $0.10)"
   },
   "suggested_params": { }
 }
@@ -35,7 +35,7 @@ Live example response (abridged):
 
 `/classify` is free — use it to budget a task before spending anything.
 
-## Paid: /dispatch ($0.50)
+## Paid: /dispatch ($0.01 ladder price, rolling out — pre-ladder $0.50; your live 402 challenge is authoritative)
 
 The priced primitive is the routing decision itself: the paid call returns the
 authoritative route, extracted parameters, and exact call instructions for the target
@@ -47,7 +47,7 @@ curl -s -X POST https://dispatch-x402.fly.dev/dispatch \
   -H 'Content-Type: application/json' \
   -d '{"intent":"draft a dispute letter for a late-payment entry"}'
 
-# 2) settle the $0.50 USDC challenge (see Recipe 02), then retry with payment:
+# 2) settle the $0.01 USDC challenge (ladder, rolling out — pre-ladder $0.50; your live 402 challenge is authoritative; see Recipe 02), then retry with payment:
 curl -s -X POST https://dispatch-x402.fly.dev/dispatch \
   -H 'Content-Type: application/json' \
   -H 'PAYMENT-SIGNATURE: <EIP-3009 envelope>' \

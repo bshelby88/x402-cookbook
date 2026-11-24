@@ -60,7 +60,7 @@ Reading it:
 |---|---|
 | `scheme: exact` | pay exactly `amount` of the named asset — no more, no less |
 | `network: eip155:8453` | Base mainnet |
-| `amount: 50000` | atomic USDC units → $0.05 (USDC has 6 decimals) |
+| `amount: 50000` | atomic USDC units → $0.05 (USDC has 6 decimals; example captured pre-ladder — royal-ruby is $0.005 = `5000` under the 2026-11-24 ladder, rolling out) |
 | `asset` | official USDC contract on Base |
 | `payTo` | the address that receives the payment |
 
@@ -81,7 +81,7 @@ never settles) so agents can price a call without triggering the full challenge:
 
 ```bash
 curl -s https://royal-ruby-x402.fly.dev/api/law-lookup | python -m json.tool
-# -> {"quote": {"price": "$0.05 per call", "network": "eip155:8453", ...}}
+# -> {"quote": {"price": "$0.05 per call", "network": "eip155:8453", ...}}  (example captured pre-ladder; royal-ruby's ladder price is $0.005, rolling out)
 ```
 
 Next: [Recipe 02 — a generic paid-call client](02-python-client.md).

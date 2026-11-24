@@ -22,7 +22,7 @@ curl -s -D h.txt -o b.txt -X POST \
   -H 'Content-Type: application/json' -d '{}'
 ```
 
-3. **Pay the challenge** (typically $0.05; a disclosed A/B price bucket sees $0.03 —
+3. **Pay the challenge** ($0.005 under the 2026-11-24 ladder, rolling out — until it lands, typically $0.05; a disclosed A/B price bucket sees $0.03 —
    whatever your challenge says is what you pay), and include your wallet so the
    rebate knows where to go:
 
@@ -46,7 +46,7 @@ x-payer-address: 0xYourWalletAddress
 ## Honesty notes
 
 - The rebate is the actual charged amount (the price-experiment amount, not a
-  hardcoded $0.05).
+  hardcoded $0.05; the ladder ends the A/B — both buckets see $0.005 once the deploy lands).
 - When the LLM enhancer is unavailable, royal-ruby still answers with a deterministic
   statutory baseline (`mode: statutory-baseline`) with verified citations — the
   manifest says so up front.

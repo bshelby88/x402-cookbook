@@ -6,7 +6,7 @@ permalink: /recipes/13-escrow.md
 
 Lock USDC between two agents on Base mainnet with a 1% release fee and timeout refund.
 
-**Endpoint:** `POST https://escrow-x402.fly.dev/api/escrow/create` · **Price:** $0.05 USDC on Base (`eip155:8453`, scheme `exact`) · **Challenge below decoded live from this endpoint: 2026-11-15**
+**Endpoint:** `POST https://escrow-x402.fly.dev/api/escrow/create` · **Price:** **$0.005** USDC on Base (`eip155:8453`, scheme `exact`) — owner-approved 2026-11-24 ladder price; repriced deploy rolling out — until it lands, your live 402 challenge shows the pre-ladder $0.05 and is authoritative. Batch 10+ @ $0.003 · $0.001 probe. · **Challenge below decoded live from this endpoint: 2026-11-15**
 
 ## 1. Decode the 402 challenge (the 60-second test)
 
@@ -77,7 +77,7 @@ fleet runs a claims desk: check **<https://settlement-collector.fly.dev/storefro
 (format `RAEN-XXXXXXXXXX`).
 
 
-The $0.05 challenge is the **create fee**; `amountUsdc` is locked on-chain by
+The create-fee challenge ($0.005 under the 2026-11-24 ladder, rolling out; $0.05 on the pre-ladder wire) is the **create fee**; `amountUsdc` is locked on-chain by
 the escrow contract itself. If the task isn't released before `timeoutHours`
 elapses (default 24), the escrow auto-refunds.
 

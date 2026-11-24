@@ -2,6 +2,8 @@
 permalink: /recipes/16-tradingagents.md
 ---
 
+> **RETIRED 2026-11-24 (owner decision):** this service is scaled to zero (reversible). It is no longer purchase-eligible; rows and recipes are kept for the record, annotated — not deleted. Do not send payments to it.
+
 # Recipe 16 — tradingagents: multi-agent ticker consensus (demo)
 
 Request a multi-agent ticker-consensus run. **Honesty note (from the live manifest):** the current deployment returns a synthetic degraded demo payload — no live market data, not financial advice.

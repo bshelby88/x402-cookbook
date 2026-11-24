@@ -1,9 +1,9 @@
 {
   "bundle": "RAEN Machine Onboarding Bundle",
-  "version": 4,
-  "updated_utc": "2026-11-23T12:30:00Z",
+  "version": 5,
+  "updated_utc": "2026-11-24T04:50:00Z",
   "purpose": "One-fetch onboarding for machine buyers: everything an autonomous agent needs to go from discovery to a settled paid call on any RAEN x402 wall - route, live-verified price, ready-to-send request body, settlement asset, and trust verification. Companion to registry/payto-registry.json (payTo verification, case rules, poison-address rejection).",
-  "verified_method": "Every price below was confirmed by sending an UNPAID request to the live paid route on 2026-11-22 and re-verified 2026-11-23, capturing the HTTP 402 payment-required header, base64-decoding it, and reading accepts[].amount. Request bodies are taken from the service's own /.well-known/x402.json advertisement. Live challenge > manifest > this file: if they ever disagree, trust the live 402 and re-fetch this bundle.",
+  "verified_method": "Every price below was confirmed by sending an UNPAID request to the live paid route on 2026-11-22 and re-verified 2026-11-23, capturing the HTTP 402 payment-required header, base64-decoding it, and reading accepts[].amount. Request bodies are taken from the service's own /.well-known/x402.json advertisement. Live challenge > manifest > this file: if they ever disagree, trust the live 402 and re-fetch this bundle. 2026-11-24 UPDATE: the fleet was re-probed unpaid on 2026-11-24 (~04:30Z) \u2014 all live challenges still show the pre-ladder prices (repriced deploys rolling out). Prices marked _ladder_2026_11_24 are the owner-approved ladder; the live 402 is authoritative until each deploy lands.",
   "settlement": {
     "protocol": "x402 v2, scheme exact",
     "chain": "Base (eip155:8453)",
@@ -33,16 +33,19 @@
           "topic": "credit-report disputes for collection accounts",
           "state": "LA",
           "scope": "both"
-        }
+        },
+        "price_usd_ladder_2026_11_24": 0.005,
+        "amount_atomic_ladder": "5000",
+        "price_note": "Owner-approved 2026-11-24 ladder price; the repriced deploy is ROLLING OUT \u2014 until it lands the live 402 challenge still shows the pre-ladder price, and the live challenge is always authoritative."
       },
       "free_surfaces": [
         "GET /machine-buyer/qa.json - free machine-buyer Q&A",
         "POST /api/cold-start-kit - integration bootstrap"
       ],
       "notes": [
-        "VOLUME TIER: add \"bulk\": 100-500 to the body for $0.001/citation (min 100 = $0.10/call); the 402 challenge shows the volume price.",
+        "VOLUME TIER (ladder 2026-11-24): bulk 10-99 citations @ $0.002, 100-500 @ $0.001 (floor dropped from 100 to 10); the 402 challenge shows the volume price. Owner-approved 2026-11-24 ladder price; the repriced deploy is ROLLING OUT \u2014 until it lands the live 402 challenge still shows the pre-ladder price, and the live challenge is always authoritative.",
         "FREE FIRST CALL (charge-and-rebate): first-time wallet sends x-payer-address: <0x address>, pays the normal challenge, full amount rebated after settlement. One per wallet per 30 days. Guide: https://bshelby88.github.io/raen-first-call-free/",
-        "PRICE A/B (disclosed): wallets are deterministically bucketed; most see $0.05, a bucket sees $0.03. The challenge you receive is the exact price you pay.",
+        "PRICE A/B ENDS under the 2026-11-24 ladder: both buckets see $0.005 once the repriced deploy lands; until then the disclosed A/B ($0.05 / $0.03) still applies and the challenge you receive is the exact price you pay.",
         "OUTPUT QUALITY: if LLM enhancement is unavailable, responses are a deterministic statutory baseline (field mode=statutory-baseline) with verified citations - disclosed, not silent.",
         "GET /api/law-lookup also returns a valid canonical 402 challenge (GET-challenge fix live 2026-11-22) - HEAD-friendly clients can probe without a body.",
         "Lumi re-crawled this domain same-day after the fix (last_quote_check 2026-11-22T12:45:59Z, canonical payTo)."
@@ -67,12 +70,16 @@
             "renewal",
             "liability"
           ]
-        }
+        },
+        "price_usd_ladder_2026_11_24": 0.005,
+        "amount_atomic_ladder": "5000",
+        "price_note": "Owner-approved 2026-11-24 ladder price; the repriced deploy is ROLLING OUT \u2014 until it lands the live 402 challenge still shows the pre-ladder price, and the live challenge is always authoritative."
       },
       "alias_route": "POST /contract/analyze (same body, same price)",
       "notes": [
         "body.text has a minimum length of 40 characters (advertised schema).",
-        "OUTPUT QUALITY: if LLM analysis is unavailable the response is a deterministic rule-based clause scan; response fields method + delivery_mode disclose this - never silent degradation."
+        "OUTPUT QUALITY: if LLM analysis is unavailable the response is a deterministic rule-based clause scan; response fields method + delivery_mode disclose this - never silent degradation.",
+        "Ladder bulk tier: 10-99 @ $0.002, 100+ @ $0.001; $0.001 /api/ping probe part of the approved ladder."
       ],
       "trust_check": {
         "url": "https://api.lumitrades.io/v1/trust/check?url=https%3A%2F%2Fcontract-eye-x402.fly.dev",
@@ -105,7 +112,8 @@
       },
       "notes": [
         "prompt minimum length 3; aspectRatio enum: 1:1, 16:9, 9:16, 3:2, 2:3, 4:3, 3:4, 4:5, 5:4, 21:9.",
-        "Response carries ok, model, aspectRatio, image_b64, mime_type."
+        "Response carries ok, model, aspectRatio, image_b64, mime_type.",
+        "Ladder 2026-11-24: single price KEPT at $0.01 (real per-call model cost); bulk 10+ @ $0.008 and a $0.001 liveness ack (no image bytes) rolling out."
       ],
       "trust_check": {
         "url": "https://api.lumitrades.io/v1/trust/check?url=https%3A%2F%2Fnanobanana-x402.fly.dev",
@@ -129,14 +137,17 @@
             "name": "<tool-name from tools/list>",
             "arguments": {}
           }
-        }
+        },
+        "price_usd_ladder_2026_11_24": 0.005,
+        "amount_atomic_ladder": "5000",
+        "price_note": "Owner-approved 2026-11-24 ladder price; the repriced deploy is ROLLING OUT \u2014 until it lands the live 402 challenge still shows the pre-ladder price, and the live challenge is always authoritative."
       },
       "free_surfaces": [
         "POST /mcp with method tools/list - FREE tool discovery (verified 200 on 2026-11-22)",
         "GET /keys/request - free dev key for integration testing"
       ],
       "notes": [
-        "tools/call settles $0.05 per call; the 402 challenge on first unpaid call carries the canonical payTo.",
+        "tools/call settles $0.005 per call under the 2026-11-24 ladder (rolling out; $0.05 on the pre-ladder wire \u2014 live challenge authoritative); bulk 10+ tool calls @ $0.002; cheapest tool call $0.001 probe part of the ladder; the 402 challenge on first unpaid call carries the canonical payTo.",
         "Pick tool names from the free tools/list response - do not guess."
       ],
       "trust_check": {
@@ -161,7 +172,8 @@
           "alleged_balance": 1842.17,
           "narrative": "I do not recognize this account and want the collector to provide enough information to identify it.",
           "collector_letter": "Example Collections LLC claims $1,842.17 for account ending 0123."
-        }
+        },
+        "retired_2026_11_24": "RETIRED (owner decision 2026-11-24): scale-to-zero, reversible, not purchase-eligible. Human-billed $5.00 held. Do not send payments; recipe kept for the record."
       },
       "notes": [
         "GET and POST both return a valid 402 challenge on this route (GET-challenge fix live since 2026-11-22, commit 46c883b)."
@@ -187,10 +199,10 @@
   "claims_desk": {
     "purpose": "Paid but got nothing? Do not pay again. Every RAEN payment is tracked on-chain, including transfers to the retired payee (stranding watch).",
     "lookup_your_payment": "GET https://settlement-collector.fly.dev/storefront/claims?tx=<your tx hash>  OR  ?payer=<your wallet address>",
-    "claim_code_rule": "RAEN-<sha256(tx)[:10]> uppercase — derivable from your own tx hash; the lookup confirms it and its state (open | delivered | credit_redeemed | recorded).",
+    "claim_code_rule": "RAEN-<sha256(tx)[:10]> uppercase \u2014 derivable from your own tx hash; the lookup confirms it and its state (open | delivered | credit_redeemed | recorded).",
     "register_for_redelivery": "POST https://settlement-collector.fly.dev/storefront/register {tx_or_intent: <tx or payer>, email: <you>} or {tx_or_intent, agent_id, callback_url} for machine webhook delivery; a new registration target re-arms re-delivery.",
-    "prepaid_credit_verify": "GET https://settlement-collector.fly.dev/storefront/credits/<claim code> (redeem: POST .../credits/<code>/redeem) — one-time; services accept it as X-RAEN-CREDIT instead of a new payment.",
-    "retired_payee_watch": "GET https://settlement-collector.fly.dev/storefront/legacy-watch — USDC transfers to retired 0x7861db4efc14a1ed5dd8c96c528a3796560f1393 auto-create an order + claim code; the same tx/payer lookup finds them.",
+    "prepaid_credit_verify": "GET https://settlement-collector.fly.dev/storefront/credits/<claim code> (redeem: POST .../credits/<code>/redeem) \u2014 one-time; services accept it as X-RAEN-CREDIT instead of a new payment.",
+    "retired_payee_watch": "GET https://settlement-collector.fly.dev/storefront/legacy-watch \u2014 USDC transfers to retired 0x7861db4efc14a1ed5dd8c96c528a3796560f1393 auto-create an order + claim code; the same tx/payer lookup finds them.",
     "human_contact": "ops@royalruby.io"
   },
   "first_settled_call": {
@@ -214,6 +226,66 @@
       "tx": "0x03a014da1fe7743809b3e3c6653ea1cebd0030474305bfda1b07508ac7f28cd5",
       "result": "settled 0.001 USDC on Base (Transfer to canonical payTo, block 61054191), payload returned same-response; full round trip 1067ms",
       "challenge_decode_note": "verified again unpaid 2026-11-23: amount 1000, canonical payTo"
+    }
+  },
+  "pricing_decision_2026_11_24": {
+    "owner_order": "proceed with all now (Nov-24 package, Box 3 price ladder APPROVED)",
+    "note": "Prices in this bundle are the owner-approved ladder prices. The repriced deploys are rolling out (executed by Bean); until each lands, its live 402 challenge still shows the pre-ladder price. The live 402 challenge is the source of truth for what you will actually pay at call time.",
+    "single_prices_usd": {
+      "royal-ruby law-lookup": 0.005,
+      "royal-ruby validate-json": 0.005,
+      "contract-eye analyze-contract": 0.005,
+      "dispute-forge dispute-pack": 0.01,
+      "escrow create": 0.005,
+      "nanobanana generate/edit": 0.01,
+      "nft-alpha nft-signal": 0.005,
+      "suprapack find-skill": 0.005,
+      "dispatch": 0.01,
+      "tiffany-creative generate": 0.01,
+      "raen-mcp-gateway tools/call": 0.005,
+      "tradingagents analyze-ticker": 0.005
+    },
+    "bulk_tiers": {
+      "royal-ruby law-lookup": "10-99 @ $0.002; 100-500 @ $0.001 (floor dropped 100 to 10)",
+      "contract-eye": "10-99 @ $0.002; 100+ @ $0.001",
+      "dispute-forge": "10+ @ $0.005",
+      "escrow": "10+ @ $0.003",
+      "nanobanana": "10+ @ $0.008",
+      "nft-alpha": "10+ @ $0.002",
+      "suprapack": "10+ @ $0.002",
+      "dispatch": "10+ @ $0.005",
+      "tiffany-creative batch": "floor-10 @ $0.008/gen",
+      "gateway": "10+ tool calls @ $0.002"
+    },
+    "probes_usd": {
+      "pattern": 0.001,
+      "live_now": "royal-ruby /api/ping ($0.001, live-verified)"
+    },
+    "fleet_router_bundles": {
+      "market-starter": 0.01,
+      "intel-trio": 0.02,
+      "full-fleet-sampler": 0.03,
+      "fleet-bundle": 0.03,
+      "full-stack": 0.04,
+      "compliance-kit": 0.35,
+      "tip": 0.01
+    },
+    "human_billed_unchanged": {
+      "cold-start-kit": 5.0,
+      "briefsnap": "$1.00-$3.00",
+      "sentry-forge": 5.0,
+      "staci": 5.0
+    },
+    "x402_enterprise": "HOLD $0.75 (identity-drift decision precedes repricing)",
+    "retired_2026_11_24": {
+      "list": [
+        "vault-pro",
+        "briefsnap",
+        "sentry-forge",
+        "tradingagents",
+        "staci-tradingagents"
+      ],
+      "note": "Scale-to-zero (reversible). Annotated, never deleted. Not purchase-eligible while retired."
     }
   }
 }

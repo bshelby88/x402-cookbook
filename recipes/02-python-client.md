@@ -43,7 +43,7 @@ def pay_and_call(url: str, body: dict, signer) -> dict:
 Notes:
 
 - **Bring your own signer.** The network leg is an ordinary USDC transfer on Base
-  (`0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913`, 6 decimals — `50000` = $0.05) plus an
+  (`0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913`, 6 decimals — `50000` = $0.05 pre-ladder; `5000` = $0.005 under the 2026-11-24 ladder, rolling out) plus an
   EIP-3009 signature derived from the challenge. The [x402 SDK](https://github.com/coinbase/x402)
   ships a ready signer if you don't want to hand-roll one.
 - **`x-payer-address`:** on services with charge-and-rebate (royal-ruby), send your

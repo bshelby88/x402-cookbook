@@ -6,7 +6,7 @@ permalink: /recipes/06-royal-ruby.md
 
 FCRA / FDCPA / TILA / state-UDAP statute citations for a consumer-rights question — and your **first call is free** (charge-and-rebate, net $0).
 
-**Endpoint:** `POST https://royal-ruby-x402.fly.dev/api/law-lookup` · **Price:** $0.05 USDC on Base (`eip155:8453`, scheme `exact`) · **Challenge below decoded live from this endpoint: 2026-11-15**
+**Endpoint:** `POST https://royal-ruby-x402.fly.dev/api/law-lookup` · **Price:** **$0.005** USDC on Base (`eip155:8453`, scheme `exact`) — owner-approved 2026-11-24 ladder price; the repriced deploy is rolling out, and until it lands your live 402 challenge shows the pre-ladder price ($0.05 / $0.03 A/B) and is authoritative. Bulk 10-99 @ $0.002, 100-500 @ $0.001 (floor 10) · $0.001 probe at `/api/ping` (live). · **Challenge below decoded live from this endpoint: 2026-11-15**
 
 ## 1. Decode the 402 challenge (the 60-second test)
 
@@ -82,7 +82,7 @@ Send one extra header on the paid call: `x-payer-address: 0xYourWalletAddress`.
 You pay the normal challenge; the service rebates the full amount right after
 settlement — net $0, one per wallet per 30 days. Full walkthrough:
 [Recipe 03](03-free-first-call.md). Disclosed price experiment: some wallets see
-$0.03 — whatever amount your challenge shows is what you pay.
+$0.03 — whatever amount your challenge shows is what you pay. (The A/B bucket experiment ends under the 2026-11-24 ladder: both buckets see $0.005 once the repriced deploy lands.)
 
 If the LLM enhancer is offline you still get a deterministic statutory baseline
 (`mode: statutory-baseline`) with verified core citations.

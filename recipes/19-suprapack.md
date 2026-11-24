@@ -6,7 +6,7 @@ permalink: /recipes/19-suprapack.md
 
 Search curated Claude Code / Hermes skills by keyword and get the full markdown of the best matches.
 
-**Endpoint:** `POST https://suprapack-x402.fly.dev/api/find-skill` · **Price:** $0.03 USDC on Base (`eip155:8453`, scheme `exact`) · **Challenge below decoded live from this endpoint: 2026-11-15**
+**Endpoint:** `POST https://suprapack-x402.fly.dev/api/find-skill` · **Price:** **$0.005** USDC on Base (`eip155:8453`, scheme `exact`) — owner-approved 2026-11-24 ladder price; repriced deploy rolling out — until it lands, your live 402 challenge shows the pre-ladder $0.03 and is authoritative. Bulk 10+ @ $0.002 · $0.001 probe. · **Challenge below decoded live from this endpoint: 2026-11-15**
 
 ## 1. Decode the 402 challenge (the 60-second test)
 
@@ -86,6 +86,6 @@ fleet runs a claims desk: check **<https://settlement-collector.fly.dev/storefro
 
 
 Already know the slug? `POST /api/get-skill` with `{"slug": "..."}` fetches one
-skill's full markdown — same $0.03 price.
+skill's full markdown — same price as the lookup ($0.005 under the ladder, rolling out).
 
 Back to the [recipe index](https://bshelby88.github.io/x402-cookbook/).
