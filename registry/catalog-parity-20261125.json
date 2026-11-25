@@ -1,0 +1,105 @@
+{
+  "tool": "catalog-parity",
+  "version": "1.0.0",
+  "generated_utc": "2026-11-25T23:13:27Z",
+  "catalog_url": "https://rae-fleet-router.fly.dev/catalog.json",
+  "catalog_generated_utc": "2026-11-25T23:13:27.316Z",
+  "expected_source": "C:/Users/jaded/RAEN/_badge_work/x402-cookbook/registry/known-live-walls.json",
+  "catalog": {
+    "wall_count": 13,
+    "endpoint_count": 44,
+    "distinct_hosts": 12,
+    "hosts": [
+      "briefsnap-x402.fly.dev",
+      "dispatch-x402.fly.dev",
+      "dispute-forge-x402.fly.dev",
+      "escrow-x402.fly.dev",
+      "nanobanana-x402.fly.dev",
+      "nft-alpha-x402.fly.dev",
+      "power-pack-x402.fly.dev",
+      "rae-fleet-router.fly.dev",
+      "royal-ruby-x402.fly.dev",
+      "suprapack-x402.fly.dev",
+      "tradingagents-x402.fly.dev",
+      "vault-pro-x402.fly.dev"
+    ],
+    "canonical_paid_items": 38
+  },
+  "expected_host_count": 13,
+  "discovery_gaps": [
+    {
+      "host": "contract-eye-x402.fly.dev",
+      "health": 200,
+      "manifest_payto_canonical": true,
+      "manifest_payTo_values": [
+        "0x9b8a27e03CEbA490953cDa8AB1291c0E13bAf72f"
+      ],
+      "reason": "live canonical wall absent from /catalog.json"
+    }
+  ],
+  "catalog_drift": [
+    {
+      "host": "power-pack-x402.fly.dev",
+      "slug": "power-pack",
+      "payTo": null,
+      "network": null,
+      "price_usdc": null,
+      "issues": [
+        "free_route_null_payto"
+      ]
+    },
+    {
+      "host": "royal-ruby-x402.fly.dev",
+      "slug": "royal-ruby__machine-buyer",
+      "payTo": null,
+      "network": null,
+      "price_usdc": null,
+      "issues": [
+        "free_route_null_payto"
+      ]
+    },
+    {
+      "host": "royal-ruby-x402.fly.dev",
+      "slug": "royal-ruby__machine-buyer-qa.json",
+      "payTo": null,
+      "network": null,
+      "price_usdc": null,
+      "issues": [
+        "free_route_null_payto"
+      ]
+    },
+    {
+      "host": "royal-ruby-x402.fly.dev",
+      "slug": "royal-ruby__buy-compliance",
+      "payTo": null,
+      "network": null,
+      "price_usdc": null,
+      "issues": [
+        "free_route_null_payto"
+      ]
+    },
+    {
+      "host": "royal-ruby-x402.fly.dev",
+      "slug": "royal-ruby__buy-managed",
+      "payTo": null,
+      "network": null,
+      "price_usdc": null,
+      "issues": [
+        "free_route_null_payto"
+      ]
+    },
+    {
+      "host": "royal-ruby-x402.fly.dev",
+      "slug": "royal-ruby__udap-citations",
+      "payTo": null,
+      "network": null,
+      "price_usdc": null,
+      "issues": [
+        "free_route_null_payto"
+      ]
+    }
+  ],
+  "unverifiable": [],
+  "coverage_pct": 92.3,
+  "note": "Read-only. Unauthenticated GETs only; no signing, no X-PAYMENT, no money movement. Live manifest > catalog > this report. A gap is a discoverability defect, not a wall outage."
+}

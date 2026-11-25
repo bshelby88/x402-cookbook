@@ -1,0 +1,74 @@
+{
+  "bundle": "RAEN known-live x402 walls (catalog parity expected set)",
+  "version": 1,
+  "updated_utc": "2026-11-25T23:15:00Z",
+  "purpose": "Expected-host input for scripts/catalog-parity.py. Adding a host here asserts ONLY that it was independently verified live and canonical; the tool still probes live health and manifest before calling a catalog absence a gap.",
+  "canonical_payto": "0x9b8a27e03ceba490953cda8ab1291c0e13baf72f",
+  "walls": [
+    {
+      "host": "briefsnap-x402.fly.dev",
+      "evidence": "advertised in rae-fleet-router /catalog.json generated_utc 2026-11-25T23:10:56.367Z",
+      "in_live_catalog": true
+    },
+    {
+      "host": "dispatch-x402.fly.dev",
+      "evidence": "advertised in rae-fleet-router /catalog.json generated_utc 2026-11-25T23:10:56.367Z",
+      "in_live_catalog": true
+    },
+    {
+      "host": "dispute-forge-x402.fly.dev",
+      "evidence": "advertised in rae-fleet-router /catalog.json generated_utc 2026-11-25T23:10:56.367Z",
+      "in_live_catalog": true
+    },
+    {
+      "host": "escrow-x402.fly.dev",
+      "evidence": "advertised in rae-fleet-router /catalog.json generated_utc 2026-11-25T23:10:56.367Z",
+      "in_live_catalog": true
+    },
+    {
+      "host": "nanobanana-x402.fly.dev",
+      "evidence": "advertised in rae-fleet-router /catalog.json generated_utc 2026-11-25T23:10:56.367Z",
+      "in_live_catalog": true
+    },
+    {
+      "host": "nft-alpha-x402.fly.dev",
+      "evidence": "advertised in rae-fleet-router /catalog.json generated_utc 2026-11-25T23:10:56.367Z",
+      "in_live_catalog": true
+    },
+    {
+      "host": "power-pack-x402.fly.dev",
+      "evidence": "advertised in rae-fleet-router /catalog.json generated_utc 2026-11-25T23:10:56.367Z",
+      "in_live_catalog": true
+    },
+    {
+      "host": "rae-fleet-router.fly.dev",
+      "evidence": "advertised in rae-fleet-router /catalog.json generated_utc 2026-11-25T23:10:56.367Z",
+      "in_live_catalog": true
+    },
+    {
+      "host": "royal-ruby-x402.fly.dev",
+      "evidence": "advertised in rae-fleet-router /catalog.json generated_utc 2026-11-25T23:10:56.367Z",
+      "in_live_catalog": true
+    },
+    {
+      "host": "suprapack-x402.fly.dev",
+      "evidence": "advertised in rae-fleet-router /catalog.json generated_utc 2026-11-25T23:10:56.367Z",
+      "in_live_catalog": true
+    },
+    {
+      "host": "tradingagents-x402.fly.dev",
+      "evidence": "advertised in rae-fleet-router /catalog.json generated_utc 2026-11-25T23:10:56.367Z",
+      "in_live_catalog": true
+    },
+    {
+      "host": "vault-pro-x402.fly.dev",
+      "evidence": "advertised in rae-fleet-router /catalog.json generated_utc 2026-11-25T23:10:56.367Z",
+      "in_live_catalog": true
+    },
+    {
+      "host": "contract-eye-x402.fly.dev",
+      "evidence": "LIVE 2026-11-25: /health 200; /.well-known/x402.json canonical payTo; POST /api/analyze 402 amount 5000 ($0.005) canonical; collector ~4820 lifetime challenges / 6 verified settles. ABSENT from router /catalog.json - flagged by TIFFANY EXEC e42ff3a8 and BEAN RUN b36a808e.",
+      "in_live_catalog": false
+    }
+  ]
+}
