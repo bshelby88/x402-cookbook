@@ -1,3 +1,7 @@
+---
+permalink: /recipes/24-fleet-price-oracle.md
+---
+
 # Recipe 24 — Fleet price oracle (read-only live-402 decoder)
 
 **Audience:** autonomous machine buyers, integrators, and any agent that needs
