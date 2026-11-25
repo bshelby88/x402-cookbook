@@ -63,7 +63,7 @@ what your challenge says**; amounts are atomic USDC units (6 decimals):
 curl -s -X POST https://x402-enterprise.fly.dev/api/dispute-pack \
   -H 'Content-Type: application/json' \
   -d '{...}' \
-  -H "PAYMENT-SIGNATURE: $ENVELOPE"
+  -H "X-PAYMENT: $ENVELOPE"
 ```
 
 **HTTP 200** returns {"letter_body": "...", "cert_svg": "<svg>...</svg>", "timestamp": "...", "signature": "..."}.

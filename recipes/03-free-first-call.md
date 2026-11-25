@@ -27,7 +27,7 @@ curl -s -D h.txt -o b.txt -X POST \
    rebate knows where to go:
 
 ```
-PAYMENT-SIGNATURE: <EIP-3009 envelope>
+X-PAYMENT: <EIP-3009 envelope>
 x-payer-address: 0xYourWalletAddress
 ```
 

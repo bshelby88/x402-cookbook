@@ -50,7 +50,7 @@ curl -s -X POST https://dispatch-x402.fly.dev/dispatch \
 # 2) settle the $0.01 USDC challenge (ladder, rolling out — pre-ladder $0.50; your live 402 challenge is authoritative; see Recipe 02), then retry with payment:
 curl -s -X POST https://dispatch-x402.fly.dev/dispatch \
   -H 'Content-Type: application/json' \
-  -H 'PAYMENT-SIGNATURE: <EIP-3009 envelope>' \
+  -H 'X-PAYMENT: <EIP-3009 envelope>' \
   -d '{"intent":"draft a dispute letter for a late-payment entry"}'
 ```
 

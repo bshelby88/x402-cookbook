@@ -71,7 +71,7 @@ what your challenge says**; amounts are atomic USDC units (6 decimals):
 curl -s -X POST https://nft-alpha-x402.fly.dev/api/nft-signal \
   -H 'Content-Type: application/json' \
   -d '{...}' \
-  -H "PAYMENT-SIGNATURE: $ENVELOPE"
+  -H "X-PAYMENT: $ENVELOPE"
 ```
 
 **HTTP 200** returns 5-minute-fresh signal JSON: listings, sales, bids, floor pressure, sell-through, bid frenzy.

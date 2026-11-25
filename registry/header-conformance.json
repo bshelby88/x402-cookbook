@@ -1,0 +1,14 @@
+{
+  "tool": "raen-buyer-header-conformance",
+  "generated_at": "2026-11-25T17:00:31.304804+00:00",
+  "verified_header": "X-PAYMENT",
+  "source_of_truth": "@x402/core README + royal-ruby/contract-eye index.js (paymentMiddleware)",
+  "files_scanned": 25,
+  "violation_count": 0,
+  "violations": [],
+  "non_payment_recipes_without_header_note": [
+    "04-mcp-gateway.md",
+    "22-claims-desk.md"
+  ],
+  "verdict": "PASS"
+}

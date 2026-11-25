@@ -103,6 +103,7 @@ you settled but got no payload.
 22. **[The claims desk — paid but got nothing](recipes/22-claims-desk.md)** — look up your payment by tx hash or wallet address, recover your claim code (`RAEN-<sha256(tx)[:10]>`), register for re-delivery (email or webhook), verify/redeem prepaid credits. Includes the retired-payee stranding watch.
 23. **[Buyer preflight — verify the wall before you sign](recipes/23-buyer-preflight.md)** — a free, read-only, stdlib-only script that decodes a live 402 and checks `accepts[0].amount`, the x402 v2 envelope, the verified `X-PAYMENT` retry header, and the canonical `payTo` (full 42-char, case-insensitive) before any funds move.
 24. **[Fleet price oracle — live price sheet for every wall](recipes/24-fleet-price-oracle.md)** — a free, read-only, stdlib-only script that decodes all nine paid walls in one pass and emits `registry/fleet-price-sheet.json` with a `generated_at` stamp: actual `accepts[0].amount`, canonical payTo, scheme and network per wall. Fixes doc drift at the source (the live 402), not by hand-maintained price tables. Exit 1 on any drift.
+25. **[Payment-header conformance guard](recipes/25-payment-header-conformance.md)** — a read-only, stdlib-only guard that fails if any recipe still teaches the stale `PAYMENT-SIGNATURE` header instead of the verified `X-PAYMENT` header (which would silently re-challenge a buyer and cause a double-pay). 25 recipes scanned, 0 violations, verdict PASS on 2026-11-25; snapshot `registry/header-conformance.json`.
 
 ## MCP registry
 

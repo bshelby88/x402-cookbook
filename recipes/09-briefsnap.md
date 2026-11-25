@@ -64,7 +64,7 @@ what your challenge says**; amounts are atomic USDC units (6 decimals):
 curl -s -X POST https://briefsnap-x402.fly.dev/api/summarize \
   -H 'Content-Type: application/json' \
   -d '{...}' \
-  -H "PAYMENT-SIGNATURE: $ENVELOPE"
+  -H "X-PAYMENT: $ENVELOPE"
 ```
 
 **HTTP 200** returns the summary as JSON (bullets, paragraph, or executive format) plus extracted action items.

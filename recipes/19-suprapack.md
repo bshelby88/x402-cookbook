@@ -71,7 +71,7 @@ what your challenge says**; amounts are atomic USDC units (6 decimals):
 curl -s -X POST https://suprapack-x402.fly.dev/api/find-skill \
   -H 'Content-Type: application/json' \
   -d '{...}' \
-  -H "PAYMENT-SIGNATURE: $ENVELOPE"
+  -H "X-PAYMENT: $ENVELOPE"
 ```
 
 **HTTP 200** returns {"ok": true, "count": 2, "results": [{"slug": "stripe-integration", "quality": 9, "content": "# Stripe Integration\n...full markdown..."}]}.

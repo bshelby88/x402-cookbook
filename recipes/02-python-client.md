@@ -35,7 +35,7 @@ def pay_and_call(url: str, body: dict, signer) -> dict:
 
     # 3) retry with payment
     r2 = requests.post(url, json=body, headers={
-        "PAYMENT-SIGNATURE": envelope,   # some stacks accept x-payment
+        "X-PAYMENT": envelope,   # x402 v2 verified header (PAYMENT-SIGNATURE is stale)
     })
     return r2.json()
 ```

@@ -1,2 +1,4 @@
 
 *.wif
+__pycache__/
+*.pyc

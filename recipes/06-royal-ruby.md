@@ -62,7 +62,7 @@ what your challenge says**; amounts are atomic USDC units (6 decimals):
 curl -s -X POST https://royal-ruby-x402.fly.dev/api/law-lookup \
   -H 'Content-Type: application/json' \
   -d '{}' \
-  -H "PAYMENT-SIGNATURE: $ENVELOPE"
+  -H "X-PAYMENT: $ENVELOPE"
 ```
 
 **HTTP 200** returns {"ok": true, "result": {"federal_citations": [...], "timelines": [...], "statute_of_limitations": {...}}}.

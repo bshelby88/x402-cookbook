@@ -65,7 +65,7 @@ what your challenge says**; amounts are atomic USDC units (6 decimals):
 curl -s -X POST https://staci-tradingagents.fly.dev/api/analyze-ticker \
   -H 'Content-Type: application/json' \
   -d '{...}' \
-  -H "PAYMENT-SIGNATURE: $ENVELOPE"
+  -H "X-PAYMENT: $ENVELOPE"
 ```
 
 **HTTP 200** returns a structured BUY/HOLD/SELL decision with per-agent reports and a verifiable receipt.

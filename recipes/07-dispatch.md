@@ -63,7 +63,7 @@ what your challenge says**; amounts are atomic USDC units (6 decimals):
 curl -s -X POST https://dispatch-x402.fly.dev/dispatch \
   -H 'Content-Type: application/json' \
   -d '{...}' \
-  -H "PAYMENT-SIGNATURE: $ENVELOPE"
+  -H "X-PAYMENT: $ENVELOPE"
 ```
 
 **HTTP 200** returns {"ok": true, "tier": "auto", "confidence": 0.93, "route": {...}, "call": {"method": "POST", "url": "https://escrow-x402.fly.dev/api/escrow/create", "price": "$0.005 (ladder, rolling out — was $0.05)"}}}.

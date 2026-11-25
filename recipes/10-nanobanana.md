@@ -65,7 +65,7 @@ what your challenge says**; amounts are atomic USDC units (6 decimals):
 curl -s -X POST https://nanobanana-x402.fly.dev/api/generate-image \
   -H 'Content-Type: application/json' \
   -d '{...}' \
-  -H "PAYMENT-SIGNATURE: $ENVELOPE"
+  -H "X-PAYMENT: $ENVELOPE"
 ```
 
 **HTTP 200** returns JSON containing the image as a base64 PNG.

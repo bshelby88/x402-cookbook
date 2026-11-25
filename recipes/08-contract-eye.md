@@ -62,7 +62,7 @@ what your challenge says**; amounts are atomic USDC units (6 decimals):
 curl -s -X POST https://contract-eye-x402.fly.dev/api/analyze-contract \
   -H 'Content-Type: application/json' \
   -d '{...}' \
-  -H "PAYMENT-SIGNATURE: $ENVELOPE"
+  -H "X-PAYMENT: $ENVELOPE"
 ```
 
 **HTTP 200** returns a risk score, flagged clauses with severity / explanation / suggested edits, and a safe-clause summary.

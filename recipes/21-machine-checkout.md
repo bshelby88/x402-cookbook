@@ -5,7 +5,9 @@ permalink: /recipes/21-machine-checkout.md
 # Recipe 21 — Machine checkout without email: pay → register → webhook delivery → redeem with `X-RAEN-CREDIT`
 
 Most x402 integrations need no checkout page at all: you pay a 402 challenge,
-retry with the signed payment, done. But RAEN's **pack products** (Dispute
+retry with the signed payment in the **`X-PAYMENT`** header (the older
+`PAYMENT-SIGNATURE` header is stale and gets a silent re-challenge — see
+[recipe 02](02-python-client.md)), done. But RAEN's **pack products** (Dispute
 Package $49, Contract Review $19, Market Intel Pack $29, skills $29) settle as
 on-chain USDC transfers to the fleet payTo, and the delivery of the pack or
 credit code historically arrived **by email** — a channel machines don't read.

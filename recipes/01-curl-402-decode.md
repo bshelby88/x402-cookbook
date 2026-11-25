@@ -68,9 +68,8 @@ Reading it:
 
 1. **POST without payment** → 402 + challenge (what you just did).
 2. **Pay** the `amount` of USDC to `payTo` on Base and build an EIP-3009
-   payment-signature envelope from the challenge.
-3. **Resend the same POST** with the signed envelope in the `PAYMENT-SIGNATURE`
-   (or `x-payment`) header → HTTP 200 with the real output.
+   signed EIP-3009 payment envelope from the challenge.
+3. **Resend the same POST** with the signed envelope in the `X-PAYMENT` header → HTTP 200 with the real output.
 
 That's the entire protocol: one 402, one transfer, one retry.
 
