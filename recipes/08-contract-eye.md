@@ -6,7 +6,7 @@ permalink: /recipes/08-contract-eye.md
 
 Paste contract text, get a risk analysis that flags risky, one-sided, or unusual clauses.
 
-**Endpoint:** `POST https://contract-eye-x402.fly.dev/api/analyze-contract` · **Price:** **$0.005** USDC on Base (`eip155:8453`, scheme `exact`) — owner-approved 2026-11-24 ladder price; repriced deploy rolling out — until it lands, your live 402 challenge shows the pre-ladder $0.05 and is authoritative. Bulk 10-99 @ $0.002, 100+ @ $0.001 · $0.001 probe. · **Challenge below decoded live from this endpoint: 2026-11-15**
+**Endpoint:** `POST https://contract-eye-x402.fly.dev/api/analyze-contract` · **Price:** **$0.005** USDC on Base (`eip155:8453`, scheme `exact`) — LIVE-VERIFIED 2026-11-25: `accepts[0].amount` = `5000`, canonical payTo (owner-approved 2026-11-24 ladder now serving). Bulk 10-99 @ $0.002, 100+ @ $0.001 · $0.001 probe. · **Challenge below decoded live from this endpoint: 2026-11-25**
 
 ## 1. Decode the 402 challenge (the 60-second test)
 
@@ -38,7 +38,7 @@ what your challenge says**; amounts are atomic USDC units (6 decimals):
   {
     "scheme": "exact",
     "network": "eip155:8453",
-    "amount": "50000",
+    "amount": "5000",
     "asset": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
     "payTo": "0x9b8a27e03CEbA490953cDa8AB1291c0E13bAf72f",
     "maxTimeoutSeconds": 300,
