@@ -6,7 +6,7 @@ permalink: /recipes/15-dispute-forge.md
 
 An FCRA-compliant dispute letter plus a unique SVG certificate of dispute, signed and timestamped.
 
-**Endpoint:** `POST https://dispute-forge-x402.fly.dev/api/dispute-pack` · **Price:** **$0.01** USDC on Base (`eip155:8453`, scheme `exact`) — owner-approved 2026-11-24 ladder price; repriced deploy rolling out — until it lands, your live 402 challenge shows the pre-ladder $0.10 and is authoritative. Bulk 10+ @ $0.005 · $0.001 probe. · **Challenge below decoded live from this endpoint: 2026-11-22**
+**Endpoint:** `POST https://dispute-forge-x402.fly.dev/api/dispute-pack` · **Price:** **$0.01** USDC on Base (`eip155:8453`, scheme `exact`) — owner-approved 2026-11-24 ladder price, **LIVE-VERIFIED 2026-11-25** (`accepts[0].amount` = `10000`). Bulk 10+ @ $0.005 · $0.001 probe. · **Challenge below decoded live from this endpoint: 2026-11-25**
 
 ## 1. Decode the 402 challenge (the 60-second test)
 
@@ -30,26 +30,39 @@ print(json.dumps(json.loads(base64.b64decode(val)), indent=2))
 EOF
 ```
 
-A live challenge from this exact endpoint (decoded from the wire 2026-11-22) — **pay exactly
+A live challenge from this exact endpoint (decoded from the wire **2026-11-25**) — **pay exactly
 what your challenge says**; amounts are atomic USDC units (6 decimals). The live
-`amount` is `100000` = **$0.10** on the pre-ladder wire (`10000` = $0.01 once the repriced deploy lands); if your decode shows anything else, trust your decode:
+`accepts[0].amount` is `10000` = **$0.01** (the 2026-11-24 ladder price is now serving on this
+route). The response is an **x402 v2 envelope**: the requirement object lives inside `accepts[]`,
+NOT at the top level. Extension metadata (`extensions.bazaar`) is omitted here for brevity;
+the fields that form the payment contract are reproduced verbatim. If your decode shows
+anything else, trust your decode:
 
 ```json
-[
-  {
-    "scheme": "exact",
-    "network": "eip155:8453",
-    "amount": "100000",
-    "asset": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
-    "payTo": "0x9b8a27e03CEbA490953cDa8AB1291c0E13bAf72f",
-    "maxTimeoutSeconds": 300,
-    "extra": {
-      "name": "USD Coin",
-      "version": "2",
-      "facilitator": "https://raen-facilitator.fly.dev/facilitator"
+{
+  "x402Version": 2,
+  "error": "Payment required",
+  "resource": {
+    "url": "https://dispute-forge-x402.fly.dev/api/dispute-pack",
+    "mimeType": "application/json",
+    "serviceName": "dispute-forge"
+  },
+  "accepts": [
+    {
+      "scheme": "exact",
+      "network": "eip155:8453",
+      "amount": "10000",
+      "asset": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
+      "payTo": "0x9b8a27e03CEbA490953cDa8AB1291c0E13bAf72f",
+      "maxTimeoutSeconds": 300,
+      "extra": {
+        "name": "USD Coin",
+        "version": "2",
+        "facilitator": "https://raen-facilitator.fly.dev/facilitator"
+      }
     }
-  }
-]
+  ]
+}
 ```
 
 ## 2. Settle and retry
@@ -64,10 +77,17 @@ what your challenge says**; amounts are atomic USDC units (6 decimals). The live
 curl -s -X POST https://dispute-forge-x402.fly.dev/api/dispute-pack \
   -H 'Content-Type: application/json' \
   -d '{...}' \
-  -H "PAYMENT-SIGNATURE: $ENVELOPE"
+  -H "X-PAYMENT: $ENVELOPE"
 ```
 
 **HTTP 200** returns {"letter_body": "Dear Bureau, ...", "cert_svg": "<svg>...</svg>", "timestamp": "...", "signature": "..."}.
+
+**Header name is `X-PAYMENT`.** Verified end-to-end with x402 SDK v2.30 on a real $0.001
+settle (`tx 0x03a014da1fe7743809b3e3c6653ea1cebd0030474305bfda1b07508ac7f28cd5`).
+An older draft of this recipe said `PAYMENT-SIGNATURE`; a probe with that header name gets a
+fresh 402 with no error discrimination, so it is NOT a reliable retry path. Treat `X-PAYMENT`
+as the RAEN-verified path, and use [Recipe 23 — buyer preflight](23-buyer-preflight.md) to
+verify a wall before you sign.
 
 ## 3. Already settled but got no payload?
 

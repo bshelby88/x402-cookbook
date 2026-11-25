@@ -11,7 +11,7 @@ number, server latency, and the service's manifest URL. Built for crawlers,
 uptime watchers, and machine payers that want a one-atom probe with real
 settlement instead of a free ping that proves nothing.
 
-**Endpoint:** `GET https://royal-ruby-x402.fly.dev/api/ping` · **Price:** $0.001 USDC on Base (`eip155:8453`, scheme `exact`) · **Challenge below decoded live from this endpoint: 2026-11-16**
+**Endpoint:** `GET https://royal-ruby-x402.fly.dev/api/ping` · **Price:** $0.001 USDC on Base (`eip155:8453`, scheme `exact`) · **Challenge below decoded live from this endpoint: 2026-11-25**
 
 ## 1. Decode the 402 challenge (the 10-second test)
 
@@ -31,18 +31,31 @@ print(json.dumps(json.loads(base64.b64decode(val)), indent=2))
 EOF
 ```
 
-A live challenge from this exact endpoint (captured 2026-11-16) — amounts are
-atomic USDC units (6 decimals), so `1000` = $0.001:
+A live challenge from this exact endpoint (decoded from the wire **2026-11-25**) — amounts are
+atomic USDC units (6 decimals), so `accepts[0].amount` = `1000` = $0.001. The response is an
+**x402 v2 envelope**; `amount` lives at `accepts[0].amount`, NOT at the top level. Extension
+metadata (`extensions.bazaar`) is omitted here for brevity; the payment-contract fields are
+verbatim:
 
 ```json
 {
-  "scheme": "exact",
-  "network": "eip155:8453",
-  "amount": "1000",
-  "asset": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
-  "payTo": "0x9b8a27e03ceba490953cda8ab1291c0e13baf72f",
-  "maxTimeoutSeconds": 300,
-  "extra": { "name": "USD Coin", "version": "2" }
+  "x402Version": 2,
+  "error": "Payment required",
+  "resource": {
+    "url": "https://royal-ruby-x402.fly.dev/api/ping",
+    "mimeType": "application/json"
+  },
+  "accepts": [
+    {
+      "scheme": "exact",
+      "network": "eip155:8453",
+      "amount": "1000",
+      "asset": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
+      "payTo": "0x9b8a27e03ceba490953cda8ab1291c0e13baf72f",
+      "maxTimeoutSeconds": 300,
+      "extra": { "name": "USD Coin", "version": "2" }
+    }
+  ]
 }
 ```
 
@@ -81,7 +94,9 @@ curl -s https://royal-ruby-x402.fly.dev/api/ping \
 
 ## 3. Machine verification checklist
 
-1. `amount` must be exactly `1000` (any other amount = not this SKU).
+1. `accepts[0].amount` must be exactly `"1000"` (any other amount = not this SKU; the
+   price field is inside the x402 v2 envelope, never top-level — see
+   [Recipe 23](23-buyer-preflight.md)).
 2. `payTo` must be the canonical treasury `0x9b8a27e03ceba490953cda8ab1291c0e13baf72f`.
 3. `network` must be `eip155:8453` (Base mainnet USDC).
 4. After settling, the response carries a payment-response header with the

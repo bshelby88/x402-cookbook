@@ -101,6 +101,7 @@ you settled but got no payload.
 20. **[royal-ruby ping — $0.001 alive-check](recipes/20-royal-ruby-ping.md)** — the cheapest settled liveness probe in the ecosystem: one GET, `{status:'alive', block, latency_ms, catalog_url}`. Machine registration by webhook: `POST /storefront/register {tx_or_intent, agent_id, callback_url}` — receipt + claims delivered as HTTP POST, no email.
 21. **[Machine checkout without email](recipes/21-machine-checkout.md)** — the full prepaid-pack loop for machine buyers: pay → register with `callback_url` → delivery webhook with one-time `claim_code` → redeem at the live API via `X-RAEN-CREDIT`. No email ever.
 22. **[The claims desk — paid but got nothing](recipes/22-claims-desk.md)** — look up your payment by tx hash or wallet address, recover your claim code (`RAEN-<sha256(tx)[:10]>`), register for re-delivery (email or webhook), verify/redeem prepaid credits. Includes the retired-payee stranding watch.
+23. **[Buyer preflight — verify the wall before you sign](recipes/23-buyer-preflight.md)** — a free, read-only, stdlib-only script that decodes a live 402 and checks `accepts[0].amount`, the x402 v2 envelope, the verified `X-PAYMENT` retry header, and the canonical `payTo` (full 42-char, case-insensitive) before any funds move.
 
 ## MCP registry
 

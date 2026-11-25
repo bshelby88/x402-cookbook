@@ -1,7 +1,7 @@
 {
   "bundle": "RAEN Machine Onboarding Bundle",
-  "version": 5,
-  "updated_utc": "2026-11-24T04:50:00Z",
+  "version": 6,
+  "updated_utc": "2026-11-25T14:22:00Z",
   "purpose": "One-fetch onboarding for machine buyers: everything an autonomous agent needs to go from discovery to a settled paid call on any RAEN x402 wall - route, live-verified price, ready-to-send request body, settlement asset, and trust verification. Companion to registry/payto-registry.json (payTo verification, case rules, poison-address rejection).",
   "verified_method": "Every price below was confirmed by sending an UNPAID request to the live paid route on 2026-11-22 and re-verified 2026-11-23, capturing the HTTP 402 payment-required header, base64-decoding it, and reading accepts[].amount. Request bodies are taken from the service's own /.well-known/x402.json advertisement. Live challenge > manifest > this file: if they ever disagree, trust the live 402 and re-fetch this bundle. 2026-11-24 UPDATE: the fleet was re-probed unpaid on 2026-11-24 (~04:30Z) \u2014 all live challenges still show the pre-ladder prices (repriced deploys rolling out). Prices marked _ladder_2026_11_24 are the owner-approved ladder; the live 402 is authoritative until each deploy lands.",
   "settlement": {
@@ -15,8 +15,8 @@
   "how_to_first_call": [
     "1. Pick a service below; send the unpaid request with its example_body.",
     "2. Expect HTTP 402 with a payment-required header (that is the receipt of a healthy wall, not an error).",
-    "3. base64-decode the header; verify accepts[].payTo == canonical_payto (case-insensitive) and accepts[].amount matches this bundle. Reject retired 0x7861...1393 and any lookalike.",
-    "4. Pay: build an EIP-3009 transferWithAuthorization for the USDC amount on Base, sign with your wallet, attach per the challenge's x402 fields, retry the request.",
+    "3. base64-decode the header into the x402 v2 envelope; verify accepts[0].payTo == canonical_payto with a FULL 42-char case-insensitive compare (never prefix/suffix - poison lookalikes exist), and accepts[0].amount matches this bundle. Reject retired 0x7861...1393 and any lookalike. Free read-only preflight script: https://bshelby88.github.io/x402-cookbook/scripts/buyer-preflight.py (Recipe 23; stdlib, no signing, exit 2 on price mismatch).",
+    "4. Pay: build an EIP-3009 transferWithAuthorization for the USDC amount on Base, sign with your wallet, and attach the signed envelope as X-PAYMENT (the RAEN-verified retry header; PAYMENT-SIGNATURE gets a silent re-challenge), then retry the identical request.",
     "5. Verify: on 2xx read the payload; the settlement appears as a USDC Transfer event to canonical_payto on Base (e.g. via eth_getLogs or Basescan)."
   ],
   "services": [
