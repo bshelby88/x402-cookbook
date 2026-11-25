@@ -1,0 +1,91 @@
+{
+  "generated_at": "2026-11-25T14:5x-06:00",
+  "generator": "scripts/bazaar-readiness.py (read-only live manifest audit)",
+  "source": "402index GET /api/v1/services q=<host>.fly.dev, live 2026-11-25",
+  "criteria": [
+    "bazaar-ready (method + non-empty example body) in the LIVE manifest",
+    "price appeal: $0.01-0.05 first",
+    "category uniqueness vs already-listed walls",
+    "complementarity with existing listings"
+  ],
+  "ranked": [
+    {
+      "rank": 1,
+      "url": "https://nanobanana-x402.fly.dev/api/generate-image",
+      "slug": "nanobanana-x402.fly.dev-api-generate-image",
+      "price_usd": "$0.01",
+      "http_method": "POST",
+      "probe_body": {
+        "prompt": "A product hero image for a Telegram breach monitor, neon terminal style",
+        "aspectRatio": "16:9"
+      },
+      "reason": "Image generation at $0.01; 402index already carries this wall's /api/edit-image (validated category) but NOT generate-image. Lowest-friction generation route; complements the listed edit route.",
+      "metadata_needed": "Already satisfied in the LIVE manifest: extensions.bazaar.info.input.method + non-empty body. Carry the advertised body verbatim as probe_body; do not hand-write one.",
+      "listing_status_live": "unlisted at census time"
+    },
+    {
+      "rank": 2,
+      "url": "https://suprapack-x402.fly.dev/api/find-skill",
+      "slug": "suprapack-x402.fly.dev-api-find-skill",
+      "price_usd": "$0.005",
+      "http_method": "POST",
+      "probe_body": {
+        "query": "stripe webhook"
+      },
+      "reason": "$0.005 skill-discovery endpoint; zero suprapack listings found in live 402index census. Distinct category (agent tooling discovery) and lowest price tier.",
+      "metadata_needed": "Already satisfied in the LIVE manifest: extensions.bazaar.info.input.method + non-empty body. Carry the advertised body verbatim as probe_body; do not hand-write one.",
+      "listing_status_live": "unlisted at census time"
+    },
+    {
+      "rank": 3,
+      "url": "https://contract-eye-x402.fly.dev/api/analyze",
+      "slug": "contract-eye-x402.fly.dev-api-analyze",
+      "price_usd": "$0.005",
+      "http_method": "POST",
+      "probe_body": {
+        "text": "This agreement auto-renews every twelve months unless cancelled sixty days prior.",
+        "focus": [
+          "renewal",
+          "liability"
+        ]
+      },
+      "reason": "$0.005 contract-risk alias; two sibling aliases (/contract/analyze, /api/analyze-contract) are already indexed, proving directory acceptance of this category. Third alias unlisted.",
+      "metadata_needed": "Already satisfied in the LIVE manifest: extensions.bazaar.info.input.method + non-empty body. Carry the advertised body verbatim as probe_body; do not hand-write one.",
+      "listing_status_live": "unlisted at census time"
+    },
+    {
+      "rank": 4,
+      "url": "https://tradingagents-x402.fly.dev/api/analyze-ticker",
+      "slug": "tradingagents-x402.fly.dev-api-analyze-ticker",
+      "price_usd": "$0.05",
+      "http_method": "POST",
+      "probe_body": {
+        "ticker": "NVDA",
+        "analysts": [
+          "market",
+          "news",
+          "fundamentals"
+        ]
+      },
+      "reason": "$0.05 ticker signal; zero listings in live census (a Nov-9 registration was recorded pending - re-read the record before POST to avoid a duplicate). Finance-signal category is distinct from listed oracle/RPC walls.",
+      "metadata_needed": "Already satisfied in the LIVE manifest: extensions.bazaar.info.input.method + non-empty body. Carry the advertised body verbatim as probe_body; do not hand-write one.",
+      "listing_status_live": "unlisted at census time"
+    },
+    {
+      "rank": 5,
+      "url": "https://dispatch-x402.fly.dev/dispatch",
+      "slug": "dispatch-x402.fly.dev-dispatch",
+      "price_usd": "$0.50",
+      "http_method": "POST",
+      "probe_body": {
+        "intent": "create an escrow between two agents",
+        "params": {}
+      },
+      "reason": "$0.50 dispatch/agent-task endpoint; zero listings. Category complement is high but price friction is highest, so it ranks last.",
+      "metadata_needed": "Already satisfied in the LIVE manifest: extensions.bazaar.info.input.method + non-empty body. Carry the advertised body verbatim as probe_body; do not hand-write one.",
+      "listing_status_live": "unlisted at census time"
+    }
+  ],
+  "falsifier": "If a READY wall still shows zero discovery after a settled payment through the CDP facilitator, metadata is not the gate - record that and stop patching manifests.",
+  "boundaries": "Read-only listing-prep. No POST executed, no funds, no deploy, no wallet. Directory registration is an owner/agent action outside this artifact."
+}
