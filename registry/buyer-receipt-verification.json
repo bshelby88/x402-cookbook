@@ -1,0 +1,24 @@
+{
+  "verified": true,
+  "status": "VERIFIED",
+  "chain": "eip155:8453 (Base)",
+  "tx": "0x39ac4545c1fe8c4f795a1ff3562ecf8bbb0dd6c43ac4fa92507b9f7c908d0182",
+  "block": "0x3aafe80",
+  "tx_success": true,
+  "from": "0xe72f0af4cf41356d433723547f1412ca27fbb1b8",
+  "canonical_payto": "0x9b8a27e03ceba490953cda8ab1291c0e13baf72f",
+  "usdc_transfer_count": 1,
+  "usdc_to_canonical": 0.05,
+  "transfers": [
+    {
+      "from": "0xfbc0eb7811d477e55261d956df39f0046e192240",
+      "to": "0x9b8a27e03ceba490953cda8ab1291c0e13baf72f",
+      "amount_usdc": 0.05,
+      "to_canonical": true
+    }
+  ],
+  "note": "USDC settlement to canonical payTo confirmed on Base",
+  "verified_at_utc": "2026-11-25T19:2x:00Z",
+  "verified_by": "tiffany",
+  "note_chain_coverage": "Base eip155:8453 only; settlement proven, NOT delivery (see recipe 22)"
+}
