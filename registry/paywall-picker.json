@@ -1,0 +1,1342 @@
+{
+  "artifact": "PLAN-78 Pick My Paywall — guided recommender copy pack",
+  "version": 1,
+  "generated_utc": "2026-11-25T18:18:15.527190+00:00",
+  "snapshot_url": "https://rae-fleet-router.fly.dev/buy?format=json",
+  "snapshot_generated_utc": "2026-11-25T18:18:15.971Z",
+  "snapshot_count": 37,
+  "healthy_priced_count": 30,
+  "excluded_from_picker": [
+    {
+      "slug": "power-pack",
+      "reason": "status=unreachable; no positive price; non-canonical payTo"
+    },
+    {
+      "slug": "royal-ruby",
+      "reason": "no positive price"
+    },
+    {
+      "slug": "royal-ruby__machine-buyer",
+      "reason": "status=wrong_network; no positive price; non-canonical payTo"
+    },
+    {
+      "slug": "royal-ruby__machine-buyer-qa.json",
+      "reason": "status=wrong_network; no positive price; non-canonical payTo"
+    },
+    {
+      "slug": "royal-ruby__buy-compliance",
+      "reason": "status=wrong_network; no positive price; non-canonical payTo"
+    },
+    {
+      "slug": "royal-ruby__buy-managed",
+      "reason": "status=wrong_network; no positive price; non-canonical payTo"
+    },
+    {
+      "slug": "royal-ruby__udap-citations",
+      "reason": "status=wrong_network; no positive price; non-canonical payTo"
+    }
+  ],
+  "questions": [
+    {
+      "id": "need",
+      "prompt": "What do you need from the fleet?",
+      "options": [
+        {
+          "value": "data",
+          "label": "Data / signals",
+          "copy": "Market, NFT, skill or bundle data you can act on."
+        },
+        {
+          "value": "code",
+          "label": "Code / tooling",
+          "copy": "Scaffolds, validators and audit helpers for agents."
+        },
+        {
+          "value": "content",
+          "label": "Text / summaries",
+          "copy": "Summarize, simplify, extract or compare documents."
+        },
+        {
+          "value": "image",
+          "label": "Images",
+          "copy": "Generate or edit an image from a prompt."
+        },
+        {
+          "value": "legal",
+          "label": "Compliance / disputes",
+          "copy": "Compliance bundles and dispute packs."
+        },
+        {
+          "value": "security",
+          "label": "Security / audit",
+          "copy": "Site and x402 configuration audits."
+        }
+      ]
+    },
+    {
+      "id": "budget",
+      "prompt": "What is your per-call budget?",
+      "options": [
+        {
+          "value": "penny",
+          "label": "Penny tier (<= $0.01)",
+          "copy": "Cheapest possible first call."
+        },
+        {
+          "value": "value",
+          "label": "Value tier (<= $0.05)",
+          "copy": "A little more depth for a few cents."
+        },
+        {
+          "value": "pro",
+          "label": "Pro tier (> $0.05)",
+          "copy": "Higher-value, multi-step deliverables."
+        }
+      ]
+    },
+    {
+      "id": "urgency",
+      "prompt": "How do you want to start?",
+      "options": [
+        {
+          "value": "quick",
+          "label": "Quickest / cheapest",
+          "copy": "Lowest price in your tier, fastest first result."
+        },
+        {
+          "value": "thorough",
+          "label": "Most capable",
+          "copy": "Richest deliverable available in your tier."
+        }
+      ]
+    }
+  ],
+  "output_schema": {
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "title": "RAEN paywall recommendation",
+    "type": "object",
+    "required": [
+      "generated_utc",
+      "snapshot_generated_utc",
+      "need",
+      "budget",
+      "urgency",
+      "primary",
+      "alternates"
+    ],
+    "properties": {
+      "generated_utc": {
+        "type": "string"
+      },
+      "snapshot_generated_utc": {
+        "type": "string"
+      },
+      "need": {
+        "enum": [
+          "data",
+          "code",
+          "content",
+          "image",
+          "legal",
+          "security"
+        ]
+      },
+      "budget": {
+        "enum": [
+          "penny",
+          "value",
+          "pro"
+        ]
+      },
+      "urgency": {
+        "enum": [
+          "quick",
+          "thorough"
+        ]
+      },
+      "primary": {
+        "$ref": "#/$defs/paylink"
+      },
+      "alternates": {
+        "type": "array",
+        "items": {
+          "$ref": "#/$defs/paylink"
+        },
+        "maxItems": 2
+      }
+    },
+    "$defs": {
+      "paylink": {
+        "type": "object",
+        "required": [
+          "slug",
+          "price_usdc",
+          "buy_url",
+          "method",
+          "host",
+          "endpoint"
+        ],
+        "properties": {
+          "slug": {
+            "type": "string"
+          },
+          "price_usdc": {
+            "type": "number"
+          },
+          "amount_micro": {
+            "type": "string"
+          },
+          "buy_url": {
+            "type": "string"
+          },
+          "method": {
+            "type": "string"
+          },
+          "host": {
+            "type": "string"
+          },
+          "endpoint": {
+            "type": "string"
+          }
+        }
+      }
+    }
+  },
+  "leaves": [
+    {
+      "need": "data",
+      "budget": "penny",
+      "urgency": "quick",
+      "primary": {
+        "slug": "nft-alpha",
+        "price_usdc": 0.005,
+        "amount_micro": "5000",
+        "buy_url": "https://rae-fleet-router.fly.dev/buy/nft-alpha",
+        "method": "POST",
+        "host": "nft-alpha-x402.fly.dev",
+        "endpoint": "/api/nft-signal"
+      },
+      "alternates": [
+        {
+          "slug": "suprapack",
+          "price_usdc": 0.005,
+          "amount_micro": "5000",
+          "buy_url": "https://rae-fleet-router.fly.dev/buy/suprapack",
+          "method": "POST",
+          "host": "suprapack-x402.fly.dev",
+          "endpoint": "/api/find-skill"
+        },
+        {
+          "slug": "suprapack__get-skill",
+          "price_usdc": 0.005,
+          "amount_micro": "5000",
+          "buy_url": "https://rae-fleet-router.fly.dev/buy/suprapack__get-skill",
+          "method": "POST",
+          "host": "suprapack-x402.fly.dev",
+          "endpoint": "/api/get-skill"
+        }
+      ]
+    },
+    {
+      "need": "data",
+      "budget": "penny",
+      "urgency": "thorough",
+      "primary": {
+        "slug": "rae-fleet-router__bundle_market-starter",
+        "price_usdc": 0.01,
+        "amount_micro": "10000",
+        "buy_url": "https://rae-fleet-router.fly.dev/buy/rae-fleet-router__bundle_market-starter",
+        "method": "POST",
+        "host": "rae-fleet-router.fly.dev",
+        "endpoint": "/api/bundle/market-starter"
+      },
+      "alternates": [
+        {
+          "slug": "nft-alpha",
+          "price_usdc": 0.005,
+          "amount_micro": "5000",
+          "buy_url": "https://rae-fleet-router.fly.dev/buy/nft-alpha",
+          "method": "POST",
+          "host": "nft-alpha-x402.fly.dev",
+          "endpoint": "/api/nft-signal"
+        },
+        {
+          "slug": "suprapack",
+          "price_usdc": 0.005,
+          "amount_micro": "5000",
+          "buy_url": "https://rae-fleet-router.fly.dev/buy/suprapack",
+          "method": "POST",
+          "host": "suprapack-x402.fly.dev",
+          "endpoint": "/api/find-skill"
+        }
+      ]
+    },
+    {
+      "need": "data",
+      "budget": "value",
+      "urgency": "quick",
+      "primary": {
+        "slug": "rae-fleet-router__bundle_market-intel-trio",
+        "price_usdc": 0.02,
+        "amount_micro": "20000",
+        "buy_url": "https://rae-fleet-router.fly.dev/buy/rae-fleet-router__bundle_market-intel-trio",
+        "method": "POST",
+        "host": "rae-fleet-router.fly.dev",
+        "endpoint": "/api/bundle/market-intel-trio"
+      },
+      "alternates": [
+        {
+          "slug": "rae-fleet-router__bundle_full-fleet-sampler",
+          "price_usdc": 0.03,
+          "amount_micro": "30000",
+          "buy_url": "https://rae-fleet-router.fly.dev/buy/rae-fleet-router__bundle_full-fleet-sampler",
+          "method": "POST",
+          "host": "rae-fleet-router.fly.dev",
+          "endpoint": "/api/bundle/full-fleet-sampler"
+        },
+        {
+          "slug": "rae-fleet-router__bundle_full-stack",
+          "price_usdc": 0.04,
+          "amount_micro": "40000",
+          "buy_url": "https://rae-fleet-router.fly.dev/buy/rae-fleet-router__bundle_full-stack",
+          "method": "POST",
+          "host": "rae-fleet-router.fly.dev",
+          "endpoint": "/api/bundle/full-stack"
+        }
+      ]
+    },
+    {
+      "need": "data",
+      "budget": "value",
+      "urgency": "thorough",
+      "primary": {
+        "slug": "tradingagents",
+        "price_usdc": 0.05,
+        "amount_micro": "50000",
+        "buy_url": "https://rae-fleet-router.fly.dev/buy/tradingagents",
+        "method": "POST",
+        "host": "tradingagents-x402.fly.dev",
+        "endpoint": "/api/analyze-ticker"
+      },
+      "alternates": [
+        {
+          "slug": "tradingagents__analyze-arbitrage",
+          "price_usdc": 0.05,
+          "amount_micro": "50000",
+          "buy_url": "https://rae-fleet-router.fly.dev/buy/tradingagents__analyze-arbitrage",
+          "method": "POST",
+          "host": "tradingagents-x402.fly.dev",
+          "endpoint": "/api/analyze-arbitrage"
+        },
+        {
+          "slug": "rae-fleet-router__bundle_full-stack",
+          "price_usdc": 0.04,
+          "amount_micro": "40000",
+          "buy_url": "https://rae-fleet-router.fly.dev/buy/rae-fleet-router__bundle_full-stack",
+          "method": "POST",
+          "host": "rae-fleet-router.fly.dev",
+          "endpoint": "/api/bundle/full-stack"
+        }
+      ]
+    },
+    {
+      "need": "data",
+      "budget": "pro",
+      "urgency": "quick",
+      "primary": {
+        "slug": "rae-fleet-router__bundle_compliance-kit",
+        "price_usdc": 0.35,
+        "amount_micro": "350000",
+        "buy_url": "https://rae-fleet-router.fly.dev/buy/rae-fleet-router__bundle_compliance-kit",
+        "method": "POST",
+        "host": "rae-fleet-router.fly.dev",
+        "endpoint": "/api/bundle/compliance-kit"
+      },
+      "alternates": [
+        {
+          "slug": "dispatch",
+          "price_usdc": 0.5,
+          "amount_micro": "500000",
+          "buy_url": "https://rae-fleet-router.fly.dev/buy/dispatch",
+          "method": "POST",
+          "host": "dispatch-x402.fly.dev",
+          "endpoint": "/dispatch"
+        },
+        {
+          "slug": "briefsnap",
+          "price_usdc": 1,
+          "amount_micro": "1000000",
+          "buy_url": "https://rae-fleet-router.fly.dev/buy/briefsnap",
+          "method": "POST",
+          "host": "briefsnap-x402.fly.dev",
+          "endpoint": "/api/summarize"
+        }
+      ]
+    },
+    {
+      "need": "data",
+      "budget": "pro",
+      "urgency": "thorough",
+      "primary": {
+        "slug": "royal-ruby__cold-start-kit",
+        "price_usdc": 5,
+        "amount_micro": "5000000",
+        "buy_url": "https://rae-fleet-router.fly.dev/buy/royal-ruby__cold-start-kit",
+        "method": "GET",
+        "host": "royal-ruby-x402.fly.dev",
+        "endpoint": "/api/cold-start-kit"
+      },
+      "alternates": [
+        {
+          "slug": "briefsnap__compare-docs",
+          "price_usdc": 3,
+          "amount_micro": "3000000",
+          "buy_url": "https://rae-fleet-router.fly.dev/buy/briefsnap__compare-docs",
+          "method": "POST",
+          "host": "briefsnap-x402.fly.dev",
+          "endpoint": "/api/compare-docs"
+        },
+        {
+          "slug": "briefsnap__extract-actions",
+          "price_usdc": 1.5,
+          "amount_micro": "1500000",
+          "buy_url": "https://rae-fleet-router.fly.dev/buy/briefsnap__extract-actions",
+          "method": "POST",
+          "host": "briefsnap-x402.fly.dev",
+          "endpoint": "/api/extract-actions"
+        }
+      ]
+    },
+    {
+      "need": "code",
+      "budget": "penny",
+      "urgency": "quick",
+      "primary": {
+        "slug": "royal-ruby__address-check",
+        "price_usdc": 0.001,
+        "amount_micro": "1000",
+        "buy_url": "https://rae-fleet-router.fly.dev/buy/royal-ruby__address-check",
+        "method": "GET",
+        "host": "royal-ruby-x402.fly.dev",
+        "endpoint": "/api/address-check"
+      },
+      "alternates": [
+        {
+          "slug": "royal-ruby__x402-audit",
+          "price_usdc": 0.005,
+          "amount_micro": "5000",
+          "buy_url": "https://rae-fleet-router.fly.dev/buy/royal-ruby__x402-audit",
+          "method": "GET",
+          "host": "royal-ruby-x402.fly.dev",
+          "endpoint": "/api/x402-audit"
+        },
+        {
+          "slug": "rae-fleet-router__bundle_market-starter",
+          "price_usdc": 0.01,
+          "amount_micro": "10000",
+          "buy_url": "https://rae-fleet-router.fly.dev/buy/rae-fleet-router__bundle_market-starter",
+          "method": "POST",
+          "host": "rae-fleet-router.fly.dev",
+          "endpoint": "/api/bundle/market-starter"
+        }
+      ]
+    },
+    {
+      "need": "code",
+      "budget": "penny",
+      "urgency": "thorough",
+      "primary": {
+        "slug": "rae-fleet-router__bundle_market-starter",
+        "price_usdc": 0.01,
+        "amount_micro": "10000",
+        "buy_url": "https://rae-fleet-router.fly.dev/buy/rae-fleet-router__bundle_market-starter",
+        "method": "POST",
+        "host": "rae-fleet-router.fly.dev",
+        "endpoint": "/api/bundle/market-starter"
+      },
+      "alternates": [
+        {
+          "slug": "royal-ruby__validate-json",
+          "price_usdc": 0.01,
+          "amount_micro": "10000",
+          "buy_url": "https://rae-fleet-router.fly.dev/buy/royal-ruby__validate-json",
+          "method": "POST",
+          "host": "royal-ruby-x402.fly.dev",
+          "endpoint": "/api/validate-json"
+        },
+        {
+          "slug": "royal-ruby__x402-audit",
+          "price_usdc": 0.005,
+          "amount_micro": "5000",
+          "buy_url": "https://rae-fleet-router.fly.dev/buy/royal-ruby__x402-audit",
+          "method": "GET",
+          "host": "royal-ruby-x402.fly.dev",
+          "endpoint": "/api/x402-audit"
+        }
+      ]
+    },
+    {
+      "need": "code",
+      "budget": "value",
+      "urgency": "quick",
+      "primary": {
+        "slug": "rae-fleet-router__bundle_market-intel-trio",
+        "price_usdc": 0.02,
+        "amount_micro": "20000",
+        "buy_url": "https://rae-fleet-router.fly.dev/buy/rae-fleet-router__bundle_market-intel-trio",
+        "method": "POST",
+        "host": "rae-fleet-router.fly.dev",
+        "endpoint": "/api/bundle/market-intel-trio"
+      },
+      "alternates": [
+        {
+          "slug": "rae-fleet-router__bundle_full-fleet-sampler",
+          "price_usdc": 0.03,
+          "amount_micro": "30000",
+          "buy_url": "https://rae-fleet-router.fly.dev/buy/rae-fleet-router__bundle_full-fleet-sampler",
+          "method": "POST",
+          "host": "rae-fleet-router.fly.dev",
+          "endpoint": "/api/bundle/full-fleet-sampler"
+        },
+        {
+          "slug": "rae-fleet-router__bundle_full-stack",
+          "price_usdc": 0.04,
+          "amount_micro": "40000",
+          "buy_url": "https://rae-fleet-router.fly.dev/buy/rae-fleet-router__bundle_full-stack",
+          "method": "POST",
+          "host": "rae-fleet-router.fly.dev",
+          "endpoint": "/api/bundle/full-stack"
+        }
+      ]
+    },
+    {
+      "need": "code",
+      "budget": "value",
+      "urgency": "thorough",
+      "primary": {
+        "slug": "vault-pro",
+        "price_usdc": 0.05,
+        "amount_micro": "50000",
+        "buy_url": "https://rae-fleet-router.fly.dev/buy/vault-pro",
+        "method": "POST",
+        "host": "vault-pro-x402.fly.dev",
+        "endpoint": "/api/scaffold-project"
+      },
+      "alternates": [
+        {
+          "slug": "vault-pro__scaffold-agent",
+          "price_usdc": 0.05,
+          "amount_micro": "50000",
+          "buy_url": "https://rae-fleet-router.fly.dev/buy/vault-pro__scaffold-agent",
+          "method": "POST",
+          "host": "vault-pro-x402.fly.dev",
+          "endpoint": "/api/scaffold-agent"
+        },
+        {
+          "slug": "rae-fleet-router__bundle_full-stack",
+          "price_usdc": 0.04,
+          "amount_micro": "40000",
+          "buy_url": "https://rae-fleet-router.fly.dev/buy/rae-fleet-router__bundle_full-stack",
+          "method": "POST",
+          "host": "rae-fleet-router.fly.dev",
+          "endpoint": "/api/bundle/full-stack"
+        }
+      ]
+    },
+    {
+      "need": "code",
+      "budget": "pro",
+      "urgency": "quick",
+      "primary": {
+        "slug": "rae-fleet-router__bundle_compliance-kit",
+        "price_usdc": 0.35,
+        "amount_micro": "350000",
+        "buy_url": "https://rae-fleet-router.fly.dev/buy/rae-fleet-router__bundle_compliance-kit",
+        "method": "POST",
+        "host": "rae-fleet-router.fly.dev",
+        "endpoint": "/api/bundle/compliance-kit"
+      },
+      "alternates": [
+        {
+          "slug": "royal-ruby__cold-start-kit",
+          "price_usdc": 5,
+          "amount_micro": "5000000",
+          "buy_url": "https://rae-fleet-router.fly.dev/buy/royal-ruby__cold-start-kit",
+          "method": "GET",
+          "host": "royal-ruby-x402.fly.dev",
+          "endpoint": "/api/cold-start-kit"
+        }
+      ]
+    },
+    {
+      "need": "code",
+      "budget": "pro",
+      "urgency": "thorough",
+      "primary": {
+        "slug": "royal-ruby__cold-start-kit",
+        "price_usdc": 5,
+        "amount_micro": "5000000",
+        "buy_url": "https://rae-fleet-router.fly.dev/buy/royal-ruby__cold-start-kit",
+        "method": "GET",
+        "host": "royal-ruby-x402.fly.dev",
+        "endpoint": "/api/cold-start-kit"
+      },
+      "alternates": [
+        {
+          "slug": "rae-fleet-router__bundle_compliance-kit",
+          "price_usdc": 0.35,
+          "amount_micro": "350000",
+          "buy_url": "https://rae-fleet-router.fly.dev/buy/rae-fleet-router__bundle_compliance-kit",
+          "method": "POST",
+          "host": "rae-fleet-router.fly.dev",
+          "endpoint": "/api/bundle/compliance-kit"
+        }
+      ]
+    },
+    {
+      "need": "content",
+      "budget": "penny",
+      "urgency": "quick",
+      "primary": {
+        "slug": "nanobanana",
+        "price_usdc": 0.01,
+        "amount_micro": "10000",
+        "buy_url": "https://rae-fleet-router.fly.dev/buy/nanobanana",
+        "method": "POST",
+        "host": "nanobanana-x402.fly.dev",
+        "endpoint": "/api/generate-image"
+      },
+      "alternates": [
+        {
+          "slug": "nanobanana__edit-image",
+          "price_usdc": 0.01,
+          "amount_micro": "10000",
+          "buy_url": "https://rae-fleet-router.fly.dev/buy/nanobanana__edit-image",
+          "method": "POST",
+          "host": "nanobanana-x402.fly.dev",
+          "endpoint": "/api/edit-image"
+        }
+      ]
+    },
+    {
+      "need": "content",
+      "budget": "penny",
+      "urgency": "thorough",
+      "primary": {
+        "slug": "nanobanana",
+        "price_usdc": 0.01,
+        "amount_micro": "10000",
+        "buy_url": "https://rae-fleet-router.fly.dev/buy/nanobanana",
+        "method": "POST",
+        "host": "nanobanana-x402.fly.dev",
+        "endpoint": "/api/generate-image"
+      },
+      "alternates": [
+        {
+          "slug": "nanobanana__edit-image",
+          "price_usdc": 0.01,
+          "amount_micro": "10000",
+          "buy_url": "https://rae-fleet-router.fly.dev/buy/nanobanana__edit-image",
+          "method": "POST",
+          "host": "nanobanana-x402.fly.dev",
+          "endpoint": "/api/edit-image"
+        }
+      ]
+    },
+    {
+      "need": "content",
+      "budget": "value",
+      "urgency": "quick",
+      "primary": {
+        "slug": "rae-fleet-router__bundle_market-intel-trio",
+        "price_usdc": 0.02,
+        "amount_micro": "20000",
+        "buy_url": "https://rae-fleet-router.fly.dev/buy/rae-fleet-router__bundle_market-intel-trio",
+        "method": "POST",
+        "host": "rae-fleet-router.fly.dev",
+        "endpoint": "/api/bundle/market-intel-trio"
+      },
+      "alternates": [
+        {
+          "slug": "rae-fleet-router",
+          "price_usdc": 0.03,
+          "amount_micro": "30000",
+          "buy_url": "https://rae-fleet-router.fly.dev/buy/rae-fleet-router",
+          "method": "POST",
+          "host": "rae-fleet-router.fly.dev",
+          "endpoint": "/api/fleet-bundle"
+        },
+        {
+          "slug": "rae-fleet-router__bundle_full-fleet-sampler",
+          "price_usdc": 0.03,
+          "amount_micro": "30000",
+          "buy_url": "https://rae-fleet-router.fly.dev/buy/rae-fleet-router__bundle_full-fleet-sampler",
+          "method": "POST",
+          "host": "rae-fleet-router.fly.dev",
+          "endpoint": "/api/bundle/full-fleet-sampler"
+        }
+      ]
+    },
+    {
+      "need": "content",
+      "budget": "value",
+      "urgency": "thorough",
+      "primary": {
+        "slug": "tradingagents",
+        "price_usdc": 0.05,
+        "amount_micro": "50000",
+        "buy_url": "https://rae-fleet-router.fly.dev/buy/tradingagents",
+        "method": "POST",
+        "host": "tradingagents-x402.fly.dev",
+        "endpoint": "/api/analyze-ticker"
+      },
+      "alternates": [
+        {
+          "slug": "tradingagents__analyze-arbitrage",
+          "price_usdc": 0.05,
+          "amount_micro": "50000",
+          "buy_url": "https://rae-fleet-router.fly.dev/buy/tradingagents__analyze-arbitrage",
+          "method": "POST",
+          "host": "tradingagents-x402.fly.dev",
+          "endpoint": "/api/analyze-arbitrage"
+        },
+        {
+          "slug": "vault-pro",
+          "price_usdc": 0.05,
+          "amount_micro": "50000",
+          "buy_url": "https://rae-fleet-router.fly.dev/buy/vault-pro",
+          "method": "POST",
+          "host": "vault-pro-x402.fly.dev",
+          "endpoint": "/api/scaffold-project"
+        }
+      ]
+    },
+    {
+      "need": "content",
+      "budget": "pro",
+      "urgency": "quick",
+      "primary": {
+        "slug": "briefsnap",
+        "price_usdc": 1,
+        "amount_micro": "1000000",
+        "buy_url": "https://rae-fleet-router.fly.dev/buy/briefsnap",
+        "method": "POST",
+        "host": "briefsnap-x402.fly.dev",
+        "endpoint": "/api/summarize"
+      },
+      "alternates": [
+        {
+          "slug": "briefsnap__eli5",
+          "price_usdc": 1,
+          "amount_micro": "1000000",
+          "buy_url": "https://rae-fleet-router.fly.dev/buy/briefsnap__eli5",
+          "method": "POST",
+          "host": "briefsnap-x402.fly.dev",
+          "endpoint": "/api/eli5"
+        },
+        {
+          "slug": "briefsnap__extract-actions",
+          "price_usdc": 1.5,
+          "amount_micro": "1500000",
+          "buy_url": "https://rae-fleet-router.fly.dev/buy/briefsnap__extract-actions",
+          "method": "POST",
+          "host": "briefsnap-x402.fly.dev",
+          "endpoint": "/api/extract-actions"
+        }
+      ]
+    },
+    {
+      "need": "content",
+      "budget": "pro",
+      "urgency": "thorough",
+      "primary": {
+        "slug": "briefsnap__compare-docs",
+        "price_usdc": 3,
+        "amount_micro": "3000000",
+        "buy_url": "https://rae-fleet-router.fly.dev/buy/briefsnap__compare-docs",
+        "method": "POST",
+        "host": "briefsnap-x402.fly.dev",
+        "endpoint": "/api/compare-docs"
+      },
+      "alternates": [
+        {
+          "slug": "briefsnap__extract-actions",
+          "price_usdc": 1.5,
+          "amount_micro": "1500000",
+          "buy_url": "https://rae-fleet-router.fly.dev/buy/briefsnap__extract-actions",
+          "method": "POST",
+          "host": "briefsnap-x402.fly.dev",
+          "endpoint": "/api/extract-actions"
+        },
+        {
+          "slug": "briefsnap",
+          "price_usdc": 1,
+          "amount_micro": "1000000",
+          "buy_url": "https://rae-fleet-router.fly.dev/buy/briefsnap",
+          "method": "POST",
+          "host": "briefsnap-x402.fly.dev",
+          "endpoint": "/api/summarize"
+        }
+      ]
+    },
+    {
+      "need": "image",
+      "budget": "penny",
+      "urgency": "quick",
+      "primary": {
+        "slug": "nanobanana",
+        "price_usdc": 0.01,
+        "amount_micro": "10000",
+        "buy_url": "https://rae-fleet-router.fly.dev/buy/nanobanana",
+        "method": "POST",
+        "host": "nanobanana-x402.fly.dev",
+        "endpoint": "/api/generate-image"
+      },
+      "alternates": [
+        {
+          "slug": "nanobanana__edit-image",
+          "price_usdc": 0.01,
+          "amount_micro": "10000",
+          "buy_url": "https://rae-fleet-router.fly.dev/buy/nanobanana__edit-image",
+          "method": "POST",
+          "host": "nanobanana-x402.fly.dev",
+          "endpoint": "/api/edit-image"
+        }
+      ]
+    },
+    {
+      "need": "image",
+      "budget": "penny",
+      "urgency": "thorough",
+      "primary": {
+        "slug": "nanobanana",
+        "price_usdc": 0.01,
+        "amount_micro": "10000",
+        "buy_url": "https://rae-fleet-router.fly.dev/buy/nanobanana",
+        "method": "POST",
+        "host": "nanobanana-x402.fly.dev",
+        "endpoint": "/api/generate-image"
+      },
+      "alternates": [
+        {
+          "slug": "nanobanana__edit-image",
+          "price_usdc": 0.01,
+          "amount_micro": "10000",
+          "buy_url": "https://rae-fleet-router.fly.dev/buy/nanobanana__edit-image",
+          "method": "POST",
+          "host": "nanobanana-x402.fly.dev",
+          "endpoint": "/api/edit-image"
+        }
+      ]
+    },
+    {
+      "need": "image",
+      "budget": "value",
+      "urgency": "quick",
+      "primary": {
+        "slug": "rae-fleet-router__bundle_market-intel-trio",
+        "price_usdc": 0.02,
+        "amount_micro": "20000",
+        "buy_url": "https://rae-fleet-router.fly.dev/buy/rae-fleet-router__bundle_market-intel-trio",
+        "method": "POST",
+        "host": "rae-fleet-router.fly.dev",
+        "endpoint": "/api/bundle/market-intel-trio"
+      },
+      "alternates": [
+        {
+          "slug": "rae-fleet-router",
+          "price_usdc": 0.03,
+          "amount_micro": "30000",
+          "buy_url": "https://rae-fleet-router.fly.dev/buy/rae-fleet-router",
+          "method": "POST",
+          "host": "rae-fleet-router.fly.dev",
+          "endpoint": "/api/fleet-bundle"
+        },
+        {
+          "slug": "rae-fleet-router__bundle_full-fleet-sampler",
+          "price_usdc": 0.03,
+          "amount_micro": "30000",
+          "buy_url": "https://rae-fleet-router.fly.dev/buy/rae-fleet-router__bundle_full-fleet-sampler",
+          "method": "POST",
+          "host": "rae-fleet-router.fly.dev",
+          "endpoint": "/api/bundle/full-fleet-sampler"
+        }
+      ]
+    },
+    {
+      "need": "image",
+      "budget": "value",
+      "urgency": "thorough",
+      "primary": {
+        "slug": "tradingagents",
+        "price_usdc": 0.05,
+        "amount_micro": "50000",
+        "buy_url": "https://rae-fleet-router.fly.dev/buy/tradingagents",
+        "method": "POST",
+        "host": "tradingagents-x402.fly.dev",
+        "endpoint": "/api/analyze-ticker"
+      },
+      "alternates": [
+        {
+          "slug": "tradingagents__analyze-arbitrage",
+          "price_usdc": 0.05,
+          "amount_micro": "50000",
+          "buy_url": "https://rae-fleet-router.fly.dev/buy/tradingagents__analyze-arbitrage",
+          "method": "POST",
+          "host": "tradingagents-x402.fly.dev",
+          "endpoint": "/api/analyze-arbitrage"
+        },
+        {
+          "slug": "vault-pro",
+          "price_usdc": 0.05,
+          "amount_micro": "50000",
+          "buy_url": "https://rae-fleet-router.fly.dev/buy/vault-pro",
+          "method": "POST",
+          "host": "vault-pro-x402.fly.dev",
+          "endpoint": "/api/scaffold-project"
+        }
+      ]
+    },
+    {
+      "need": "image",
+      "budget": "pro",
+      "urgency": "quick",
+      "primary": {
+        "slug": "rae-fleet-router__bundle_compliance-kit",
+        "price_usdc": 0.35,
+        "amount_micro": "350000",
+        "buy_url": "https://rae-fleet-router.fly.dev/buy/rae-fleet-router__bundle_compliance-kit",
+        "method": "POST",
+        "host": "rae-fleet-router.fly.dev",
+        "endpoint": "/api/bundle/compliance-kit"
+      },
+      "alternates": [
+        {
+          "slug": "dispatch",
+          "price_usdc": 0.5,
+          "amount_micro": "500000",
+          "buy_url": "https://rae-fleet-router.fly.dev/buy/dispatch",
+          "method": "POST",
+          "host": "dispatch-x402.fly.dev",
+          "endpoint": "/dispatch"
+        },
+        {
+          "slug": "briefsnap",
+          "price_usdc": 1,
+          "amount_micro": "1000000",
+          "buy_url": "https://rae-fleet-router.fly.dev/buy/briefsnap",
+          "method": "POST",
+          "host": "briefsnap-x402.fly.dev",
+          "endpoint": "/api/summarize"
+        }
+      ]
+    },
+    {
+      "need": "image",
+      "budget": "pro",
+      "urgency": "thorough",
+      "primary": {
+        "slug": "royal-ruby__cold-start-kit",
+        "price_usdc": 5,
+        "amount_micro": "5000000",
+        "buy_url": "https://rae-fleet-router.fly.dev/buy/royal-ruby__cold-start-kit",
+        "method": "GET",
+        "host": "royal-ruby-x402.fly.dev",
+        "endpoint": "/api/cold-start-kit"
+      },
+      "alternates": [
+        {
+          "slug": "briefsnap__compare-docs",
+          "price_usdc": 3,
+          "amount_micro": "3000000",
+          "buy_url": "https://rae-fleet-router.fly.dev/buy/briefsnap__compare-docs",
+          "method": "POST",
+          "host": "briefsnap-x402.fly.dev",
+          "endpoint": "/api/compare-docs"
+        },
+        {
+          "slug": "briefsnap__extract-actions",
+          "price_usdc": 1.5,
+          "amount_micro": "1500000",
+          "buy_url": "https://rae-fleet-router.fly.dev/buy/briefsnap__extract-actions",
+          "method": "POST",
+          "host": "briefsnap-x402.fly.dev",
+          "endpoint": "/api/extract-actions"
+        }
+      ]
+    },
+    {
+      "need": "legal",
+      "budget": "penny",
+      "urgency": "quick",
+      "primary": {
+        "slug": "royal-ruby__address-check",
+        "price_usdc": 0.001,
+        "amount_micro": "1000",
+        "buy_url": "https://rae-fleet-router.fly.dev/buy/royal-ruby__address-check",
+        "method": "GET",
+        "host": "royal-ruby-x402.fly.dev",
+        "endpoint": "/api/address-check"
+      },
+      "alternates": [
+        {
+          "slug": "royal-ruby__ping",
+          "price_usdc": 0.001,
+          "amount_micro": "1000",
+          "buy_url": "https://rae-fleet-router.fly.dev/buy/royal-ruby__ping",
+          "method": "GET",
+          "host": "royal-ruby-x402.fly.dev",
+          "endpoint": "/api/ping"
+        },
+        {
+          "slug": "royal-ruby__site-audit",
+          "price_usdc": 0.005,
+          "amount_micro": "5000",
+          "buy_url": "https://rae-fleet-router.fly.dev/buy/royal-ruby__site-audit",
+          "method": "GET",
+          "host": "royal-ruby-x402.fly.dev",
+          "endpoint": "/api/site-audit"
+        }
+      ]
+    },
+    {
+      "need": "legal",
+      "budget": "penny",
+      "urgency": "thorough",
+      "primary": {
+        "slug": "dispute-forge",
+        "price_usdc": 0.01,
+        "amount_micro": "10000",
+        "buy_url": "https://rae-fleet-router.fly.dev/buy/dispute-forge",
+        "method": "POST",
+        "host": "dispute-forge-x402.fly.dev",
+        "endpoint": "/api/dispute-pack"
+      },
+      "alternates": [
+        {
+          "slug": "royal-ruby__validate-json",
+          "price_usdc": 0.01,
+          "amount_micro": "10000",
+          "buy_url": "https://rae-fleet-router.fly.dev/buy/royal-ruby__validate-json",
+          "method": "POST",
+          "host": "royal-ruby-x402.fly.dev",
+          "endpoint": "/api/validate-json"
+        },
+        {
+          "slug": "royal-ruby__site-audit",
+          "price_usdc": 0.005,
+          "amount_micro": "5000",
+          "buy_url": "https://rae-fleet-router.fly.dev/buy/royal-ruby__site-audit",
+          "method": "GET",
+          "host": "royal-ruby-x402.fly.dev",
+          "endpoint": "/api/site-audit"
+        }
+      ]
+    },
+    {
+      "need": "legal",
+      "budget": "value",
+      "urgency": "quick",
+      "primary": {
+        "slug": "rae-fleet-router__bundle_market-intel-trio",
+        "price_usdc": 0.02,
+        "amount_micro": "20000",
+        "buy_url": "https://rae-fleet-router.fly.dev/buy/rae-fleet-router__bundle_market-intel-trio",
+        "method": "POST",
+        "host": "rae-fleet-router.fly.dev",
+        "endpoint": "/api/bundle/market-intel-trio"
+      },
+      "alternates": [
+        {
+          "slug": "rae-fleet-router",
+          "price_usdc": 0.03,
+          "amount_micro": "30000",
+          "buy_url": "https://rae-fleet-router.fly.dev/buy/rae-fleet-router",
+          "method": "POST",
+          "host": "rae-fleet-router.fly.dev",
+          "endpoint": "/api/fleet-bundle"
+        },
+        {
+          "slug": "rae-fleet-router__bundle_full-fleet-sampler",
+          "price_usdc": 0.03,
+          "amount_micro": "30000",
+          "buy_url": "https://rae-fleet-router.fly.dev/buy/rae-fleet-router__bundle_full-fleet-sampler",
+          "method": "POST",
+          "host": "rae-fleet-router.fly.dev",
+          "endpoint": "/api/bundle/full-fleet-sampler"
+        }
+      ]
+    },
+    {
+      "need": "legal",
+      "budget": "value",
+      "urgency": "thorough",
+      "primary": {
+        "slug": "tradingagents",
+        "price_usdc": 0.05,
+        "amount_micro": "50000",
+        "buy_url": "https://rae-fleet-router.fly.dev/buy/tradingagents",
+        "method": "POST",
+        "host": "tradingagents-x402.fly.dev",
+        "endpoint": "/api/analyze-ticker"
+      },
+      "alternates": [
+        {
+          "slug": "tradingagents__analyze-arbitrage",
+          "price_usdc": 0.05,
+          "amount_micro": "50000",
+          "buy_url": "https://rae-fleet-router.fly.dev/buy/tradingagents__analyze-arbitrage",
+          "method": "POST",
+          "host": "tradingagents-x402.fly.dev",
+          "endpoint": "/api/analyze-arbitrage"
+        },
+        {
+          "slug": "vault-pro",
+          "price_usdc": 0.05,
+          "amount_micro": "50000",
+          "buy_url": "https://rae-fleet-router.fly.dev/buy/vault-pro",
+          "method": "POST",
+          "host": "vault-pro-x402.fly.dev",
+          "endpoint": "/api/scaffold-project"
+        }
+      ]
+    },
+    {
+      "need": "legal",
+      "budget": "pro",
+      "urgency": "quick",
+      "primary": {
+        "slug": "rae-fleet-router__bundle_compliance-kit",
+        "price_usdc": 0.35,
+        "amount_micro": "350000",
+        "buy_url": "https://rae-fleet-router.fly.dev/buy/rae-fleet-router__bundle_compliance-kit",
+        "method": "POST",
+        "host": "rae-fleet-router.fly.dev",
+        "endpoint": "/api/bundle/compliance-kit"
+      },
+      "alternates": [
+        {
+          "slug": "royal-ruby__cold-start-kit",
+          "price_usdc": 5,
+          "amount_micro": "5000000",
+          "buy_url": "https://rae-fleet-router.fly.dev/buy/royal-ruby__cold-start-kit",
+          "method": "GET",
+          "host": "royal-ruby-x402.fly.dev",
+          "endpoint": "/api/cold-start-kit"
+        }
+      ]
+    },
+    {
+      "need": "legal",
+      "budget": "pro",
+      "urgency": "thorough",
+      "primary": {
+        "slug": "royal-ruby__cold-start-kit",
+        "price_usdc": 5,
+        "amount_micro": "5000000",
+        "buy_url": "https://rae-fleet-router.fly.dev/buy/royal-ruby__cold-start-kit",
+        "method": "GET",
+        "host": "royal-ruby-x402.fly.dev",
+        "endpoint": "/api/cold-start-kit"
+      },
+      "alternates": [
+        {
+          "slug": "rae-fleet-router__bundle_compliance-kit",
+          "price_usdc": 0.35,
+          "amount_micro": "350000",
+          "buy_url": "https://rae-fleet-router.fly.dev/buy/rae-fleet-router__bundle_compliance-kit",
+          "method": "POST",
+          "host": "rae-fleet-router.fly.dev",
+          "endpoint": "/api/bundle/compliance-kit"
+        }
+      ]
+    },
+    {
+      "need": "security",
+      "budget": "penny",
+      "urgency": "quick",
+      "primary": {
+        "slug": "royal-ruby__site-audit",
+        "price_usdc": 0.005,
+        "amount_micro": "5000",
+        "buy_url": "https://rae-fleet-router.fly.dev/buy/royal-ruby__site-audit",
+        "method": "GET",
+        "host": "royal-ruby-x402.fly.dev",
+        "endpoint": "/api/site-audit"
+      },
+      "alternates": [
+        {
+          "slug": "royal-ruby__x402-audit",
+          "price_usdc": 0.005,
+          "amount_micro": "5000",
+          "buy_url": "https://rae-fleet-router.fly.dev/buy/royal-ruby__x402-audit",
+          "method": "GET",
+          "host": "royal-ruby-x402.fly.dev",
+          "endpoint": "/api/x402-audit"
+        },
+        {
+          "slug": "dispute-forge",
+          "price_usdc": 0.01,
+          "amount_micro": "10000",
+          "buy_url": "https://rae-fleet-router.fly.dev/buy/dispute-forge",
+          "method": "POST",
+          "host": "dispute-forge-x402.fly.dev",
+          "endpoint": "/api/dispute-pack"
+        }
+      ]
+    },
+    {
+      "need": "security",
+      "budget": "penny",
+      "urgency": "thorough",
+      "primary": {
+        "slug": "dispute-forge",
+        "price_usdc": 0.01,
+        "amount_micro": "10000",
+        "buy_url": "https://rae-fleet-router.fly.dev/buy/dispute-forge",
+        "method": "POST",
+        "host": "dispute-forge-x402.fly.dev",
+        "endpoint": "/api/dispute-pack"
+      },
+      "alternates": [
+        {
+          "slug": "royal-ruby__site-audit",
+          "price_usdc": 0.005,
+          "amount_micro": "5000",
+          "buy_url": "https://rae-fleet-router.fly.dev/buy/royal-ruby__site-audit",
+          "method": "GET",
+          "host": "royal-ruby-x402.fly.dev",
+          "endpoint": "/api/site-audit"
+        },
+        {
+          "slug": "royal-ruby__x402-audit",
+          "price_usdc": 0.005,
+          "amount_micro": "5000",
+          "buy_url": "https://rae-fleet-router.fly.dev/buy/royal-ruby__x402-audit",
+          "method": "GET",
+          "host": "royal-ruby-x402.fly.dev",
+          "endpoint": "/api/x402-audit"
+        }
+      ]
+    },
+    {
+      "need": "security",
+      "budget": "value",
+      "urgency": "quick",
+      "primary": {
+        "slug": "vault-pro",
+        "price_usdc": 0.05,
+        "amount_micro": "50000",
+        "buy_url": "https://rae-fleet-router.fly.dev/buy/vault-pro",
+        "method": "POST",
+        "host": "vault-pro-x402.fly.dev",
+        "endpoint": "/api/scaffold-project"
+      },
+      "alternates": [
+        {
+          "slug": "vault-pro__scaffold-agent",
+          "price_usdc": 0.05,
+          "amount_micro": "50000",
+          "buy_url": "https://rae-fleet-router.fly.dev/buy/vault-pro__scaffold-agent",
+          "method": "POST",
+          "host": "vault-pro-x402.fly.dev",
+          "endpoint": "/api/scaffold-agent"
+        }
+      ]
+    },
+    {
+      "need": "security",
+      "budget": "value",
+      "urgency": "thorough",
+      "primary": {
+        "slug": "vault-pro",
+        "price_usdc": 0.05,
+        "amount_micro": "50000",
+        "buy_url": "https://rae-fleet-router.fly.dev/buy/vault-pro",
+        "method": "POST",
+        "host": "vault-pro-x402.fly.dev",
+        "endpoint": "/api/scaffold-project"
+      },
+      "alternates": [
+        {
+          "slug": "vault-pro__scaffold-agent",
+          "price_usdc": 0.05,
+          "amount_micro": "50000",
+          "buy_url": "https://rae-fleet-router.fly.dev/buy/vault-pro__scaffold-agent",
+          "method": "POST",
+          "host": "vault-pro-x402.fly.dev",
+          "endpoint": "/api/scaffold-agent"
+        }
+      ]
+    },
+    {
+      "need": "security",
+      "budget": "pro",
+      "urgency": "quick",
+      "primary": {
+        "slug": "rae-fleet-router__bundle_compliance-kit",
+        "price_usdc": 0.35,
+        "amount_micro": "350000",
+        "buy_url": "https://rae-fleet-router.fly.dev/buy/rae-fleet-router__bundle_compliance-kit",
+        "method": "POST",
+        "host": "rae-fleet-router.fly.dev",
+        "endpoint": "/api/bundle/compliance-kit"
+      },
+      "alternates": [
+        {
+          "slug": "dispatch",
+          "price_usdc": 0.5,
+          "amount_micro": "500000",
+          "buy_url": "https://rae-fleet-router.fly.dev/buy/dispatch",
+          "method": "POST",
+          "host": "dispatch-x402.fly.dev",
+          "endpoint": "/dispatch"
+        },
+        {
+          "slug": "briefsnap",
+          "price_usdc": 1,
+          "amount_micro": "1000000",
+          "buy_url": "https://rae-fleet-router.fly.dev/buy/briefsnap",
+          "method": "POST",
+          "host": "briefsnap-x402.fly.dev",
+          "endpoint": "/api/summarize"
+        }
+      ]
+    },
+    {
+      "need": "security",
+      "budget": "pro",
+      "urgency": "thorough",
+      "primary": {
+        "slug": "royal-ruby__cold-start-kit",
+        "price_usdc": 5,
+        "amount_micro": "5000000",
+        "buy_url": "https://rae-fleet-router.fly.dev/buy/royal-ruby__cold-start-kit",
+        "method": "GET",
+        "host": "royal-ruby-x402.fly.dev",
+        "endpoint": "/api/cold-start-kit"
+      },
+      "alternates": [
+        {
+          "slug": "briefsnap__compare-docs",
+          "price_usdc": 3,
+          "amount_micro": "3000000",
+          "buy_url": "https://rae-fleet-router.fly.dev/buy/briefsnap__compare-docs",
+          "method": "POST",
+          "host": "briefsnap-x402.fly.dev",
+          "endpoint": "/api/compare-docs"
+        },
+        {
+          "slug": "briefsnap__extract-actions",
+          "price_usdc": 1.5,
+          "amount_micro": "1500000",
+          "buy_url": "https://rae-fleet-router.fly.dev/buy/briefsnap__extract-actions",
+          "method": "POST",
+          "host": "briefsnap-x402.fly.dev",
+          "endpoint": "/api/extract-actions"
+        }
+      ]
+    }
+  ],
+  "leaf_count": 36
+}
