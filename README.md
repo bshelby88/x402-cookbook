@@ -123,6 +123,8 @@ you settled but got no payload.
 
 40. **[x402 for Developers — live-grounded three-part course](recipes/40-dev-education.md)** — closes POST-102: a 3-article course (introduction, integration, advanced patterns) generated ONLY from fresh unpaid 402s and the sellers' manifests — every price / payTo / request shape is live-read, never hand-typed. 2026-11-26: 3 kept-live walls CLEAN and canonical ($0.05 / $0.005 / $0.05, eip155:8453, exact), 0 drift; gateway `tools/list` flagged as free discovery. Snapshot `registry/dev-education.json`; read-only, no deploy.
 
+41. **[Machine-buyer trust coverage — independent verification, honest gaps](recipes/41-trust-coverage.md)** — closes `ERICA-LUMI-CATALOG-GAP`: a live Lumi trust-coverage map across 14 public surfaces plus a canonical-payTo guard on kept-live walls, so a buyer can verify RAEN through a third party without an account. 2026-11-26: 9 `check_first` / 5 `no_data` / 0 verified (test_buys=0 everywhere) — honest discovery GAP published; 3/3 walls canonical and $0 drift. Snapshot `registry/trust-coverage.json` + buyer copy `registry/trust-coverage.md`; read-only, no deploy.
+
 ## MCP registry
 
 RAEN's MCP gateway is listed at `io.github.bshelby88/raen-mcp` on the MCP Registry.

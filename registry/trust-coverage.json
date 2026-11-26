@@ -1,0 +1,247 @@
+{
+  "generated_at": "2026-11-26T11:09:58.705817Z",
+  "version": "trust-coverage/1.0",
+  "scope": "read-only: third-party Lumi trust checks by URL + unpaid 402 canonical guard on kept-live walls",
+  "surfaces": [
+    {
+      "name": "royal-ruby",
+      "url": "https://royal-ruby-x402.fly.dev",
+      "role": "kept-live",
+      "lumi": {
+        "label": "check_first",
+        "scope": "url",
+        "test_buys": 0,
+        "delivered": 0,
+        "last_quote_check": null,
+        "as_of": "2026-11-26T11:09:47Z",
+        "summary": "Lumi has not test-bought this URL yet. Lumi's check result: Check first. Not a guarantee."
+      }
+    },
+    {
+      "name": "contract-eye",
+      "url": "https://contract-eye-x402.fly.dev",
+      "role": "kept-live",
+      "lumi": {
+        "label": "check_first",
+        "scope": "url",
+        "test_buys": 0,
+        "delivered": 0,
+        "last_quote_check": null,
+        "as_of": "2026-11-26T11:09:48Z",
+        "summary": "Lumi has not test-bought this URL yet. Lumi's check result: Check first. Not a guarantee."
+      }
+    },
+    {
+      "name": "nanobanana",
+      "url": "https://nanobanana-x402.fly.dev",
+      "role": "kept-live",
+      "lumi": {
+        "label": "check_first",
+        "scope": "url",
+        "test_buys": 0,
+        "delivered": 0,
+        "last_quote_check": null,
+        "as_of": "2026-11-26T11:09:49Z",
+        "summary": "Lumi has not test-bought this URL yet. Lumi's check result: Check first. Not a guarantee."
+      }
+    },
+    {
+      "name": "sentry-forge",
+      "url": "https://sentry-forge-x402.fly.dev",
+      "role": "kept-live",
+      "lumi": {
+        "label": "no_data",
+        "scope": "not_observed",
+        "test_buys": 0,
+        "delivered": 0,
+        "last_quote_check": null,
+        "as_of": "2026-11-26T11:09:49Z",
+        "summary": "Lumi has no record of this seller: it is not in the x402 catalog Lumi reads and Lumi has not test-bought it. No record is not a negative finding."
+      }
+    },
+    {
+      "name": "raen-mcp-gateway",
+      "url": "https://raen-mcp-gateway.fly.dev",
+      "role": "kept-live",
+      "lumi": {
+        "label": "no_data",
+        "scope": "not_observed",
+        "test_buys": 0,
+        "delivered": 0,
+        "last_quote_check": null,
+        "as_of": "2026-11-26T11:09:50Z",
+        "summary": "Lumi has no record of this seller: it is not in the x402 catalog Lumi reads and Lumi has not test-bought it. No record is not a negative finding."
+      }
+    },
+    {
+      "name": "raen-mcp-gateway/mcp",
+      "url": "https://raen-mcp-gateway.fly.dev/mcp",
+      "role": "kept-live",
+      "lumi": {
+        "label": "no_data",
+        "scope": "not_observed",
+        "test_buys": 0,
+        "delivered": 0,
+        "last_quote_check": null,
+        "as_of": "2026-11-26T11:09:51Z",
+        "summary": "Lumi has no record of this seller: it is not in the x402 catalog Lumi reads and Lumi has not test-bought it. No record is not a negative finding."
+      }
+    },
+    {
+      "name": "settlement-collector",
+      "url": "https://settlement-collector.fly.dev",
+      "role": "infra",
+      "lumi": {
+        "label": "no_data",
+        "scope": "not_observed",
+        "test_buys": 0,
+        "delivered": 0,
+        "last_quote_check": null,
+        "as_of": "2026-11-26T11:09:51Z",
+        "summary": "Lumi has no record of this seller: it is not in the x402 catalog Lumi reads and Lumi has not test-bought it. No record is not a negative finding."
+      }
+    },
+    {
+      "name": "raen-blog",
+      "url": "https://raen-blog-x402.fly.dev",
+      "role": "infra",
+      "lumi": {
+        "label": "no_data",
+        "scope": "not_observed",
+        "test_buys": 0,
+        "delivered": 0,
+        "last_quote_check": null,
+        "as_of": "2026-11-26T11:09:52Z",
+        "summary": "Lumi has no record of this seller: it is not in the x402 catalog Lumi reads and Lumi has not test-bought it. No record is not a negative finding."
+      }
+    },
+    {
+      "name": "escrow",
+      "url": "https://escrow-x402.fly.dev",
+      "role": "frozen-public",
+      "lumi": {
+        "label": "check_first",
+        "scope": "url",
+        "test_buys": 0,
+        "delivered": 0,
+        "last_quote_check": null,
+        "as_of": "2026-11-26T11:09:53Z",
+        "summary": "Lumi has not test-bought this URL yet. Lumi's check result: Check first. Not a guarantee."
+      }
+    },
+    {
+      "name": "dispute-forge",
+      "url": "https://dispute-forge-x402.fly.dev",
+      "role": "frozen-public",
+      "lumi": {
+        "label": "check_first",
+        "scope": "url",
+        "test_buys": 0,
+        "delivered": 0,
+        "last_quote_check": null,
+        "as_of": "2026-11-26T11:09:55Z",
+        "summary": "Lumi has not test-bought this URL yet. Lumi's check result: Check first. Not a guarantee."
+      }
+    },
+    {
+      "name": "briefsnap",
+      "url": "https://briefsnap-x402.fly.dev",
+      "role": "frozen-public",
+      "lumi": {
+        "label": "check_first",
+        "scope": "url",
+        "test_buys": 0,
+        "delivered": 0,
+        "last_quote_check": null,
+        "as_of": "2026-11-26T11:09:56Z",
+        "summary": "Lumi has not test-bought this URL yet. Lumi's check result: Check first. Not a guarantee."
+      }
+    },
+    {
+      "name": "vault-pro",
+      "url": "https://vault-pro-x402.fly.dev",
+      "role": "frozen-public",
+      "lumi": {
+        "label": "check_first",
+        "scope": "url",
+        "test_buys": 0,
+        "delivered": 0,
+        "last_quote_check": null,
+        "as_of": "2026-11-26T11:09:57Z",
+        "summary": "Lumi has not test-bought this URL yet. Lumi's check result: Check first. Not a guarantee."
+      }
+    },
+    {
+      "name": "dispatch",
+      "url": "https://dispatch-x402.fly.dev",
+      "role": "frozen-public",
+      "lumi": {
+        "label": "check_first",
+        "scope": "url",
+        "test_buys": 0,
+        "delivered": 0,
+        "last_quote_check": null,
+        "as_of": "2026-11-26T11:09:57Z",
+        "summary": "Lumi has not test-bought this URL yet. Lumi's check result: Check first. Not a guarantee."
+      }
+    },
+    {
+      "name": "nft-alpha",
+      "url": "https://nft-alpha-x402.fly.dev",
+      "role": "frozen-public",
+      "lumi": {
+        "label": "check_first",
+        "scope": "url",
+        "test_buys": 0,
+        "delivered": 0,
+        "last_quote_check": null,
+        "as_of": "2026-11-26T11:09:58Z",
+        "summary": "Lumi has not test-bought this URL yet. Lumi's check result: Check first. Not a guarantee."
+      }
+    }
+  ],
+  "label_counts": {
+    "check_first": 9,
+    "no_data": 5
+  },
+  "canonical_guard": {
+    "walls": [
+      {
+        "svc": "royal-ruby",
+        "status": 402,
+        "payto": "0x9b8a27e03ceba490953cda8ab1291c0e13baf72f",
+        "network": "eip155:8453",
+        "scheme": "exact",
+        "canonical": true
+      },
+      {
+        "svc": "contract-eye",
+        "status": 402,
+        "payto": "0x9b8a27e03CEbA490953cDa8AB1291c0E13bAf72f",
+        "network": "eip155:8453",
+        "scheme": "exact",
+        "canonical": true
+      },
+      {
+        "svc": "gateway",
+        "status": 402,
+        "payto": "0x9b8a27e03CEbA490953cDa8AB1291c0E13bAf72f",
+        "network": "eip155:8453",
+        "scheme": "exact",
+        "canonical": true
+      }
+    ],
+    "reachable": 3,
+    "drift": 0,
+    "verdict": "CLEAN",
+    "canonical_address": "0x9b8a27e03ceba490953cda8ab1291c0e13baf72f"
+  },
+  "honesty": [
+    "A Lumi 'no_data' verdict means NOT OBSERVED, not negative — Lumi has no record of the seller.",
+    "Absence from a trust catalog is a discovery GAP; it is not proof of fraud or non-delivery.",
+    "Lumi never test-bought these URLs (test_buys=0); paying for a high-value check does not change the verdict.",
+    "A 402 challenge is a demand signal, not a sale. Fleet external revenue is $0.00 unless the chain says otherwise.",
+    "Internal AgentCash self-pays are not external revenue. Verification is independent of our own dashboards.",
+    "Claiming / monitoring a third-party trust listing is an owner-lane action; this report only measures it."
+  ]
+}
