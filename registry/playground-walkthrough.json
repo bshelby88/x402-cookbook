@@ -1,0 +1,289 @@
+{
+  "generated_at": "2026-11-26T06:30:09.119132+00:00",
+  "tool": "playground-walkthrough/1.0",
+  "playground_url": "https://rae-fleet-router.fly.dev/playground",
+  "playground_http": 200,
+  "verdict": "DRIFT",
+  "canonical_payto": "0x9b8a27e03ceba490953cda8ab1291c0e13baf72f",
+  "chain": "eip155:8453",
+  "scheme": "exact",
+  "truth_notes": [
+    "Price truth = a fresh live 402 challenge (accepts[0].amount), never the hardcoded playground price.",
+    "Many 402 challenges are scanners/bots; challenges are not sales. See Recipe 36.",
+    "Internal self-pays (AgentCash) are not external revenue.",
+    "Frozen walls are labelled NOT VERIFIED and are never probed (BURN FREEZE).",
+    "Chain-coverage: this verifies Base (eip155:8453) only - the chain RAEN walls settle on."
+  ],
+  "verified_walls": [
+    {
+      "svc": "royal-ruby",
+      "route": "/api/law-lookup",
+      "http": 402,
+      "payto": "0x9b8a27e03ceba490953cda8ab1291c0e13baf72f",
+      "payto_role": "CANONICAL",
+      "network": "eip155:8453",
+      "scheme": "exact",
+      "amount_usd": 0.05,
+      "amount_atomic": 50000,
+      "ok": true
+    },
+    {
+      "svc": "contract-eye",
+      "route": "/api/analyze-contract",
+      "http": 402,
+      "payto": "0x9b8a27e03CEbA490953cDa8AB1291c0E13bAf72f",
+      "payto_role": "CANONICAL",
+      "network": "eip155:8453",
+      "scheme": "exact",
+      "amount_usd": 0.005,
+      "amount_atomic": 5000,
+      "ok": true
+    },
+    {
+      "svc": "gateway",
+      "route": "/mcp",
+      "http": 402,
+      "payto": "0x9b8a27e03CEbA490953cDa8AB1291c0E13bAf72f",
+      "payto_role": "CANONICAL",
+      "network": "eip155:8453",
+      "scheme": "exact",
+      "amount_usd": 0.05,
+      "amount_atomic": 50000,
+      "ok": true
+    }
+  ],
+  "advertised_walls": [
+    {
+      "service": "rae-fleet-router",
+      "method": "POST",
+      "path": "/api/fleet-bundle",
+      "advertised_usd": 0.07,
+      "text": "rae-fleet-router \u2014 POST /api/fleet-bundle ($0.07)",
+      "status": "NOT VERIFIED (frozen)",
+      "live_usd": null,
+      "price_drift": null,
+      "payto_role": null
+    },
+    {
+      "service": "rae-fleet-router",
+      "method": "POST",
+      "path": "/api/bundle/market-starter",
+      "advertised_usd": 0.02,
+      "text": "rae-fleet-router \u2014 POST /api/bundle/market-starter ($0.02)",
+      "status": "NOT VERIFIED (frozen)",
+      "live_usd": null,
+      "price_drift": null,
+      "payto_role": null
+    },
+    {
+      "service": "rae-fleet-router",
+      "method": "POST",
+      "path": "/api/bundle/market-intel-trio",
+      "advertised_usd": 0.05,
+      "text": "rae-fleet-router \u2014 POST /api/bundle/market-intel-trio ($0.05)",
+      "status": "NOT VERIFIED (frozen)",
+      "live_usd": null,
+      "price_drift": null,
+      "payto_role": null
+    },
+    {
+      "service": "rae-fleet-router",
+      "method": "POST",
+      "path": "/api/bundle/full-fleet-sampler",
+      "advertised_usd": 0.06,
+      "text": "rae-fleet-router \u2014 POST /api/bundle/full-fleet-sampler ($0.06)",
+      "status": "NOT VERIFIED (frozen)",
+      "live_usd": null,
+      "price_drift": null,
+      "payto_role": null
+    },
+    {
+      "service": "dispatch-x402",
+      "method": "POST",
+      "path": "/dispatch",
+      "advertised_usd": 0.5,
+      "text": "dispatch-x402 \u2014 POST /dispatch ($0.50)",
+      "status": "NOT VERIFIED (frozen)",
+      "live_usd": null,
+      "price_drift": null,
+      "payto_role": null
+    },
+    {
+      "service": "dispute-forge-x402",
+      "method": "POST",
+      "path": "/api/dispute-pack",
+      "advertised_usd": 0.75,
+      "text": "dispute-forge-x402 \u2014 POST /api/dispute-pack ($0.75)",
+      "status": "NOT VERIFIED (frozen)",
+      "live_usd": null,
+      "price_drift": null,
+      "payto_role": null
+    },
+    {
+      "service": "escrow-x402",
+      "method": "POST",
+      "path": "/api/escrow/create",
+      "advertised_usd": 0.05,
+      "text": "escrow-x402 \u2014 POST /api/escrow/create ($0.05)",
+      "status": "NOT VERIFIED (frozen)",
+      "live_usd": null,
+      "price_drift": null,
+      "payto_role": null
+    },
+    {
+      "service": "nft-alpha-x402",
+      "method": "POST",
+      "path": "/api/nft-signal",
+      "advertised_usd": 0.02,
+      "text": "nft-alpha-x402 \u2014 POST /api/nft-signal ($0.02)",
+      "status": "NOT VERIFIED (frozen)",
+      "live_usd": null,
+      "price_drift": null,
+      "payto_role": null
+    },
+    {
+      "service": "power-pack-x402",
+      "method": "POST",
+      "path": "/api/score-email",
+      "advertised_usd": 0.01,
+      "text": "power-pack-x402 \u2014 POST /api/score-email ($0.01)",
+      "status": "NOT VERIFIED (frozen)",
+      "live_usd": null,
+      "price_drift": null,
+      "payto_role": null
+    },
+    {
+      "service": "royal-feel-x402",
+      "method": "POST",
+      "path": "/api/lint-copy",
+      "advertised_usd": 2.0,
+      "text": "royal-feel-x402 \u2014 POST /api/lint-copy ($2.00)",
+      "status": "NOT VERIFIED (frozen)",
+      "live_usd": null,
+      "price_drift": null,
+      "payto_role": null
+    },
+    {
+      "service": "royal-feel-x402",
+      "method": "POST",
+      "path": "/copy/lint",
+      "advertised_usd": 2.0,
+      "text": "royal-feel-x402 \u2014 POST /copy/lint ($2.00)",
+      "status": "NOT VERIFIED (frozen)",
+      "live_usd": null,
+      "price_drift": null,
+      "payto_role": null
+    },
+    {
+      "service": "royal-feel-x402",
+      "method": "POST",
+      "path": "/api/batch-lint",
+      "advertised_usd": 5.0,
+      "text": "royal-feel-x402 \u2014 POST /api/batch-lint ($5.00)",
+      "status": "NOT VERIFIED (frozen)",
+      "live_usd": null,
+      "price_drift": null,
+      "payto_role": null
+    },
+    {
+      "service": "royal-ruby-x402",
+      "method": "POST",
+      "path": "/api/law-lookup",
+      "advertised_usd": 0.25,
+      "text": "royal-ruby-x402 \u2014 POST /api/law-lookup ($0.25)",
+      "status": "VERIFIED",
+      "live_usd": 0.05,
+      "price_drift": true,
+      "payto_role": "CANONICAL"
+    },
+    {
+      "service": "suprapack-x402",
+      "method": "POST",
+      "path": "/api/find-skill",
+      "advertised_usd": 0.03,
+      "text": "suprapack-x402 \u2014 POST /api/find-skill ($0.03)",
+      "status": "NOT VERIFIED (frozen)",
+      "live_usd": null,
+      "price_drift": null,
+      "payto_role": null
+    },
+    {
+      "service": "suprapack-x402",
+      "method": "POST",
+      "path": "/api/get-skill",
+      "advertised_usd": 0.03,
+      "text": "suprapack-x402 \u2014 POST /api/get-skill ($0.03)",
+      "status": "NOT VERIFIED (frozen)",
+      "live_usd": null,
+      "price_drift": null,
+      "payto_role": null
+    },
+    {
+      "service": "suprapack-x402",
+      "method": "POST",
+      "path": "/api/list-top",
+      "advertised_usd": 0.03,
+      "text": "suprapack-x402 \u2014 POST /api/list-top ($0.03)",
+      "status": "NOT VERIFIED (frozen)",
+      "live_usd": null,
+      "price_drift": null,
+      "payto_role": null
+    },
+    {
+      "service": "tradingagents-x402",
+      "method": "POST",
+      "path": "/api/analyze-arbitrage",
+      "advertised_usd": 0.05,
+      "text": "tradingagents-x402 \u2014 POST /api/analyze-arbitrage ($0.05)",
+      "status": "NOT VERIFIED (frozen)",
+      "live_usd": null,
+      "price_drift": null,
+      "payto_role": null
+    },
+    {
+      "service": "tradingagents-x402",
+      "method": "POST",
+      "path": "/api/analyze-ticker",
+      "advertised_usd": 0.05,
+      "text": "tradingagents-x402 \u2014 POST /api/analyze-ticker ($0.05)",
+      "status": "NOT VERIFIED (frozen)",
+      "live_usd": null,
+      "price_drift": null,
+      "payto_role": null
+    },
+    {
+      "service": "vault-pro-x402",
+      "method": "POST",
+      "path": "/api/scaffold-project",
+      "advertised_usd": 0.05,
+      "text": "vault-pro-x402 \u2014 POST /api/scaffold-project ($0.05)",
+      "status": "NOT VERIFIED (frozen)",
+      "live_usd": null,
+      "price_drift": null,
+      "payto_role": null
+    },
+    {
+      "service": "vault-pro-x402",
+      "method": "POST",
+      "path": "/api/scaffold-agent",
+      "advertised_usd": 0.05,
+      "text": "vault-pro-x402 \u2014 POST /api/scaffold-agent ($0.05)",
+      "status": "NOT VERIFIED (frozen)",
+      "live_usd": null,
+      "price_drift": null,
+      "payto_role": null
+    },
+    {
+      "service": "raen-portfolio-x402",
+      "method": "POST",
+      "path": "/api/portfolio",
+      "advertised_usd": 0.01,
+      "text": "raen-portfolio-x402 \u2014 POST /api/portfolio ($0.01)",
+      "status": "NOT VERIFIED (frozen)",
+      "live_usd": null,
+      "price_drift": null,
+      "payto_role": null
+    }
+  ],
+  "drift_count": 1
+}
