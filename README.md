@@ -119,6 +119,8 @@ you settled but got no payload.
 
 38. **[Consumer documentation copy pack](recipes/38-consumer-doc-pack.md)** — closes TIFF-PLAN-17: a buyer-facing doc pack whose request shapes come from each seller's live manifest (`extensions.bazaar`) and whose price / payTo / network / scheme come only from a fresh live 402. Cross-checks manifest + OpenAPI + live challenge; reports `VALIDATION_GATED` rather than inventing a schema verdict (the 402 precedes body validation). 2026-11-26: 3 kept-live walls CLEAN and canonical ($0.05 / $0.005 / $0.05, eip155:8453, exact), 0 price drift; gateway `tools/list` correctly distinguished as free discovery. Snapshot `registry/consumer-doc-pack.json` + buyer copy `registry/consumer-doc-pack.md`; read-only, no deploy.
 
+39. **[Pay with USDC — live-grounded developer documentation](recipes/39-developer-docs.md)** — closes TIFF-PLAN-95: a quickstart + API reference + 3 integration examples whose prices / payTo / request shapes are read ONLY from a fresh live 402 and the seller's own manifest. 2026-11-26: 3 kept-live walls CLEAN and canonical ($0.05 / $0.005 / $0.05, eip155:8453, exact), 0 price drift; gateway `tools/list` flagged as free discovery. Snapshot `registry/developer-docs.json` + buyer doc `registry/developer-docs.md`; read-only, no deploy.
+
 ## MCP registry
 
 RAEN's MCP gateway is listed at `io.github.bshelby88/raen-mcp` on the MCP Registry.

@@ -1,0 +1,114 @@
+{
+  "bundle": "RAEN 'Pay with USDC' developer documentation pack",
+  "version": 1,
+  "tool": "developer-docs/1.0",
+  "generated_utc": "2026-11-26T08:53:06.603269Z",
+  "canonical_payto": "0x9b8a27e03ceba490953cda8ab1291c0e13baf72f",
+  "chain": "eip155:8453",
+  "verdict": "CLEAN",
+  "walls_verified": 3,
+  "price_drift": 0,
+  "truth_notes": [
+    "Price truth = a fresh live 402 challenge (accepts[0].amount), never a hand-typed or cached figure.",
+    "payTo truth = the full 42-character canonical address, compared case-insensitively (homoglyph-safe).",
+    "A 402 challenge is a demand signal, not a sale: most challenges are scanners/bots (Recipe 36).",
+    "Internal self-pays (AgentCash) are not external revenue; fleet external revenue is $0.00 unless the chain says otherwise.",
+    "On x402 paid walls the 402 precedes body validation: request shapes here are the seller's published manifest examples, not an observed validation result.",
+    "Some surfaces expose a FREE discovery call that returns 200 with no challenge (e.g. gateway tools/list); the paid wall is tools/call.",
+    "This pack verifies Base (eip155:8453) only \u2014 the chain RAEN walls settle on. Frozen services are never probed (BURN FREEZE).",
+    "Code examples are illustrative: they contain NO real key and sign NOTHING. Payment happens only when the buyer attaches their own X-PAYMENT."
+  ],
+  "drift": [],
+  "walls": [
+    {
+      "svc": "royal-ruby",
+      "base": "https://royal-ruby-x402.fly.dev",
+      "route": "/api/law-lookup",
+      "method": "POST",
+      "manifest_status": 200,
+      "request_fields": [
+        "scope",
+        "state",
+        "topic"
+      ],
+      "request_example": {
+        "topic": "credit-report disputes for collection accounts",
+        "state": "LA",
+        "scope": "both"
+      },
+      "manifest_price": "$0.001",
+      "challenge_status": 402,
+      "amount_atomic": 50000,
+      "price_usd": 0.05,
+      "payto": "0x9b8a27e03ceba490953cda8ab1291c0e13baf72f",
+      "payto_role": "CANONICAL",
+      "network": "eip155:8453",
+      "scheme": "exact",
+      "openapi_status": 200,
+      "documented": true
+    },
+    {
+      "svc": "contract-eye",
+      "base": "https://contract-eye-x402.fly.dev",
+      "route": "/api/analyze-contract",
+      "method": "POST",
+      "manifest_status": 200,
+      "request_fields": [
+        "focus",
+        "text"
+      ],
+      "request_example": {
+        "text": "This agreement auto-renews every twelve months unless cancelled sixty days prior.",
+        "focus": [
+          "renewal",
+          "liability"
+        ]
+      },
+      "manifest_price": "$0.005",
+      "challenge_status": 402,
+      "amount_atomic": 5000,
+      "price_usd": 0.005,
+      "payto": "0x9b8a27e03CEbA490953cDa8AB1291c0E13bAf72f",
+      "payto_role": "CANONICAL",
+      "network": "eip155:8453",
+      "scheme": "exact",
+      "openapi_status": 200,
+      "documented": true
+    },
+    {
+      "svc": "gateway",
+      "base": "https://raen-mcp-gateway.fly.dev",
+      "route": "/mcp",
+      "method": "POST",
+      "free_discovery": "tools/list (free, no challenge)",
+      "manifest_status": 200,
+      "request_fields": [
+        "id",
+        "jsonrpc",
+        "method",
+        "params"
+      ],
+      "request_example": {
+        "jsonrpc": "2.0",
+        "id": 1,
+        "method": "tools/call",
+        "params": {
+          "name": "raen_law_lookup",
+          "arguments": {
+            "query": "FCRA"
+          }
+        }
+      },
+      "manifest_price": "$0.05",
+      "challenge_status": 402,
+      "amount_atomic": 50000,
+      "price_usd": 0.05,
+      "payto": "0x9b8a27e03CEbA490953cDa8AB1291c0E13bAf72f",
+      "payto_role": "CANONICAL",
+      "network": "eip155:8453",
+      "scheme": "exact",
+      "openapi_status": 200,
+      "documented": true
+    }
+  ]
+}
