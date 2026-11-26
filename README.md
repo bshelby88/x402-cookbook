@@ -111,6 +111,7 @@ you settled but got no payload.
 30. **[Intent-to-endpoint matcher](recipes/30-intent-match.md)** — turns a buyer's plain-language intent into a ranked list of actually-buyable endpoints with copy-paste unpaid curls, sourced from the live catalog.
 31. **[Catalog parity audit](recipes/31-catalog-parity.md)** — finds live canonical walls the router catalog forgot to advertise; 92.3% coverage on 2026-11-25, one real gap (`contract-eye`), with a CI `--fail-on-gap` mode.
 32. **[Buyer failure triage + live doc-truth audit](recipes/32-failure-triage.md)** — maps any observed buyer HTTP outcome to a `do_not_repay` verdict (the silent-rechallenge / double-pay trap), and audits the seven live router docs for stale retry headers, stale down-claims and stale verification stamps. 9 findings on 2026-11-26; read-only, no signing.
+33. **[Canonical address guard](recipes/33-address-guard.md)** — classifies every `0x…` address in any text/file/URL against the canonical / retired / AgentCash roles and flags poison homoglyphs within Hamming distance ≤2. Hard-block before paying a lookalike; CI-safe (exit 1 on RETIRED/POISON).
 
 ## MCP registry
 
