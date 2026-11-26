@@ -1,0 +1,326 @@
+{
+  "tool": "llms-lint/1.0",
+  "canonical_payto": "0x9b8a27e03ceba490953cda8ab1291c0e13baf72f",
+  "surfaces": {
+    "router": {
+      "url": "https://rae-fleet-router.fly.dev/llms.txt",
+      "http": 200,
+      "bytes": 2984,
+      "canonical_address_hits": 0,
+      "addresses_in_payment_context": [],
+      "other_addresses": [],
+      "prices": [
+        "0.01",
+        "0.02",
+        "0.03",
+        "0.04",
+        "0.35"
+      ]
+    },
+    "royal-ruby": {
+      "url": "https://royal-ruby-x402.fly.dev/llms.txt",
+      "http": 200,
+      "bytes": 2545,
+      "canonical_address_hits": 1,
+      "addresses_in_payment_context": [
+        {
+          "address": "0x9b8a27e03ceba490953cda8ab1291c0e13baf72f",
+          "role": "CANONICAL"
+        }
+      ],
+      "other_addresses": [
+        {
+          "address": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
+          "role": "UNKNOWN"
+        }
+      ],
+      "prices": [
+        "0",
+        "0.001",
+        "0.005",
+        "0.01",
+        "0.05",
+        "0.10",
+        "2",
+        "5.00"
+      ]
+    },
+    "contract-eye": {
+      "url": "https://contract-eye-x402.fly.dev/llms.txt",
+      "http": 200,
+      "bytes": 2652,
+      "canonical_address_hits": 0,
+      "addresses_in_payment_context": [],
+      "other_addresses": [],
+      "prices": [
+        "0.001",
+        "0.005",
+        "0.01",
+        "0.02",
+        "0.03",
+        "0.05",
+        "0.25",
+        "0.50",
+        "0.75",
+        "1.00",
+        "2.00",
+        "5.00"
+      ],
+      "listed_services": {
+        "suprapack": "0.03",
+        "power-pack": "0.01",
+        "vault-pro": "0.05",
+        "tradingagents": "0.05",
+        "nft-alpha": "0.02",
+        "lingua": "1.00",
+        "nanobanana": "0.01",
+        "royal-ruby": "0.25",
+        "escrow": "0.05",
+        "royal-feel": "2.00",
+        "dispatch": "0.50",
+        "briefsnap": "1.00",
+        "dispute-forge": "0.75",
+        "sentry-forge": "5.00",
+        "opensea-data": "0.01"
+      }
+    },
+    "nanobanana": {
+      "url": "https://nanobanana-x402.fly.dev/llms.txt",
+      "http": 200,
+      "bytes": 2668,
+      "canonical_address_hits": 0,
+      "addresses_in_payment_context": [],
+      "other_addresses": [],
+      "prices": [
+        "0.01",
+        "0.02",
+        "0.03",
+        "0.05",
+        "0.25",
+        "0.50",
+        "0.75",
+        "1.00",
+        "2.00",
+        "5.00"
+      ],
+      "listed_services": {
+        "suprapack": "0.03",
+        "power-pack": "0.01",
+        "vault-pro": "0.05",
+        "tradingagents": "0.05",
+        "nft-alpha": "0.02",
+        "lingua": "1.00",
+        "royal-ruby": "0.25",
+        "escrow": "0.05",
+        "royal-feel": "2.00",
+        "dispatch": "0.50",
+        "contract-eye": "0.05",
+        "briefsnap": "1.00",
+        "dispute-forge": "0.75",
+        "sentry-forge": "5.00",
+        "opensea-data": "0.01"
+      }
+    },
+    "sentry-forge": {
+      "url": "https://sentry-forge-x402.fly.dev/llms.txt",
+      "http": 200,
+      "bytes": 2655,
+      "canonical_address_hits": 0,
+      "addresses_in_payment_context": [],
+      "other_addresses": [],
+      "prices": [
+        "0.01",
+        "0.02",
+        "0.03",
+        "0.05",
+        "0.25",
+        "0.50",
+        "0.75",
+        "1.00",
+        "2.00",
+        "5.00"
+      ],
+      "listed_services": {
+        "suprapack": "0.03",
+        "power-pack": "0.01",
+        "vault-pro": "0.05",
+        "tradingagents": "0.05",
+        "nft-alpha": "0.02",
+        "lingua": "1.00",
+        "nanobanana": "0.01",
+        "royal-ruby": "0.25",
+        "escrow": "0.05",
+        "royal-feel": "2.00",
+        "dispatch": "0.50",
+        "contract-eye": "0.05",
+        "briefsnap": "1.00",
+        "dispute-forge": "0.75",
+        "opensea-data": "0.01"
+      }
+    },
+    "gateway": {
+      "url": "https://raen-mcp-gateway.fly.dev/llms.txt",
+      "http": 200,
+      "bytes": 2449,
+      "canonical_address_hits": 0,
+      "addresses_in_payment_context": [
+        {
+          "address": "0xfbc0eb7811d477e55261d956df39f0046e192240",
+          "role": "INTERNAL_AGENTCASH"
+        }
+      ],
+      "other_addresses": [
+        {
+          "address": "0x8004A169FB4a3325136EB29fA0ceB6D2e539a432",
+          "role": "UNKNOWN"
+        },
+        {
+          "address": "0x7861db4efc14a1ed5dd8c96c528a3796560f1393",
+          "role": "RETIRED"
+        }
+      ],
+      "prices": [
+        "0"
+      ]
+    }
+  },
+  "live_402": {
+    "contract-eye": {
+      "http": 402,
+      "amount_micro": "5000",
+      "price_usd": "0.005",
+      "payTo": "0x9b8a27e03CEbA490953cDa8AB1291c0E13bAf72f",
+      "payTo_role": "CANONICAL",
+      "network": "eip155:8453"
+    },
+    "royal-ruby": {
+      "http": 402,
+      "amount_micro": "50000",
+      "price_usd": "0.05",
+      "payTo": "0x9b8a27e03ceba490953cda8ab1291c0e13baf72f",
+      "payTo_role": "CANONICAL",
+      "network": "eip155:8453"
+    },
+    "gateway": {
+      "http": 402,
+      "amount_micro": "50000",
+      "price_usd": "0.05",
+      "payTo": "0x9b8a27e03CEbA490953cDa8AB1291c0E13bAf72f",
+      "payTo_role": "CANONICAL",
+      "network": "eip155:8453"
+    }
+  },
+  "doc_prices": {
+    "suprapack": [
+      "0.03"
+    ],
+    "power-pack": [
+      "0.01"
+    ],
+    "vault-pro": [
+      "0.05"
+    ],
+    "tradingagents": [
+      "0.05"
+    ],
+    "nft-alpha": [
+      "0.02"
+    ],
+    "lingua": [
+      "1.00"
+    ],
+    "nanobanana": [
+      "0.01"
+    ],
+    "royal-ruby": [
+      "0.25"
+    ],
+    "escrow": [
+      "0.05"
+    ],
+    "royal-feel": [
+      "2.00"
+    ],
+    "dispatch": [
+      "0.50"
+    ],
+    "briefsnap": [
+      "1.00"
+    ],
+    "dispute-forge": [
+      "0.75"
+    ],
+    "sentry-forge": [
+      "5.00"
+    ],
+    "opensea-data": [
+      "0.01"
+    ],
+    "contract-eye": [
+      "0.05"
+    ]
+  },
+  "findings": [
+    {
+      "severity": "GAP",
+      "surface": "router",
+      "type": "MISSING_CANONICAL_PAYTO",
+      "detail": "no canonical payTo in buyer discovery doc; buyer cannot verify destination"
+    },
+    {
+      "severity": "GAP",
+      "surface": "contract-eye",
+      "type": "MISSING_CANONICAL_PAYTO",
+      "detail": "no canonical payTo in buyer discovery doc; buyer cannot verify destination"
+    },
+    {
+      "severity": "GAP",
+      "surface": "nanobanana",
+      "type": "MISSING_CANONICAL_PAYTO",
+      "detail": "no canonical payTo in buyer discovery doc; buyer cannot verify destination"
+    },
+    {
+      "severity": "GAP",
+      "surface": "sentry-forge",
+      "type": "MISSING_CANONICAL_PAYTO",
+      "detail": "no canonical payTo in buyer discovery doc; buyer cannot verify destination"
+    },
+    {
+      "severity": "GAP",
+      "surface": "gateway",
+      "type": "MISSING_CANONICAL_PAYTO",
+      "detail": "no canonical payTo in buyer discovery doc; buyer cannot verify destination"
+    },
+    {
+      "severity": "DRIFT",
+      "surface": "gateway",
+      "type": "NONCANONICAL_PAYMENT_ADDRESS",
+      "role": "INTERNAL_AGENTCASH",
+      "address": "0xfbc0eb7811d477e55261d956df39f0046e192240",
+      "detail": "payment-context address is not canonical; misrouting risk"
+    },
+    {
+      "severity": "GAP",
+      "surface": "contract-eye",
+      "type": "STALE_DOC_PRICE",
+      "doc_price_usd": "0.05",
+      "live_price_usd": "0.005",
+      "detail": "directory doc price disagrees with live 402; live challenge authoritative"
+    },
+    {
+      "severity": "GAP",
+      "surface": "royal-ruby",
+      "type": "STALE_DOC_PRICE",
+      "doc_price_usd": "0.25",
+      "live_price_usd": "0.05",
+      "detail": "directory doc price disagrees with live 402; live challenge authoritative"
+    }
+  ],
+  "verdict": "DRIFT",
+  "summary": {
+    "surfaces_up": 6,
+    "surfaces_total": 6,
+    "drift": 1,
+    "gaps": 7
+  }
+}
