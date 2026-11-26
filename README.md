@@ -112,6 +112,7 @@ you settled but got no payload.
 31. **[Catalog parity audit](recipes/31-catalog-parity.md)** — finds live canonical walls the router catalog forgot to advertise; 92.3% coverage on 2026-11-25, one real gap (`contract-eye`), with a CI `--fail-on-gap` mode.
 32. **[Buyer failure triage + live doc-truth audit](recipes/32-failure-triage.md)** — maps any observed buyer HTTP outcome to a `do_not_repay` verdict (the silent-rechallenge / double-pay trap), and audits the seven live router docs for stale retry headers, stale down-claims and stale verification stamps. 9 findings on 2026-11-26; read-only, no signing.
 33. **[Canonical address guard](recipes/33-address-guard.md)** — classifies every `0x…` address in any text/file/URL against the canonical / retired / AgentCash roles and flags poison homoglyphs within Hamming distance ≤2. Hard-block before paying a lookalike; CI-safe (exit 1 on RETIRED/POISON).
+34. **[Broker presence monitor](recipes/34-broker-presence.md)** — asks the four public discovery surfaces (agent402.tools, 402index, payapi.market, CDP Bazaar) where machine buyers actually look whether a seller is listed, *claimed*, dispatch-eligible and canonical-payTo; exact-host match only, UUID GET for pending review, bounded Bazaar scan, exit 1 on payTo drift. 2026-11-26: 14 exact 402index rows, 3 payapi listings all Unclaimed, BriefSnap UUIDs still not live, `routerDispatchEligible: false` on all five sellers. Absence is a GAP, not a failure; claiming is owner-lane.
 
 ## MCP registry
 
