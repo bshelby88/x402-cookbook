@@ -1,0 +1,99 @@
+{
+  "version": "dev-education/1.0",
+  "generated_at": "2026-11-26T10:00:48.617417Z",
+  "verdict": "CLEAN",
+  "drift": [],
+  "walls": [
+    {
+      "svc": "royal-ruby",
+      "base": "https://royal-ruby-x402.fly.dev",
+      "route": "/api/law-lookup",
+      "method": "POST",
+      "manifest_status": 200,
+      "request_fields": [
+        "scope",
+        "state",
+        "topic"
+      ],
+      "request_example": {
+        "topic": "credit-report disputes for collection accounts",
+        "state": "LA",
+        "scope": "both"
+      },
+      "challenge_status": 402,
+      "amount_atomic": 50000,
+      "price_usd": 0.05,
+      "payto": "0x9b8a27e03ceba490953cda8ab1291c0e13baf72f",
+      "network": "eip155:8453",
+      "scheme": "exact",
+      "openapi_status": 200,
+      "documented": true
+    },
+    {
+      "svc": "contract-eye",
+      "base": "https://contract-eye-x402.fly.dev",
+      "route": "/api/analyze-contract",
+      "method": "POST",
+      "manifest_status": 200,
+      "request_fields": [
+        "focus",
+        "text"
+      ],
+      "request_example": {
+        "text": "This agreement auto-renews every twelve months unless cancelled sixty days prior.",
+        "focus": [
+          "renewal",
+          "liability"
+        ]
+      },
+      "challenge_status": 402,
+      "amount_atomic": 5000,
+      "price_usd": 0.005,
+      "payto": "0x9b8a27e03CEbA490953cDa8AB1291c0E13bAf72f",
+      "network": "eip155:8453",
+      "scheme": "exact",
+      "openapi_status": 200,
+      "documented": true
+    },
+    {
+      "svc": "gateway",
+      "base": "https://raen-mcp-gateway.fly.dev",
+      "route": "/mcp",
+      "method": "POST",
+      "free_discovery": "tools/list (free, no challenge)",
+      "manifest_status": 200,
+      "request_fields": [
+        "id",
+        "jsonrpc",
+        "method",
+        "params"
+      ],
+      "request_example": {
+        "jsonrpc": "2.0",
+        "id": 1,
+        "method": "tools/call",
+        "params": {
+          "name": "raen_law_lookup",
+          "arguments": {
+            "query": "FCRA"
+          }
+        }
+      },
+      "challenge_status": 402,
+      "amount_atomic": 50000,
+      "price_usd": 0.05,
+      "payto": "0x9b8a27e03CEbA490953cDa8AB1291c0E13bAf72f",
+      "network": "eip155:8453",
+      "scheme": "exact",
+      "openapi_status": 200,
+      "documented": true
+    }
+  ],
+  "honesty": [
+    "A 402 challenge is a demand signal, not a sale \u2014 most challenges are scanners/bots.",
+    "Internal AgentCash self-pays are not external revenue; fleet external revenue is $0.00 unless the chain says otherwise.",
+    "Discovery (manifest, tools/list) is free; only the paid wall returns 402.",
+    "The 402 precedes body validation on these walls \u2014 request shapes are the seller's published examples, not an observed 400.",
+    "Sign nothing in this document: every code example uses the buyer's OWN wallet and contains no real key."
+  ]
+}

@@ -121,6 +121,8 @@ you settled but got no payload.
 
 39. **[Pay with USDC — live-grounded developer documentation](recipes/39-developer-docs.md)** — closes TIFF-PLAN-95: a quickstart + API reference + 3 integration examples whose prices / payTo / request shapes are read ONLY from a fresh live 402 and the seller's own manifest. 2026-11-26: 3 kept-live walls CLEAN and canonical ($0.05 / $0.005 / $0.05, eip155:8453, exact), 0 price drift; gateway `tools/list` flagged as free discovery. Snapshot `registry/developer-docs.json` + buyer doc `registry/developer-docs.md`; read-only, no deploy.
 
+40. **[x402 for Developers — live-grounded three-part course](recipes/40-dev-education.md)** — closes POST-102: a 3-article course (introduction, integration, advanced patterns) generated ONLY from fresh unpaid 402s and the sellers' manifests — every price / payTo / request shape is live-read, never hand-typed. 2026-11-26: 3 kept-live walls CLEAN and canonical ($0.05 / $0.005 / $0.05, eip155:8453, exact), 0 drift; gateway `tools/list` flagged as free discovery. Snapshot `registry/dev-education.json`; read-only, no deploy.
+
 ## MCP registry
 
 RAEN's MCP gateway is listed at `io.github.bshelby88/raen-mcp` on the MCP Registry.
