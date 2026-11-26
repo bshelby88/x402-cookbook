@@ -1,0 +1,114 @@
+{
+  "version": "client-bootstrap/1.0",
+  "generated_at": "2026-11-26T14:42:27.531968+00:00",
+  "scope": "kept-live walls only; unpaid POST; no signing, no X-PAYMENT, no funds, no deploy",
+  "canonical_payTo": "0x9b8a27e03ceba490953cda8ab1291c0e13baf72f",
+  "walls": {
+    "royal-ruby": {
+      "url": "https://royal-ruby-x402.fly.dev/api/law-lookup",
+      "method": "POST",
+      "request_body": {
+        "query": "x402 bootstrap probe"
+      },
+      "http_status": 402,
+      "live_price_usd": 0.005,
+      "amount_atomic": 5000,
+      "asset": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
+      "scheme": "exact",
+      "network": "eip155:8453",
+      "payTo": "0x9b8a27e03ceba490953cda8ab1291c0e13baf72f",
+      "canonical": true,
+      "checks": {
+        "v2": true,
+        "scheme": true,
+        "network": true,
+        "payTo": true,
+        "amount": true
+      },
+      "detail": "canonical"
+    },
+    "contract-eye": {
+      "url": "https://contract-eye-x402.fly.dev/api/analyze-contract",
+      "method": "POST",
+      "request_body": {
+        "text": "x402 bootstrap probe"
+      },
+      "http_status": 402,
+      "live_price_usd": 0.005,
+      "amount_atomic": 5000,
+      "asset": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
+      "scheme": "exact",
+      "network": "eip155:8453",
+      "payTo": "0x9b8a27e03CEbA490953cDa8AB1291c0E13bAf72f",
+      "canonical": true,
+      "checks": {
+        "v2": true,
+        "scheme": true,
+        "network": true,
+        "payTo": true,
+        "amount": true
+      },
+      "detail": "canonical"
+    },
+    "nanobanana": {
+      "url": "https://nanobanana-x402.fly.dev/api/generate-image",
+      "method": "POST",
+      "request_body": {
+        "prompt": "x402 bootstrap probe"
+      },
+      "http_status": 402,
+      "live_price_usd": 0.01,
+      "amount_atomic": 10000,
+      "asset": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
+      "scheme": "exact",
+      "network": "eip155:8453",
+      "payTo": "0x9b8a27e03ceba490953cda8ab1291c0e13baf72f",
+      "canonical": true,
+      "checks": {
+        "v2": true,
+        "scheme": true,
+        "network": true,
+        "payTo": true,
+        "amount": true
+      },
+      "detail": "canonical"
+    },
+    "raen-mcp-gateway": {
+      "url": "https://raen-mcp-gateway.fly.dev/mcp",
+      "method": "POST",
+      "request_body": {
+        "jsonrpc": "2.0",
+        "id": 1,
+        "method": "tools/call",
+        "params": {
+          "name": "raen_law_lookup",
+          "arguments": {
+            "topic": "x402 bootstrap probe"
+          }
+        }
+      },
+      "http_status": 402,
+      "live_price_usd": 0.05,
+      "amount_atomic": 50000,
+      "asset": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
+      "scheme": "exact",
+      "network": "eip155:8453",
+      "payTo": "0x9b8a27e03CEbA490953cDa8AB1291c0E13bAf72f",
+      "canonical": true,
+      "checks": {
+        "v2": true,
+        "scheme": true,
+        "network": true,
+        "payTo": true,
+        "amount": true
+      },
+      "detail": "canonical"
+    }
+  },
+  "summary": {
+    "total": 4,
+    "canonical": 4,
+    "breaks": 0
+  },
+  "verdict": "OK"
+}

@@ -129,6 +129,8 @@ you settled but got no payload.
 
 43. **[Machine-Buyer Readiness Scorecard — one go/no-go number per wall](recipes/43-buyer-readiness.md)** — the whole-buyer-funnel aggregate no other tool gives: one live-read score (0–100) per kept-live wall combining canonical paid challenge (40), manifest (20), discovery doc (20), independent trust (10) and explicit price (10). 2026-11-26: verdict `OK`, 0 paid-path breaks — royal-ruby 90 / contract-eye 80 / nanobanana 80 READY, gateway 70 PARTIAL; all four paid POSTs x402 v2 `exact` `eip155:8453` full canonical payTo with integer `amount` ($0.05/$0.005/$0.01/$0.05). Honest WARNs published (royal-ruby manifest omits price; llms.txt payTo gaps; gateway no Lumi record) — friction, not breaks. CI fails ONLY on a canonical break. Snapshot `registry/buyer-readiness.json` + buyer card `registry/buyer-readiness.md`; read-only, no deploy, no payment.
 
+44. **[Machine-Buyer Client Bootstrap — from live 402 to runnable client code](recipes/44-client-bootstrap.md)** — the last mile no other tool covered: an unpaid POST per kept-live wall, a decoded x402 v2 challenge, and a paste-ready stdlib client skeleton whose price / payTo / network are live-read facts and whose signing step is a stub the buyer fills with their own wallet. 2026-11-26: verdict `OK`, 4/4 walls canonical ($0.005 / $0.005 / $0.01 / $0.05, `exact`, `eip155:8453`, full canonical payTo), 0 breaks; preflight assertion refuses any non-canonical payTo. Snapshot `registry/client-bootstrap.json` + buyer copy `registry/client-bootstrap.md`; read-only, no signing, no X-PAYMENT, no deploy.
+
 ## MCP registry
 
 RAEN's MCP gateway is listed at `io.github.bshelby88/raen-mcp` on the MCP Registry.
