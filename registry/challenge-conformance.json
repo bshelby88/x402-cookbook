@@ -1,0 +1,366 @@
+{
+  "generated_at": "2026-11-26T12:20:42.017687+00:00",
+  "tool": "challenge-conformance.py",
+  "version": 1,
+  "scope": "kept-live paid walls only; unpaid GET/HEAD/POST probes; no signing, no payment, no deploy",
+  "canonical_payTo": "0x9b8a27e03ceba490953cda8ab1291c0e13baf72f",
+  "walls": [
+    {
+      "name": "royal-ruby",
+      "url": "https://royal-ruby-x402.fly.dev/api/law-lookup",
+      "advertised_methods": [
+        "POST"
+      ],
+      "manifest": {
+        "scheme": "exact",
+        "network": "eip155:8453",
+        "payTo": "0x9b8a27e03ceba490953cda8ab1291c0e13baf72f",
+        "price": null,
+        "price_usd": null
+      },
+      "manifest_error": null,
+      "probes": [
+        {
+          "method": "POST",
+          "status": 402,
+          "advertised": true,
+          "checks": {
+            "http_402": true,
+            "decodable_challenge": true,
+            "x402_v2": true,
+            "accepts_nonempty": true
+          },
+          "findings": [],
+          "live": {
+            "scheme": "exact",
+            "network": "eip155:8453",
+            "amount_atomic": 50000,
+            "amount_usd": 0.05,
+            "payTo": "0x9b8a27e03ceba490953cda8ab1291c0e13baf72f",
+            "accepts_count": 1,
+            "resource_url": "https://royal-ruby-x402.fly.dev/api/law-lookup",
+            "maxAmountRequired_present": false
+          },
+          "verdict": "CANONICAL"
+        },
+        {
+          "method": "GET",
+          "status": 402,
+          "advertised": false,
+          "checks": {
+            "http_402": true,
+            "decodable_challenge": false
+          },
+          "findings": [
+            "no payment-required header"
+          ],
+          "verdict": "INVALID_CHALLENGE",
+          "body_excerpt": "{\"ok\":false,\"error\":\"This x402 resource is paid and read via POST.\",\"quote\":{\"method\":\"POST\",\"path\":\"/api/law-lookup\",\"scheme\":\"exact\",\"price\":\"$0.05 (A/B price test: some wallets see $0.03 \u2014 the 402 challenge you receive states the exact p"
+        },
+        {
+          "method": "HEAD",
+          "status": 402,
+          "advertised": false,
+          "checks": {
+            "http_402": true,
+            "decodable_challenge": false
+          },
+          "findings": [
+            "no payment-required header"
+          ],
+          "verdict": "INVALID_CHALLENGE",
+          "body_excerpt": ""
+        }
+      ]
+    },
+    {
+      "name": "contract-eye",
+      "url": "https://contract-eye-x402.fly.dev/api/analyze-contract",
+      "advertised_methods": [
+        "POST"
+      ],
+      "manifest": {
+        "scheme": "exact",
+        "network": "eip155:8453",
+        "payTo": "0x9b8a27e03CEbA490953cDa8AB1291c0E13bAf72f",
+        "price": "$0.005",
+        "price_usd": 0.005
+      },
+      "manifest_error": null,
+      "probes": [
+        {
+          "method": "POST",
+          "status": 402,
+          "advertised": true,
+          "checks": {
+            "http_402": true,
+            "decodable_challenge": true,
+            "x402_v2": true,
+            "accepts_nonempty": true,
+            "manifest_price_parity": true
+          },
+          "findings": [],
+          "live": {
+            "scheme": "exact",
+            "network": "eip155:8453",
+            "amount_atomic": 5000,
+            "amount_usd": 0.005,
+            "payTo": "0x9b8a27e03CEbA490953cDa8AB1291c0E13bAf72f",
+            "accepts_count": 1,
+            "resource_url": "https://contract-eye-x402.fly.dev/api/analyze-contract",
+            "maxAmountRequired_present": false
+          },
+          "verdict": "CANONICAL"
+        },
+        {
+          "method": "GET",
+          "status": 402,
+          "advertised": false,
+          "checks": {
+            "http_402": true,
+            "decodable_challenge": true,
+            "x402_v2": true,
+            "accepts_nonempty": true,
+            "manifest_price_parity": true
+          },
+          "findings": [],
+          "live": {
+            "scheme": "exact",
+            "network": "eip155:8453",
+            "amount_atomic": 5000,
+            "amount_usd": 0.005,
+            "payTo": "0x9b8a27e03CEbA490953cDa8AB1291c0E13bAf72f",
+            "accepts_count": 1,
+            "resource_url": "https://contract-eye-x402.fly.dev/api/analyze-contract",
+            "maxAmountRequired_present": false
+          },
+          "verdict": "CANONICAL"
+        },
+        {
+          "method": "HEAD",
+          "status": 402,
+          "advertised": false,
+          "checks": {
+            "http_402": true,
+            "decodable_challenge": true,
+            "x402_v2": true,
+            "accepts_nonempty": true,
+            "manifest_price_parity": true
+          },
+          "findings": [],
+          "live": {
+            "scheme": "exact",
+            "network": "eip155:8453",
+            "amount_atomic": 5000,
+            "amount_usd": 0.005,
+            "payTo": "0x9b8a27e03CEbA490953cDa8AB1291c0E13bAf72f",
+            "accepts_count": 1,
+            "resource_url": "https://contract-eye-x402.fly.dev/api/analyze-contract",
+            "maxAmountRequired_present": false
+          },
+          "verdict": "CANONICAL"
+        }
+      ]
+    },
+    {
+      "name": "nanobanana",
+      "url": "https://nanobanana-x402.fly.dev/api/generate-image",
+      "advertised_methods": [
+        "POST"
+      ],
+      "manifest": {
+        "scheme": "exact",
+        "network": "eip155:8453",
+        "payTo": "0x9b8a27e03ceba490953cda8ab1291c0e13baf72f",
+        "price": "$0.01",
+        "price_usd": 0.01
+      },
+      "manifest_error": null,
+      "probes": [
+        {
+          "method": "POST",
+          "status": 402,
+          "advertised": true,
+          "checks": {
+            "http_402": true,
+            "decodable_challenge": true,
+            "x402_v2": true,
+            "accepts_nonempty": true,
+            "manifest_price_parity": true
+          },
+          "findings": [],
+          "live": {
+            "scheme": "exact",
+            "network": "eip155:8453",
+            "amount_atomic": 10000,
+            "amount_usd": 0.01,
+            "payTo": "0x9b8a27e03ceba490953cda8ab1291c0e13baf72f",
+            "accepts_count": 1,
+            "resource_url": "https://nanobanana-x402.fly.dev/api/generate-image",
+            "maxAmountRequired_present": false
+          },
+          "verdict": "CANONICAL"
+        },
+        {
+          "method": "GET",
+          "status": 402,
+          "advertised": false,
+          "checks": {
+            "http_402": true,
+            "decodable_challenge": true,
+            "x402_v2": true,
+            "accepts_nonempty": true,
+            "manifest_price_parity": true
+          },
+          "findings": [],
+          "live": {
+            "scheme": "exact",
+            "network": "eip155:8453",
+            "amount_atomic": 10000,
+            "amount_usd": 0.01,
+            "payTo": "0x9b8a27e03ceba490953cda8ab1291c0e13baf72f",
+            "accepts_count": 1,
+            "resource_url": "https://nanobanana-x402.fly.dev/api/generate-image",
+            "maxAmountRequired_present": false
+          },
+          "verdict": "CANONICAL"
+        },
+        {
+          "method": "HEAD",
+          "status": 402,
+          "advertised": false,
+          "checks": {
+            "http_402": true,
+            "decodable_challenge": true,
+            "x402_v2": true,
+            "accepts_nonempty": true,
+            "manifest_price_parity": true
+          },
+          "findings": [],
+          "live": {
+            "scheme": "exact",
+            "network": "eip155:8453",
+            "amount_atomic": 10000,
+            "amount_usd": 0.01,
+            "payTo": "0x9b8a27e03ceba490953cda8ab1291c0e13baf72f",
+            "accepts_count": 1,
+            "resource_url": "https://nanobanana-x402.fly.dev/api/generate-image",
+            "maxAmountRequired_present": false
+          },
+          "verdict": "CANONICAL"
+        }
+      ]
+    },
+    {
+      "name": "raen-mcp-gateway",
+      "url": "https://raen-mcp-gateway.fly.dev/mcp",
+      "advertised_methods": [
+        "POST"
+      ],
+      "manifest": {
+        "scheme": "exact",
+        "network": "eip155:8453",
+        "payTo": "0x9b8a27e03CEbA490953cDa8AB1291c0E13baf72F",
+        "price": "$0.05",
+        "price_usd": 0.05
+      },
+      "manifest_error": null,
+      "probes": [
+        {
+          "method": "POST",
+          "status": 402,
+          "advertised": true,
+          "checks": {
+            "http_402": true,
+            "decodable_challenge": true,
+            "x402_v2": true,
+            "accepts_nonempty": true,
+            "manifest_price_parity": true
+          },
+          "findings": [],
+          "live": {
+            "scheme": "exact",
+            "network": "eip155:8453",
+            "amount_atomic": 50000,
+            "amount_usd": 0.05,
+            "payTo": "0x9b8a27e03CEbA490953cDa8AB1291c0E13bAf72f",
+            "accepts_count": 1,
+            "resource_url": "https://raen-mcp-gateway.fly.dev/mcp",
+            "maxAmountRequired_present": false
+          },
+          "verdict": "CANONICAL"
+        },
+        {
+          "method": "GET",
+          "status": 402,
+          "advertised": false,
+          "checks": {
+            "http_402": true,
+            "decodable_challenge": true,
+            "x402_v2": true,
+            "accepts_nonempty": true,
+            "manifest_price_parity": true
+          },
+          "findings": [],
+          "live": {
+            "scheme": "exact",
+            "network": "eip155:8453",
+            "amount_atomic": 50000,
+            "amount_usd": 0.05,
+            "payTo": "0x9b8a27e03CEbA490953cDa8AB1291c0E13bAf72f",
+            "accepts_count": 1,
+            "resource_url": "https://raen-mcp-gateway.fly.dev/mcp",
+            "maxAmountRequired_present": false
+          },
+          "verdict": "CANONICAL"
+        },
+        {
+          "method": "HEAD",
+          "status": 402,
+          "advertised": false,
+          "checks": {
+            "http_402": true,
+            "decodable_challenge": true,
+            "x402_v2": true,
+            "accepts_nonempty": true,
+            "manifest_price_parity": true
+          },
+          "findings": [],
+          "live": {
+            "scheme": "exact",
+            "network": "eip155:8453",
+            "amount_atomic": 50000,
+            "amount_usd": 0.05,
+            "payTo": "0x9b8a27e03CEbA490953cDa8AB1291c0E13bAf72f",
+            "accepts_count": 1,
+            "resource_url": "https://raen-mcp-gateway.fly.dev/mcp",
+            "maxAmountRequired_present": false
+          },
+          "verdict": "CANONICAL"
+        }
+      ],
+      "free_discovery": {
+        "method": "tools/list",
+        "status": 200,
+        "healthy": true
+      }
+    }
+  ],
+  "findings": [
+    "WARN royal-ruby GET INVALID_CHALLENGE: no payment-required header",
+    "WARN royal-ruby HEAD INVALID_CHALLENGE: no payment-required header",
+    "WARN royal-ruby manifest omits a price for /api/law-lookup -- live 402 is authoritative"
+  ],
+  "summary": {
+    "walls": 4,
+    "verdict_counts": {
+      "CANONICAL": 10,
+      "DRIFT": 0,
+      "INVALID_CHALLENGE": 2,
+      "UNREACHABLE": 0,
+      "NOT_APPLICABLE": 0
+    },
+    "findings": 3,
+    "ci_verdict": "PASS"
+  }
+}

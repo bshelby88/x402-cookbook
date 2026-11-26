@@ -125,6 +125,8 @@ you settled but got no payload.
 
 41. **[Machine-buyer trust coverage — independent verification, honest gaps](recipes/41-trust-coverage.md)** — closes `ERICA-LUMI-CATALOG-GAP`: a live Lumi trust-coverage map across 14 public surfaces plus a canonical-payTo guard on kept-live walls, so a buyer can verify RAEN through a third party without an account. 2026-11-26: 9 `check_first` / 5 `no_data` / 0 verified (test_buys=0 everywhere) — honest discovery GAP published; 3/3 walls canonical and $0 drift. Snapshot `registry/trust-coverage.json` + buyer copy `registry/trust-coverage.md`; read-only, no deploy.
 
+42. **[Challenge Conformance Doctor — can the buyer's client even parse the 402?](recipes/42-challenge-conformance.md)** — a read-only, stdlib-only guard that grades every kept-live paid wall on POST **and** GET/HEAD: decodable `payment-required` header, x402 v2 envelope, canonical payTo, integer `amount`, manifest price parity, and free-discovery stays free. 2026-11-26: 4 walls / 12 probes = 10 `CANONICAL`, 0 `DRIFT`, 2 `INVALID_CHALLENGE` — honest WARN published: royal-ruby GET+HEAD return 402 with NO `payment-required` header (QUOTE-FIX v2 defect family, paid POST path is canonical $0.05) and royal-ruby's manifest omits `price`. 4/4 advertised POST methods canonical, gateway `tools/list` 200. Snapshot `registry/challenge-conformance.json` + buyer copy `registry/challenge-conformance.md`; read-only, no deploy, no payment.
+
 ## MCP registry
 
 RAEN's MCP gateway is listed at `io.github.bshelby88/raen-mcp` on the MCP Registry.
