@@ -1,0 +1,213 @@
+{
+  "tool": "raen-challenge-leaderboard/1.0",
+  "generated_at": "2026-11-26T05:18:57.673617+00:00",
+  "source": "settlement-collector /stats + /ledger.json (tx-gated) and fresh x402 v2 402 decode",
+  "canonical_payto": "0x9b8a27e03ceba490953cda8ab1291c0e13baf72f",
+  "read_only": true,
+  "fleet_24h": {
+    "challenges": 2008,
+    "settled_verified": 2,
+    "failed": 233,
+    "external_revenue_usd": 0,
+    "internal_revenue_usd": 0.002
+  },
+  "ledger": {
+    "settled_tx_count": 45,
+    "settled_tx_count_external": 0,
+    "settled_tx_count_internal": 45,
+    "total_external_usdc": 0,
+    "distinct_external_payers": 0
+  },
+  "leaderboard": [
+    {
+      "service": "contract-eye",
+      "challenges_24h": 646,
+      "settled_verified_24h": 0,
+      "failed_24h": 6,
+      "challenges_all": 4862,
+      "settled_verified_all": 6,
+      "external_revenue_usd": 0,
+      "internal_revenue_usd": 2.2,
+      "last_proof_tx": "0xa677d8d1015c75fd020305575e5f7f9c951dc6e52182117f84b33d2bfef08466",
+      "last_proof_class": "internal",
+      "last_proof_usd": 0.05
+    },
+    {
+      "service": "royal-ruby",
+      "challenges_24h": 552,
+      "settled_verified_24h": 2,
+      "failed_24h": 47,
+      "challenges_all": 5238,
+      "settled_verified_all": 38,
+      "external_revenue_usd": 0,
+      "internal_revenue_usd": 1.606,
+      "last_proof_tx": "0xe052a4648726f12540a17b11f836f552019ce1369e39e8d8504c54e6ae538b33",
+      "last_proof_class": "internal",
+      "last_proof_usd": 0.001
+    },
+    {
+      "service": "nanobanana",
+      "challenges_24h": 339,
+      "settled_verified_24h": 0,
+      "failed_24h": 26,
+      "challenges_all": 2778,
+      "settled_verified_all": 0,
+      "external_revenue_usd": 0,
+      "internal_revenue_usd": 0,
+      "last_proof_tx": null,
+      "last_proof_class": null,
+      "last_proof_usd": null
+    },
+    {
+      "service": "nft-alpha",
+      "challenges_24h": 101,
+      "settled_verified_24h": 0,
+      "failed_24h": 7,
+      "challenges_all": 1009,
+      "settled_verified_all": 0,
+      "external_revenue_usd": 0,
+      "internal_revenue_usd": 0,
+      "last_proof_tx": null,
+      "last_proof_class": null,
+      "last_proof_usd": null
+    },
+    {
+      "service": "vault-pro",
+      "challenges_24h": 91,
+      "settled_verified_24h": 0,
+      "failed_24h": 32,
+      "challenges_all": 829,
+      "settled_verified_all": 0,
+      "external_revenue_usd": 0,
+      "internal_revenue_usd": 0,
+      "last_proof_tx": null,
+      "last_proof_class": null,
+      "last_proof_usd": null
+    },
+    {
+      "service": "dispatch",
+      "challenges_24h": 85,
+      "settled_verified_24h": 0,
+      "failed_24h": 5,
+      "challenges_all": 837,
+      "settled_verified_all": 0,
+      "external_revenue_usd": 0,
+      "internal_revenue_usd": 0,
+      "last_proof_tx": null,
+      "last_proof_class": null,
+      "last_proof_usd": null
+    },
+    {
+      "service": "dispute-forge",
+      "challenges_24h": 54,
+      "settled_verified_24h": 0,
+      "failed_24h": 59,
+      "challenges_all": 118,
+      "settled_verified_all": 0,
+      "external_revenue_usd": 0,
+      "internal_revenue_usd": 0,
+      "last_proof_tx": null,
+      "last_proof_class": null,
+      "last_proof_usd": null
+    },
+    {
+      "service": "escrow",
+      "challenges_24h": 50,
+      "settled_verified_24h": 0,
+      "failed_24h": 5,
+      "challenges_all": 591,
+      "settled_verified_all": 0,
+      "external_revenue_usd": 0,
+      "internal_revenue_usd": 0,
+      "last_proof_tx": null,
+      "last_proof_class": null,
+      "last_proof_usd": null
+    },
+    {
+      "service": "tradingagents",
+      "challenges_24h": 46,
+      "settled_verified_24h": 0,
+      "failed_24h": 26,
+      "challenges_all": 97,
+      "settled_verified_all": 0,
+      "external_revenue_usd": 0,
+      "internal_revenue_usd": 0,
+      "last_proof_tx": null,
+      "last_proof_class": null,
+      "last_proof_usd": null
+    },
+    {
+      "service": "sentry-forge",
+      "challenges_24h": 44,
+      "settled_verified_24h": 0,
+      "failed_24h": 20,
+      "challenges_all": 415,
+      "settled_verified_all": 0,
+      "external_revenue_usd": 0,
+      "internal_revenue_usd": 0,
+      "last_proof_tx": null,
+      "last_proof_class": null,
+      "last_proof_usd": null
+    },
+    {
+      "service": "raen-facilitator-worker",
+      "challenges_24h": 0,
+      "settled_verified_24h": 0,
+      "failed_24h": 0,
+      "challenges_all": 0,
+      "settled_verified_all": 1,
+      "external_revenue_usd": 0,
+      "internal_revenue_usd": 0.001,
+      "last_proof_tx": "0x428ddc362a871203fd7c8201162907627ce605bfe3757cc80e53094bf3435b7a",
+      "last_proof_class": "internal",
+      "last_proof_usd": 0.001
+    }
+  ],
+  "live_402": {
+    "royal-ruby": {
+      "url": "https://royal-ruby-x402.fly.dev/api/law-lookup",
+      "http": 402,
+      "decoded": true,
+      "amount_atomic": 50000,
+      "amount_usd": 0.05,
+      "network": "eip155:8453",
+      "scheme": "exact",
+      "payto": "0x9b8a27e03ceba490953cda8ab1291c0e13baf72f",
+      "payto_role": "CANONICAL",
+      "asset": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913"
+    },
+    "contract-eye": {
+      "url": "https://contract-eye-x402.fly.dev/api/analyze-contract",
+      "http": 402,
+      "decoded": true,
+      "amount_atomic": 5000,
+      "amount_usd": 0.005,
+      "network": "eip155:8453",
+      "scheme": "exact",
+      "payto": "0x9b8a27e03CEbA490953cDa8AB1291c0E13bAf72f",
+      "payto_role": "CANONICAL",
+      "asset": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913"
+    },
+    "gateway": {
+      "url": "https://raen-mcp-gateway.fly.dev/mcp",
+      "http": 402,
+      "decoded": true,
+      "amount_atomic": 50000,
+      "amount_usd": 0.05,
+      "network": "eip155:8453",
+      "scheme": "exact",
+      "payto": "0x9b8a27e03CEbA490953cDa8AB1291c0E13bAf72f",
+      "payto_role": "CANONICAL",
+      "asset": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913"
+    }
+  },
+  "drift": [],
+  "truth_notes": [
+    "Challenges include scanners/bots; they are demand signal, NOT sales.",
+    "Only tx-gated verified settles count; unverified 200s were a phantom-revenue bug (fixed).",
+    "External earned revenue is 0; all 45 settles are internal self-pays from AgentCash.",
+    "Frozen apps are never probed (BURN FREEZE); historical telemetry is labelled as such.",
+    "Live 402 decode wins over every cached price sheet, manifest and marketplace listing."
+  ],
+  "verdict": "CLEAN"
+}
