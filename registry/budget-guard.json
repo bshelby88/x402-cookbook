@@ -1,0 +1,100 @@
+{
+  "tool": "raen-budget-guard",
+  "version": "1.0",
+  "generated_at": "2026-11-26T16:59:19.853347+00:00",
+  "source": "live HTTP 402 payment-required header, base64-decoded (x402 v2); unpaid POST only",
+  "canonical_payto": "0x9b8a27e03ceba490953cda8ab1291c0e13baf72f",
+  "settlement": "USDC on Base (eip155:8453)",
+  "read_only": true,
+  "no_signing": true,
+  "no_funds_moved": true,
+  "budget_usdc": 0.1,
+  "reserve_pct": 10,
+  "usable_budget_usdc": 0.09,
+  "walls_probed": 4,
+  "walls_priced": 4,
+  "drift_count": 0,
+  "total_planned_cost_usdc": 0.07,
+  "verdict": "AFFORDABLE",
+  "walls": [
+    {
+      "name": "royal-ruby",
+      "url": "https://royal-ruby-x402.fly.dev/api/law-lookup",
+      "http_status": 402,
+      "price_usdc": 0.005,
+      "price_atomic": 5000,
+      "payto": "0x9b8a27e03ceba490953cda8ab1291c0e13baf72f",
+      "canonical": true,
+      "scheme": "exact",
+      "network": "eip155:8453",
+      "note": "OK",
+      "planned_calls": 1,
+      "planned_cost_usdc": 0.005,
+      "max_calls_in_budget": 17
+    },
+    {
+      "name": "contract-eye",
+      "url": "https://contract-eye-x402.fly.dev/api/analyze-contract",
+      "http_status": 402,
+      "price_usdc": 0.005,
+      "price_atomic": 5000,
+      "payto": "0x9b8a27e03CEbA490953cDa8AB1291c0E13bAf72f",
+      "canonical": true,
+      "scheme": "exact",
+      "network": "eip155:8453",
+      "note": "OK",
+      "planned_calls": 1,
+      "planned_cost_usdc": 0.005,
+      "max_calls_in_budget": 17
+    },
+    {
+      "name": "nanobanana",
+      "url": "https://nanobanana-x402.fly.dev/api/generate-image",
+      "http_status": 402,
+      "price_usdc": 0.01,
+      "price_atomic": 10000,
+      "payto": "0x9b8a27e03ceba490953cda8ab1291c0e13baf72f",
+      "canonical": true,
+      "scheme": "exact",
+      "network": "eip155:8453",
+      "note": "OK",
+      "planned_calls": 1,
+      "planned_cost_usdc": 0.01,
+      "max_calls_in_budget": 8
+    },
+    {
+      "name": "raen-mcp-gateway",
+      "url": "https://raen-mcp-gateway.fly.dev/mcp",
+      "http_status": 402,
+      "price_usdc": 0.05,
+      "price_atomic": 50000,
+      "payto": "0x9b8a27e03CEbA490953cDa8AB1291c0E13bAf72f",
+      "canonical": true,
+      "scheme": "exact",
+      "network": "eip155:8453",
+      "note": "OK",
+      "planned_calls": 1,
+      "planned_cost_usdc": 0.05,
+      "max_calls_in_budget": 1
+    }
+  ],
+  "agent_policy": {
+    "currency": "USDC",
+    "network": "eip155:8453",
+    "payTo_allowlist": [
+      "0x9b8a27e03ceba490953cda8ab1291c0e13baf72f"
+    ],
+    "budget_usdc": 0.1,
+    "usable_usdc": 0.09,
+    "reserve_pct": 10,
+    "max_per_call_usdc": {
+      "royal-ruby": 0.005,
+      "contract-eye": 0.005,
+      "nanobanana": 0.01,
+      "raen-mcp-gateway": 0.05
+    },
+    "require_canonical_payto": true,
+    "on_challenge_drift": "ABSTAIN",
+    "signing": "buyer-supplied wallet only"
+  }
+}

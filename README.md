@@ -133,6 +133,8 @@ you settled but got no payload.
 
 45. **[Installable Agent Buyer Skill Card — one portable file an agent can install](recipes/45-agent-skillcard.md)** — the 44 tools are reference material an agent must interpret; this one emits a SKILL.md-style card (`registry/agent-skillcard.md`, frontmatter + instructions) that can be dropped into an agent's `skills/` dir or system prompt and followed directly. Live-generated price table, FULL 42-char canonical payTo guard (poison-address safe), EIP-3009 checkout order, degraded-output warning and claims-desk fallback; the card declares the live 402 authoritative over its own timestamped snapshot. 2026-11-26: verdict `OK`, 4/4 walls canonical ($0.005 / $0.005 / $0.01 / $0.05), 0 breaks. Snapshot `registry/agent-skillcard.json`; read-only, no signing, no X-PAYMENT, no deploy, no funds.
 
+46. **[Budget Guard — live-priced spend cap for autonomous buyers](recipes/46-budget-guard.md)** — the acquisition blocker no other tool removes: before an agent signs anything, price a planned basket of calls ONLY from live 402 challenges and get a deterministic AFFORDABLE / OVER_BUDGET verdict, per-wall cost, affordability frontier and a copy-ready JSON budget policy. Full 42-char canonical payTo guard, `exact`/`eip155:8453`/integer-amount enforcement, and a retry/claims reserve (default 10%) so a budgeted agent never abstains by default and never double-pays. 2026-11-26: verdict `AFFORDABLE`, 4/4 walls canonical, 0 drift ($0.005 / $0.005 / $0.01 / $0.05); snapshot `registry/budget-guard.json` + buyer card `registry/budget-guard.md`; read-only, no signing, no X-PAYMENT, no deploy.
+
 ## MCP registry
 
 RAEN's MCP gateway is listed at `io.github.bshelby88/raen-mcp` on the MCP Registry.
