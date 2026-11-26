@@ -1,0 +1,109 @@
+{
+  "generated_utc": "2026-11-26T00:28:55Z",
+  "mode": "audit-docs",
+  "canonical_payto": "0x9b8a27e03ceba490953cda8ab1291c0e13baf72f",
+  "verified_retry_header": "X-PAYMENT",
+  "docs_checked": [
+    {
+      "url": "https://rae-fleet-router.fly.dev/pricing.md",
+      "status": 200,
+      "bytes": 3889
+    },
+    {
+      "url": "https://rae-fleet-router.fly.dev/faq.md",
+      "status": 200,
+      "bytes": 3214
+    },
+    {
+      "url": "https://rae-fleet-router.fly.dev/faq.json",
+      "status": 200,
+      "bytes": 3391
+    },
+    {
+      "url": "https://rae-fleet-router.fly.dev/how-it-works.json",
+      "status": 200,
+      "bytes": 1897
+    },
+    {
+      "url": "https://rae-fleet-router.fly.dev/pay-failed?format=json",
+      "status": 200,
+      "bytes": 5999
+    },
+    {
+      "url": "https://rae-fleet-router.fly.dev/terms.md",
+      "status": 200,
+      "bytes": 3960
+    },
+    {
+      "url": "https://rae-fleet-router.fly.dev/privacy.md",
+      "status": 200,
+      "bytes": 1376
+    }
+  ],
+  "finding_count": 9,
+  "findings": [
+    {
+      "code": "STALE_RETRY_HEADER",
+      "severity": "high",
+      "url": "https://rae-fleet-router.fly.dev/pricing.md",
+      "detail": "Doc teaches PAYMENT-SIGNATURE; live-retry header is X-PAYMENT (silent re-challenge -> double-pay).",
+      "fix": "Replace PAYMENT-SIGNATURE with X-PAYMENT in the doc source and redeploy."
+    },
+    {
+      "code": "STALE_VERIFICATION",
+      "severity": "medium",
+      "url": "https://rae-fleet-router.fly.dev/faq.md",
+      "detail": "10 date stamp(s) older than 7 days; newest-old=2026-09-28",
+      "fix": "Re-probe cited URLs and restamp with same-day verification."
+    },
+    {
+      "code": "STALE_DOWN_CLAIM",
+      "severity": "medium",
+      "url": "https://rae-fleet-router.fly.dev/faq.md",
+      "detail": "Doc lists contract-eye as down; its live manifest is canonical.",
+      "fix": "Remove contract-eye from the down-walls list or re-check the recovery matrix."
+    },
+    {
+      "code": "STALE_VERIFICATION",
+      "severity": "medium",
+      "url": "https://rae-fleet-router.fly.dev/faq.json",
+      "detail": "11 date stamp(s) older than 7 days; newest-old=2026-09-28",
+      "fix": "Re-probe cited URLs and restamp with same-day verification."
+    },
+    {
+      "code": "STALE_DOWN_CLAIM",
+      "severity": "medium",
+      "url": "https://rae-fleet-router.fly.dev/faq.json",
+      "detail": "Doc lists contract-eye as down; its live manifest is canonical.",
+      "fix": "Remove contract-eye from the down-walls list or re-check the recovery matrix."
+    },
+    {
+      "code": "STALE_RETRY_HEADER",
+      "severity": "high",
+      "url": "https://rae-fleet-router.fly.dev/how-it-works.json",
+      "detail": "Doc teaches PAYMENT-SIGNATURE; live-retry header is X-PAYMENT (silent re-challenge -> double-pay).",
+      "fix": "Replace PAYMENT-SIGNATURE with X-PAYMENT in the doc source and redeploy."
+    },
+    {
+      "code": "STALE_VERIFICATION",
+      "severity": "medium",
+      "url": "https://rae-fleet-router.fly.dev/how-it-works.json",
+      "detail": "1 date stamp(s) older than 7 days; newest-old=2026-10-02",
+      "fix": "Re-probe cited URLs and restamp with same-day verification."
+    },
+    {
+      "code": "STALE_VERIFICATION",
+      "severity": "medium",
+      "url": "https://rae-fleet-router.fly.dev/terms.md",
+      "detail": "2 date stamp(s) older than 7 days; newest-old=2026-10-02",
+      "fix": "Re-probe cited URLs and restamp with same-day verification."
+    },
+    {
+      "code": "STALE_VERIFICATION",
+      "severity": "medium",
+      "url": "https://rae-fleet-router.fly.dev/privacy.md",
+      "detail": "1 date stamp(s) older than 7 days; newest-old=2026-10-02",
+      "fix": "Re-probe cited URLs and restamp with same-day verification."
+    }
+  ]
+}
