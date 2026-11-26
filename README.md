@@ -131,6 +131,8 @@ you settled but got no payload.
 
 44. **[Machine-Buyer Client Bootstrap — from live 402 to runnable client code](recipes/44-client-bootstrap.md)** — the last mile no other tool covered: an unpaid POST per kept-live wall, a decoded x402 v2 challenge, and a paste-ready stdlib client skeleton whose price / payTo / network are live-read facts and whose signing step is a stub the buyer fills with their own wallet. 2026-11-26: verdict `OK`, 4/4 walls canonical ($0.005 / $0.005 / $0.01 / $0.05, `exact`, `eip155:8453`, full canonical payTo), 0 breaks; preflight assertion refuses any non-canonical payTo. Snapshot `registry/client-bootstrap.json` + buyer copy `registry/client-bootstrap.md`; read-only, no signing, no X-PAYMENT, no deploy.
 
+45. **[Installable Agent Buyer Skill Card — one portable file an agent can install](recipes/45-agent-skillcard.md)** — the 44 tools are reference material an agent must interpret; this one emits a SKILL.md-style card (`registry/agent-skillcard.md`, frontmatter + instructions) that can be dropped into an agent's `skills/` dir or system prompt and followed directly. Live-generated price table, FULL 42-char canonical payTo guard (poison-address safe), EIP-3009 checkout order, degraded-output warning and claims-desk fallback; the card declares the live 402 authoritative over its own timestamped snapshot. 2026-11-26: verdict `OK`, 4/4 walls canonical ($0.005 / $0.005 / $0.01 / $0.05), 0 breaks. Snapshot `registry/agent-skillcard.json`; read-only, no signing, no X-PAYMENT, no deploy, no funds.
+
 ## MCP registry
 
 RAEN's MCP gateway is listed at `io.github.bshelby88/raen-mcp` on the MCP Registry.

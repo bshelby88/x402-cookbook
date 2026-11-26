@@ -1,0 +1,126 @@
+{
+  "tool": "agent-skillcard/1.0",
+  "generated_utc": "2026-11-26T15:50:55Z",
+  "verdict": "OK",
+  "canonical_payto": "0x9b8a27e03ceba490953cda8ab1291c0e13baf72f",
+  "retired_payto": "0x7861db4efc14a1ed5dd8c96c528a3796560f1393",
+  "network": "eip155:8453",
+  "asset": "USDC 0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
+  "walls": [
+    {
+      "name": "royal-ruby",
+      "offer": "Statutory law lookup with cited baseline",
+      "url": "https://royal-ruby-x402.fly.dev/api/law-lookup",
+      "method": "POST",
+      "request_body": {
+        "query": "x402 skillcard probe"
+      },
+      "http_status": 402,
+      "canonical": true,
+      "x402Version": 2,
+      "scheme": "exact",
+      "network": "eip155:8453",
+      "payTo": "0x9b8a27e03ceba490953cda8ab1291c0e13baf72f",
+      "asset": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
+      "amount_atomic": 5000,
+      "amount_usd": 0.005,
+      "checks": {
+        "v2": true,
+        "scheme": true,
+        "network": true,
+        "payTo": true,
+        "amount": true
+      },
+      "detail": "canonical"
+    },
+    {
+      "name": "contract-eye",
+      "offer": "Contract risk analysis",
+      "url": "https://contract-eye-x402.fly.dev/api/analyze-contract",
+      "method": "POST",
+      "request_body": {
+        "text": "x402 skillcard probe"
+      },
+      "http_status": 402,
+      "canonical": true,
+      "x402Version": 2,
+      "scheme": "exact",
+      "network": "eip155:8453",
+      "payTo": "0x9b8a27e03CEbA490953cDa8AB1291c0E13bAf72f",
+      "asset": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
+      "amount_atomic": 5000,
+      "amount_usd": 0.005,
+      "checks": {
+        "v2": true,
+        "scheme": true,
+        "network": true,
+        "payTo": true,
+        "amount": true
+      },
+      "detail": "canonical"
+    },
+    {
+      "name": "nanobanana",
+      "offer": "Image generation",
+      "url": "https://nanobanana-x402.fly.dev/api/generate-image",
+      "method": "POST",
+      "request_body": {
+        "prompt": "x402 skillcard probe"
+      },
+      "http_status": 402,
+      "canonical": true,
+      "x402Version": 2,
+      "scheme": "exact",
+      "network": "eip155:8453",
+      "payTo": "0x9b8a27e03ceba490953cda8ab1291c0e13baf72f",
+      "asset": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
+      "amount_atomic": 10000,
+      "amount_usd": 0.01,
+      "checks": {
+        "v2": true,
+        "scheme": true,
+        "network": true,
+        "payTo": true,
+        "amount": true
+      },
+      "detail": "canonical"
+    },
+    {
+      "name": "raen-mcp-gateway",
+      "offer": "MCP tool call gateway (tools/list is free for discovery)",
+      "url": "https://raen-mcp-gateway.fly.dev/mcp",
+      "method": "POST",
+      "request_body": {
+        "jsonrpc": "2.0",
+        "id": 1,
+        "method": "tools/call",
+        "params": {
+          "name": "raen_law_lookup",
+          "arguments": {
+            "topic": "x402 skillcard probe"
+          }
+        }
+      },
+      "http_status": 402,
+      "canonical": true,
+      "x402Version": 2,
+      "scheme": "exact",
+      "network": "eip155:8453",
+      "payTo": "0x9b8a27e03CEbA490953cDa8AB1291c0E13bAf72f",
+      "asset": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
+      "amount_atomic": 50000,
+      "amount_usd": 0.05,
+      "checks": {
+        "v2": true,
+        "scheme": true,
+        "network": true,
+        "payTo": true,
+        "amount": true
+      },
+      "detail": "canonical"
+    }
+  ],
+  "breaks": [],
+  "authority": "live 402 challenge > manifest > this snapshot",
+  "no_sign_no_send": true
+}
