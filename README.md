@@ -165,6 +165,8 @@ you settled but got no payload.
 60. **[Wallet-Only Purchase Conformance Auditor — can an autonomous agent buy with a wallet alone?](recipes/60-wallet-only-auditor.md)** — the acquisition face tools 1-59 leave ungraded: the owner's law is autonomous agents, and an agent has a wallet, not an email/account/API key. Read-only, stdlib-only; unpaid-probes every kept-live paid wall + the MCP gateway, decodes the 402, and checks the public manifest schema/description for identity gates required BEFORE payment (email/account/OAuth/KYC/API key). `--check` fails only on a HARD identity wall; an optional key alternative, a down page or a price drift is a WARN handoff. Pricing/credentials are owner-gated, never changed.
 
 
+62. **[x402 Challenge Constructability Auditor — can a strict client build the payment?**](recipes/62-challenge-fields-auditor.md)** — the acquisition gate tools 48/57/58/61 leave open: a price is not enough, a buyer must construct a valid EIP-3009 authorization. Unpaid-probes every kept-live paid wall, decodes the live 402, and grades the full constructability set (exact / eip155:8453 / canonical payTo / asset / amount / maxTimeoutSeconds / extra.name + extra.version EIP-3009 domain / resource) plus header-vs-body agreement; a 200 is a FREE_BACKDOOR hard defect. 2026-11-27 21:5xZ live: 8/8 CONSTRUCTIBLE, 0 hard defects, --check exit 0; gateway:ticker $0.001 WARN below the $0.003 winner floor (owner-gated). Snapshot `registry/challenge-fields.json` + buyer card `registry/challenge-fields.md`; read-only, stdlib-only, no signing, no X-PAYMENT, no price change, no deploy.
+
 ## MCP registry
 
 RAEN's MCP gateway is listed at `io.github.bshelby88/raen-mcp` on the MCP Registry.
