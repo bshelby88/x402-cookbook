@@ -1,0 +1,50 @@
+{
+  "tool": "wallet-only-purchase-conformance-auditor",
+  "innovation": 60,
+  "generated_at": "2026-11-27T19:44:51.626807+00:00",
+  "doctrine": "autonomous agent has a wallet, not an email/account/API key; identity wall before payment = lost sale",
+  "rows": [
+    {
+      "name": "royal-ruby",
+      "route": "/api/law-lookup",
+      "unpaid_status": 402,
+      "wallet_gate": "canonical wallet gate",
+      "free_discovery_status": 200,
+      "paid_schema_identity_fields": [],
+      "warns": [],
+      "verdict": "WALLET_ONLY"
+    },
+    {
+      "name": "contract-eye",
+      "route": "/api/analyze-contract",
+      "unpaid_status": 402,
+      "wallet_gate": "canonical wallet gate",
+      "free_discovery_status": 200,
+      "paid_schema_identity_fields": [],
+      "warns": [],
+      "verdict": "WALLET_ONLY"
+    },
+    {
+      "name": "nanobanana",
+      "route": "/api/generate-image",
+      "unpaid_status": 402,
+      "wallet_gate": "canonical wallet gate",
+      "free_discovery_status": 200,
+      "paid_schema_identity_fields": [],
+      "warns": [],
+      "verdict": "WALLET_ONLY"
+    },
+    {
+      "name": "raen-mcp-gateway",
+      "route": "/mcp",
+      "unpaid_status": 402,
+      "wallet_gate": "canonical wallet gate",
+      "free_discovery_status": 200,
+      "paid_schema_identity_fields": [],
+      "warns": [
+        "optional credential alternative noted (wallet still works)"
+      ],
+      "verdict": "WALLET_ONLY"
+    }
+  ]
+}
