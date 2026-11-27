@@ -1,0 +1,127 @@
+{
+  "tool": "price-band",
+  "version": 1,
+  "band_usd": {
+    "lo": 0.003,
+    "hi": 0.01,
+    "proven_median": 0.005,
+    "source": "consolidated world audit 2026-11-26 (p25/median/p75=$0.003/$0.003/$0.005)"
+  },
+  "usdc_base": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
+  "canonical_payto": "0x9b8a27e03ceba490953cda8ab1291c0e13baf72f",
+  "summary": {
+    "probed": 8,
+    "in_band": 7,
+    "below_band": [
+      "gateway:ticker $0.001"
+    ],
+    "above_band": [],
+    "hard_defects": 0
+  },
+  "results": [
+    {
+      "name": "royal-ruby",
+      "url": "https://royal-ruby-x402.fly.dev/api/law-lookup",
+      "http": 402,
+      "payto_canonical": true,
+      "network": "eip155:8453",
+      "scheme": "exact",
+      "asset": "0x833589fcd6edb6e08f4c7c32d4f71b54bda02913",
+      "amount_base": 5000,
+      "amount_usd": 0.005,
+      "verdict": "IN_BAND",
+      "note": "within data-derived winner band $0.003-$0.01"
+    },
+    {
+      "name": "contract-eye",
+      "url": "https://contract-eye-x402.fly.dev/api/analyze-contract",
+      "http": 402,
+      "payto_canonical": true,
+      "network": "eip155:8453",
+      "scheme": "exact",
+      "asset": "0x833589fcd6edb6e08f4c7c32d4f71b54bda02913",
+      "amount_base": 5000,
+      "amount_usd": 0.005,
+      "verdict": "IN_BAND",
+      "note": "within data-derived winner band $0.003-$0.01"
+    },
+    {
+      "name": "nanobanana",
+      "url": "https://nanobanana-x402.fly.dev/api/generate-image",
+      "http": 402,
+      "payto_canonical": true,
+      "network": "eip155:8453",
+      "scheme": "exact",
+      "asset": "0x833589fcd6edb6e08f4c7c32d4f71b54bda02913",
+      "amount_base": 10000,
+      "amount_usd": 0.01,
+      "verdict": "IN_BAND",
+      "note": "within data-derived winner band $0.003-$0.01"
+    },
+    {
+      "name": "gateway:law",
+      "url": "https://raen-mcp-gateway.fly.dev/mcp",
+      "http": 402,
+      "payto_canonical": true,
+      "network": "eip155:8453",
+      "scheme": "exact",
+      "asset": "0x833589fcd6edb6e08f4c7c32d4f71b54bda02913",
+      "amount_base": 5000,
+      "amount_usd": 0.005,
+      "verdict": "IN_BAND",
+      "note": "within data-derived winner band $0.003-$0.01"
+    },
+    {
+      "name": "gateway:ticker",
+      "url": "https://raen-mcp-gateway.fly.dev/mcp",
+      "http": 402,
+      "payto_canonical": true,
+      "network": "eip155:8453",
+      "scheme": "exact",
+      "asset": "0x833589fcd6edb6e08f4c7c32d4f71b54bda02913",
+      "amount_base": 1000,
+      "amount_usd": 0.001,
+      "verdict": "BELOW_BAND",
+      "note": "below proven winner floor $0.003 (owner-gated WARN)"
+    },
+    {
+      "name": "gateway:dispute_letter",
+      "url": "https://raen-mcp-gateway.fly.dev/mcp",
+      "http": 402,
+      "payto_canonical": true,
+      "network": "eip155:8453",
+      "scheme": "exact",
+      "asset": "0x833589fcd6edb6e08f4c7c32d4f71b54bda02913",
+      "amount_base": 10000,
+      "amount_usd": 0.01,
+      "verdict": "IN_BAND",
+      "note": "within data-derived winner band $0.003-$0.01"
+    },
+    {
+      "name": "gateway:image",
+      "url": "https://raen-mcp-gateway.fly.dev/mcp",
+      "http": 402,
+      "payto_canonical": true,
+      "network": "eip155:8453",
+      "scheme": "exact",
+      "asset": "0x833589fcd6edb6e08f4c7c32d4f71b54bda02913",
+      "amount_base": 10000,
+      "amount_usd": 0.01,
+      "verdict": "IN_BAND",
+      "note": "within data-derived winner band $0.003-$0.01"
+    },
+    {
+      "name": "gateway:contract",
+      "url": "https://raen-mcp-gateway.fly.dev/mcp",
+      "http": 402,
+      "payto_canonical": true,
+      "network": "eip155:8453",
+      "scheme": "exact",
+      "asset": "0x833589fcd6edb6e08f4c7c32d4f71b54bda02913",
+      "amount_base": 5000,
+      "amount_usd": 0.005,
+      "verdict": "IN_BAND",
+      "note": "within data-derived winner band $0.003-$0.01"
+    }
+  ]
+}
