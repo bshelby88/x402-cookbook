@@ -1,0 +1,110 @@
+{
+ "breadth_crawlers": [
+  "0x171d8021b98c53dcbb3c9c30cbbbeb1b01850fca",
+  "0xc9c7b38c0942914fc8ea12063bc92dcd3b581670"
+ ],
+ "collector_reported_external_usd_24h": 0.012,
+ "crawler_usd_in_ledger": 0.012,
+ "current_block": 62901046,
+ "external_payers_scanned": [
+  "0x171d8021b98c53dcbb3c9c30cbbbeb1b01850fca",
+  "0xc9c7b38c0942914fc8ea12063bc92dcd3b581670"
+ ],
+ "findings": {
+  "0x171d8021b98c53dcbb3c9c30cbbbeb1b01850fca": {
+   "breadth_signal": true,
+   "burst_signal": true,
+   "coverage": "partial-lookback",
+   "distinct_recipients": 20,
+   "lookback_blocks": 200000,
+   "outgoing_transfers": 41,
+   "span_minutes": 32.9,
+   "top_recipients": [
+    {
+     "addr": "0x5adecdcd11abd13ab021b611c67929816c398d04",
+     "usdc": 0.235
+    },
+    {
+     "addr": "0x5d47070a36a37daf417e64ff27a1e5b3f1c84efa",
+     "usdc": 0.11
+    },
+    {
+     "addr": "0x9b8a27e03ceba490953cda8ab1291c0e13baf72f",
+     "usdc": 0.11
+    },
+    {
+     "addr": "0x719227f384b66bfef00093d6d8d32fa9dc2b40e7",
+     "usdc": 0.08
+    },
+    {
+     "addr": "0xfbf41f92592b3ff315983e41f058c21a1e8b8d48",
+     "usdc": 0.055
+    },
+    {
+     "addr": "0xd997be970543bf2fd698321d629c49d5a06a6fbc",
+     "usdc": 0.05
+    },
+    {
+     "addr": "0x5a0353bc9c75b893a9b5735d3e79f1bd988ea143",
+     "usdc": 0.034
+    },
+    {
+     "addr": "0xbb973749ea8b7fa42266ced175e4a7bb0a9ffa5b",
+     "usdc": 0.02
+    }
+   ],
+   "total_usdc_out": 0.806,
+   "verdict": "BREADTH_CRAWLER"
+  },
+  "0xc9c7b38c0942914fc8ea12063bc92dcd3b581670": {
+   "breadth_signal": true,
+   "burst_signal": false,
+   "coverage": "partial-lookback",
+   "distinct_recipients": 35,
+   "lookback_blocks": 200000,
+   "outgoing_transfers": 114,
+   "span_minutes": 361.6,
+   "top_recipients": [
+    {
+     "addr": "0xa98e8c6cbc64b7bb30fd0d2015ab24814c661839",
+     "usdc": 0.41
+    },
+    {
+     "addr": "0x9dba414637c611a16bea6f0796bfcbcbdc410df8",
+     "usdc": 0.12
+    },
+    {
+     "addr": "0xceb6cf6bf564c9b924d8ee0734d9a2ae96b7915f",
+     "usdc": 0.074
+    },
+    {
+     "addr": "0x6302d9e6dbb22fec3c350551568bb39b4b35ad57",
+     "usdc": 0.06
+    },
+    {
+     "addr": "0x9f7556c65392e5cbcb342010618c2b407e64a8ea",
+     "usdc": 0.03
+    },
+    {
+     "addr": "0x26abdbd6cfc29e49dae97643ea979677744a6866",
+     "usdc": 0.022
+    },
+    {
+     "addr": "0x325bdf6f7efab24a2210c48c1b64cab2eae1d430",
+     "usdc": 0.02
+    },
+    {
+     "addr": "0x7284d41b5b852f2bd4c99bdf95043d84452d299c",
+     "usdc": 0.02
+    }
+   ],
+   "total_usdc_out": 0.898,
+   "verdict": "BREADTH_CRAWLER"
+  }
+ },
+ "generated_utc": "2026-11-27T09:11:32.560614+00:00",
+ "genuine_payers": [],
+ "honest_external_earned_usd": 0.0,
+ "note": "Behavioural discovery: a payer with >=8 distinct USDC recipients or >=15 transfers inside 60 minutes is breadth-class scatter, not demand. Collector revenue_external_usd counts these as external; this tool subtracts them. Partial lookback is stated per payer.",
+ "verdict": "CRAWLER_NOISE"
+}
