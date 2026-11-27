@@ -1,0 +1,52 @@
+{
+  "tool": "raen-buyer-wallet-fit",
+  "version": 1,
+  "innovation": 49,
+  "buyer": "0xc9c7b38c0942914fc8ea12063bc92dcd3b581670",
+  "verdict": "KNOWN_CRAWLER",
+  "reason": "TIFF-BUYER-05 breadth class (156 payees/6.4d, p50 $0.003); dust-excluded, NOT demand",
+  "required_usdc": 0.005,
+  "price_source": "live_402",
+  "wall": {
+    "wall": "https://royal-ruby-x402.fly.dev/api/law-lookup",
+    "http_status": 402,
+    "scheme": "exact",
+    "network": "eip155:8453",
+    "asset": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
+    "payto": "0x9b8a27e03ceba490953cda8ab1291c0e13baf72f",
+    "amount_atomic": "5000",
+    "price_usdc": 0.005,
+    "payto_canonical": true
+  },
+  "base_usdc": {
+    "value": 100.330205,
+    "consensus": true,
+    "reads": [
+      100.330205,
+      100.330205,
+      100.330205
+    ],
+    "agreeing": 3
+  },
+  "base_gas_eth": {
+    "value_eth": 0.00180238,
+    "consensus": true,
+    "reads": [
+      0.00180238,
+      0.00180238
+    ]
+  },
+  "eth_mainnet_usdc": {
+    "value": 0.0,
+    "consensus": true,
+    "reads": [
+      0.0,
+      0.0
+    ],
+    "agreeing": 2
+  },
+  "buyer_role": "KNOWN_CRAWLER",
+  "role_note": "TIFF-BUYER-05 breadth class (156 payees/6.4d, p50 $0.003); dust-excluded, NOT demand",
+  "chain_scope": "Base (eip155:8453) primary; ETH mainnet informational",
+  "truth": "chain balances read from public RPCs; live price from unpaid 402; no signing, no funds moved"
+}
