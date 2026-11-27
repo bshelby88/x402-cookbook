@@ -1,0 +1,142 @@
+{
+  "tool": "acquisition-funnel",
+  "version": 1,
+  "generated_utc": "2026-11-27T11:30:56.868639+00:00",
+  "catalog_http": 200,
+  "ledger_note": "Counts include only settlements with an on-chain tx hash (TRUTH law, 2026-11-11).",
+  "canonical_payto": "0x9b8a27e03ceba490953cda8ab1291c0e13baf72f",
+  "network": "eip155:8453",
+  "walls": [
+    {
+      "service": "royal-ruby",
+      "host": "royal-ruby-x402.fly.dev",
+      "stages": {
+        "DISCOVER": {
+          "ok": true,
+          "reason": "in router catalog"
+        },
+        "UNDERSTAND": {
+          "ok": true,
+          "canonical_payto": true,
+          "declares_request_fields": true,
+          "reason": "canonical manifest"
+        },
+        "PAY": {
+          "ok": true,
+          "scheme": "exact",
+          "network": "eip155:8453",
+          "amount": "5000",
+          "payTo": "0x9b8a27e03ceba490953cda8ab1291c0e13baf72f",
+          "reason": "canonical live 402"
+        },
+        "REPEAT": {
+          "ok": false,
+          "genuine_external_settles": 0,
+          "payers": [],
+          "reason": "no genuine external payer"
+        }
+      },
+      "verdict": "BLOCKED_AT_REPEAT",
+      "blocker": "REPEAT"
+    },
+    {
+      "service": "contract-eye",
+      "host": "contract-eye-x402.fly.dev",
+      "stages": {
+        "DISCOVER": {
+          "ok": false,
+          "reason": "ABSENT from router catalog"
+        },
+        "UNDERSTAND": {
+          "ok": true,
+          "canonical_payto": true,
+          "declares_request_fields": true,
+          "reason": "canonical manifest"
+        },
+        "PAY": {
+          "ok": true,
+          "scheme": "exact",
+          "network": "eip155:8453",
+          "amount": "5000",
+          "payTo": "0x9b8a27e03CEbA490953cDa8AB1291c0E13bAf72f",
+          "reason": "canonical live 402"
+        },
+        "REPEAT": {
+          "ok": false,
+          "genuine_external_settles": 0,
+          "payers": [],
+          "reason": "no genuine external payer"
+        }
+      },
+      "verdict": "BLOCKED_AT_DISCOVER",
+      "blocker": "DISCOVER"
+    },
+    {
+      "service": "nanobanana",
+      "host": "nanobanana-x402.fly.dev",
+      "stages": {
+        "DISCOVER": {
+          "ok": true,
+          "reason": "in router catalog"
+        },
+        "UNDERSTAND": {
+          "ok": true,
+          "canonical_payto": true,
+          "declares_request_fields": true,
+          "reason": "canonical manifest"
+        },
+        "PAY": {
+          "ok": true,
+          "scheme": "exact",
+          "network": "eip155:8453",
+          "amount": "10000",
+          "payTo": "0x9b8a27e03ceba490953cda8ab1291c0e13baf72f",
+          "reason": "canonical live 402"
+        },
+        "REPEAT": {
+          "ok": false,
+          "genuine_external_settles": 0,
+          "payers": [],
+          "reason": "no genuine external payer"
+        }
+      },
+      "verdict": "BLOCKED_AT_REPEAT",
+      "blocker": "REPEAT"
+    },
+    {
+      "service": "raen-mcp-gateway",
+      "host": "raen-mcp-gateway.fly.dev",
+      "stages": {
+        "DISCOVER": {
+          "ok": false,
+          "reason": "ABSENT from router catalog"
+        },
+        "UNDERSTAND": {
+          "ok": true,
+          "canonical_payto": true,
+          "declares_request_fields": false,
+          "reason": "canonical manifest"
+        },
+        "PAY": {
+          "ok": true,
+          "scheme": "exact",
+          "network": "eip155:8453",
+          "amount": "50000",
+          "payTo": "0x9b8a27e03CEbA490953cDa8AB1291c0E13bAf72f",
+          "reason": "canonical live 402"
+        },
+        "REPEAT": {
+          "ok": false,
+          "genuine_external_settles": 0,
+          "payers": [],
+          "reason": "no genuine external payer"
+        }
+      },
+      "verdict": "BLOCKED_AT_DISCOVER",
+      "blocker": "DISCOVER"
+    }
+  ],
+  "walls_ready": 0,
+  "honest_external_earned_usd": 0.0,
+  "read_only": true
+}
