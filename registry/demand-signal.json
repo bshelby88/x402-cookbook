@@ -1,0 +1,121 @@
+{
+  "classification_counts": {
+    "crawler": 1,
+    "external": 0,
+    "internal": 55,
+    "other": 0
+  },
+  "collector_24h": {
+    "challenges": 2745,
+    "failed": 136,
+    "revenue_external_usd_reported": 0.002,
+    "settled": 11,
+    "settled_verified": 11
+  },
+  "crawler_dust_usd": 0.002,
+  "crawlers": {
+    "0xc9c7b38c0942914fc8ea12063bc92dcd3b581670": {
+      "count": 1,
+      "label": "breadth-crawler TIFF-BUYER-05 (recWIQUYkLMfYRAw7)",
+      "usd": 0.002
+    }
+  },
+  "generated_utc": "2026-11-27T07:56:04.862599+00:00",
+  "genuine_external_payers": [],
+  "honest_external_earned_usd": 0,
+  "kpi": {
+    "calls_per_payer": {},
+    "distinct_genuine_external_payers": 0,
+    "repeat_buyers": 0
+  },
+  "live_wall_cross_reference": [
+    {
+      "challenge": {
+        "amount_atomic": 5000,
+        "asset": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
+        "canonical": true,
+        "network": "eip155:8453",
+        "payTo": "0x9b8a27e03ceba490953cda8ab1291c0e13baf72f",
+        "price_usd": 0.005,
+        "scheme": "exact",
+        "status": 402,
+        "x402Version": 2
+      },
+      "method": "POST",
+      "service": "royal-ruby",
+      "url": "https://royal-ruby-x402.fly.dev/api/law-lookup"
+    },
+    {
+      "challenge": {
+        "amount_atomic": 5000,
+        "asset": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
+        "canonical": true,
+        "network": "eip155:8453",
+        "payTo": "0x9b8a27e03CEbA490953cDa8AB1291c0E13bAf72f",
+        "price_usd": 0.005,
+        "scheme": "exact",
+        "status": 402,
+        "x402Version": 2
+      },
+      "method": "POST",
+      "service": "contract-eye",
+      "url": "https://contract-eye-x402.fly.dev/api/analyze-contract"
+    },
+    {
+      "challenge": {
+        "amount_atomic": 10000,
+        "asset": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
+        "canonical": true,
+        "network": "eip155:8453",
+        "payTo": "0x9b8a27e03ceba490953cda8ab1291c0e13baf72f",
+        "price_usd": 0.01,
+        "scheme": "exact",
+        "status": 402,
+        "x402Version": 2
+      },
+      "method": "POST",
+      "service": "nanobanana",
+      "url": "https://nanobanana-x402.fly.dev/api/generate-image"
+    },
+    {
+      "challenge": {
+        "amount_atomic": 2000,
+        "asset": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
+        "canonical": true,
+        "network": "eip155:8453",
+        "payTo": "0x9b8a27e03ceba490953cda8ab1291c0e13baf72f",
+        "price_usd": 0.002,
+        "scheme": "exact",
+        "status": 402,
+        "x402Version": 2
+      },
+      "method": "POST",
+      "service": "shipgate402",
+      "url": "https://shipgate402.fly.dev/v1/ship-check/batch"
+    }
+  ],
+  "note": "Collector revenue_external_usd counts any non-internal payer; this tool re-excludes recorded breadth-class crawlers. Honest earned = chain-verified external payments from genuine (non-crawler) payers only.",
+  "per_service": {
+    "contract-eye": {
+      "all_tx": 8,
+      "genuine_external_tx": 0,
+      "genuine_external_usd": 0.0
+    },
+    "raen-facilitator-worker": {
+      "all_tx": 1,
+      "genuine_external_tx": 0,
+      "genuine_external_usd": 0.0
+    },
+    "royal-ruby": {
+      "all_tx": 41,
+      "genuine_external_tx": 0,
+      "genuine_external_usd": 0.0
+    },
+    "shipgate402": {
+      "all_tx": 6,
+      "genuine_external_tx": 0,
+      "genuine_external_usd": 0.0
+    }
+  },
+  "verdict": "EVIDENCE_DEAD"
+}
