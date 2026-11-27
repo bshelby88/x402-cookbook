@@ -1,0 +1,194 @@
+{
+  "tool": "bulk-tier-auditor",
+  "version": 1,
+  "generated_at": "2026-11-27T17:21:30Z",
+  "canonical_payto": "0x9b8a27e03ceba490953cda8ab1291c0e13baf72f",
+  "network": "eip155:8453",
+  "asset": "0x833589fcd6edb6e08f4c7c32d4f71b54bda02913",
+  "note": "Prices are owner-gated; this tool REPORTS drift and never changes a price. No signing, no X-PAYMENT, no funds.",
+  "walls": [
+    {
+      "name": "royal-ruby",
+      "base_amount_atoms": "5000",
+      "base_usd": 0.005,
+      "x402_version": 2,
+      "manifest_advertised_base_usd": [
+        0.005,
+        0.05
+      ],
+      "base_price_drift": [
+        {
+          "advertised_usd": 0.05,
+          "live_usd": 0.005
+        }
+      ],
+      "manifest_advertised_tiers": [
+        {
+          "min": 10,
+          "max": 99,
+          "per_unit_usd": 0.002
+        },
+        {
+          "min": 100,
+          "max": 500,
+          "per_unit_usd": 0.001
+        }
+      ],
+      "cookbook_advertised_tiers": [
+        {
+          "min": 10,
+          "max": 99,
+          "per_unit_usd": 0.002
+        },
+        {
+          "min": 100,
+          "max": 500,
+          "per_unit_usd": 0.001
+        }
+      ],
+      "tiers": [
+        {
+          "quantity": 5,
+          "amount_atoms": "5000",
+          "total_usd": 0.005,
+          "bulk_mechanism_applies": false,
+          "per_unit_usd": null,
+          "expected_per_unit_usd": null,
+          "envelope_flags": []
+        },
+        {
+          "quantity": 9,
+          "amount_atoms": "5000",
+          "total_usd": 0.005,
+          "bulk_mechanism_applies": false,
+          "per_unit_usd": null,
+          "expected_per_unit_usd": null,
+          "envelope_flags": []
+        },
+        {
+          "quantity": 10,
+          "amount_atoms": "20000",
+          "total_usd": 0.02,
+          "bulk_mechanism_applies": true,
+          "per_unit_usd": 0.002,
+          "expected_per_unit_usd": 0.002,
+          "envelope_flags": []
+        },
+        {
+          "quantity": 50,
+          "amount_atoms": "100000",
+          "total_usd": 0.1,
+          "bulk_mechanism_applies": true,
+          "per_unit_usd": 0.002,
+          "expected_per_unit_usd": 0.002,
+          "envelope_flags": []
+        },
+        {
+          "quantity": 100,
+          "amount_atoms": "100000",
+          "total_usd": 0.1,
+          "bulk_mechanism_applies": true,
+          "per_unit_usd": 0.001,
+          "expected_per_unit_usd": 0.001,
+          "envelope_flags": []
+        },
+        {
+          "quantity": 500,
+          "amount_atoms": "500000",
+          "total_usd": 0.5,
+          "bulk_mechanism_applies": true,
+          "per_unit_usd": 0.001,
+          "expected_per_unit_usd": 0.001,
+          "envelope_flags": []
+        }
+      ],
+      "hard_flags": [],
+      "doc_flags": [
+        "MANIFEST_BASE_PRICE_DRIFT"
+      ]
+    },
+    {
+      "name": "contract-eye",
+      "base_amount_atoms": "5000",
+      "base_usd": 0.005,
+      "x402_version": 2,
+      "manifest_advertised_base_usd": [
+        0.005
+      ],
+      "base_price_drift": [],
+      "manifest_advertised_tiers": [],
+      "cookbook_advertised_tiers": [
+        {
+          "min": 10,
+          "max": 99,
+          "per_unit_usd": 0.002
+        },
+        {
+          "min": 100,
+          "max": null,
+          "per_unit_usd": 0.001
+        }
+      ],
+      "tiers": [
+        {
+          "quantity": 10,
+          "amount_atoms": "5000",
+          "total_usd": 0.005,
+          "bulk_mechanism_applies": false,
+          "per_unit_usd": null,
+          "expected_per_unit_usd": 0.002,
+          "envelope_flags": []
+        },
+        {
+          "quantity": 100,
+          "amount_atoms": "5000",
+          "total_usd": 0.005,
+          "bulk_mechanism_applies": false,
+          "per_unit_usd": null,
+          "expected_per_unit_usd": 0.001,
+          "envelope_flags": []
+        }
+      ],
+      "hard_flags": [],
+      "doc_flags": [
+        "BULK_FIELD_IGNORED_BY_LIVE_402",
+        "COOKBOOK_TIER_UNSUPPORTED_BY_MANIFEST"
+      ]
+    },
+    {
+      "name": "nanobanana",
+      "base_amount_atoms": "10000",
+      "base_usd": 0.01,
+      "x402_version": 2,
+      "manifest_advertised_base_usd": [
+        0.01
+      ],
+      "base_price_drift": [],
+      "manifest_advertised_tiers": [],
+      "cookbook_advertised_tiers": [
+        {
+          "min": 10,
+          "max": null,
+          "per_unit_usd": 0.008
+        }
+      ],
+      "tiers": [
+        {
+          "quantity": 10,
+          "amount_atoms": "10000",
+          "total_usd": 0.01,
+          "bulk_mechanism_applies": false,
+          "per_unit_usd": null,
+          "expected_per_unit_usd": 0.008,
+          "envelope_flags": []
+        }
+      ],
+      "hard_flags": [],
+      "doc_flags": [
+        "BULK_FIELD_IGNORED_BY_LIVE_402",
+        "COOKBOOK_TIER_UNSUPPORTED_BY_MANIFEST"
+      ]
+    }
+  ],
+  "verdict": "DOC_DRIFT_WARN"
+}
