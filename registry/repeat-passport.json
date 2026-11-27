@@ -1,0 +1,53 @@
+{
+  "tool": "repeat-passport/1.0",
+  "generated_at": "2026-11-27T13:53:59.997532+00:00",
+  "canonical_payto": "0x9b8a27e03ceba490953cda8ab1291c0e13baf72f",
+  "chain": "eip155:8453 (Base)",
+  "usdc": "0x833589fcd6edb6e08f4c7c32d4f71b54bda02913",
+  "evidence_basis": "on-chain Base receipt",
+  "excluded_internal_wallets": [
+    "0x7861db4efc14a1ed5dd8c96c528a3796560f1393",
+    "0xfbc0eb7811d477e55261d956df39f0046e192240"
+  ],
+  "excluded_crawlers": {
+    "0x171d8021b98c53dcbb3c9c30cbbbeb1b01850fca": "breadth-crawler (tool 51: 41 tx/20 recipients/33min; tool 52: $0.10 = scatter, NOT demand)",
+    "0xc9c7b38c0942914fc8ea12063bc92dcd3b581670": "breadth-crawler TIFF-BUYER-05 (156 payees/6.4d, p50 $0.003, U5-excluded)"
+  },
+  "fleet_kpi": {
+    "external_payers": 0,
+    "repeat_buyers": 0,
+    "calls_per_payer": 0.0,
+    "max_calls_single_payer": 0,
+    "external_received_usd": 0,
+    "honest_external_earned_usd": 0.0,
+    "earned_definition": "external tx with receipt + matching challenge + confirmed delivery; no delivery signal in collector => 0.00",
+    "rpc_used": "https://base.publicnode.com",
+    "chain_verified": true
+  },
+  "passports": [],
+  "crawler_exclusions": [
+    {
+      "payer": "0x171d8021b98c53dcbb3c9c30cbbbeb1b01850fca",
+      "calls": 2,
+      "logged_usd": 0.01,
+      "services": [
+        "contract-eye",
+        "royal-ruby"
+      ],
+      "evidence": "breadth-crawler (tool 51: 41 tx/20 recipients/33min; tool 52: $0.10 = scatter, NOT demand)",
+      "passport_issued": false,
+      "reason": "breadth-crawler dust-scatter: machine discovery, NOT demand"
+    },
+    {
+      "payer": "0xc9c7b38c0942914fc8ea12063bc92dcd3b581670",
+      "calls": 1,
+      "logged_usd": 0.002,
+      "services": [
+        "shipgate402"
+      ],
+      "evidence": "breadth-crawler TIFF-BUYER-05 (156 payees/6.4d, p50 $0.003, U5-excluded)",
+      "passport_issued": false,
+      "reason": "breadth-crawler dust-scatter: machine discovery, NOT demand"
+    }
+  ]
+}
