@@ -162,6 +162,8 @@ you settled but got no payload.
 
 
 59. **[Discovery Brochure Auditor — grade the public storefront window](recipes/59-discovery-brochure.md)** — the acquisition surface tools 1-58 never touch: the eight public buyer pages a machine buyer reads first (GitHub Pages buyer tools, cookbook, law pages, llms.txt, router catalog, MCP Registry). Grades liveness (the Vercel ready-but-404 trap) and canonical-vs-retired payTo safety with context-aware warning detection — a retired address in a "Reject the retired wallet" warning is correct guidance, not drift; only an un-warned occurrence fails. 2026-11-27 18:3xZ: 8/8 surfaces 200 + non-empty, 0 drift, verdict CANONICAL; self-tested both retired-address cases. Snapshot `registry/discovery-brochure.json` + buyer card `registry/discovery-brochure.md`; read-only, stdlib-only, no signing, no X-PAYMENT, no deploy.
+60. **[Wallet-Only Purchase Conformance Auditor — can an autonomous agent buy with a wallet alone?](recipes/60-wallet-only-auditor.md)** — the acquisition face tools 1-59 leave ungraded: the owner's law is autonomous agents, and an agent has a wallet, not an email/account/API key. Read-only, stdlib-only; unpaid-probes every kept-live paid wall + the MCP gateway, decodes the 402, and checks the public manifest schema/description for identity gates required BEFORE payment (email/account/OAuth/KYC/API key). `--check` fails only on a HARD identity wall; an optional key alternative, a down page or a price drift is a WARN handoff. Pricing/credentials are owner-gated, never changed.
+
 
 ## MCP registry
 
