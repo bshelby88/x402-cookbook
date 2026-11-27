@@ -1,0 +1,73 @@
+{
+ "tool": "chain-reconciler/1.0",
+ "generated_utc": "2026-11-27T10:22:04.746583+00:00",
+ "source_of_truth": "Base USDC Transfer logs -> canonical (eth_getLogs), matched to collector ledger",
+ "current_block": 62922629,
+ "lookback_blocks": 120000,
+ "scan_start_block": 62802629,
+ "chunk_errors": 0,
+ "collector_reported_external_usd_24h": 0.012,
+ "breadth_crawlers_used": [
+  "0x171d8021b98c53dcbb3c9c30cbbbeb1b01850fca",
+  "0xc9c7b38c0942914fc8ea12063bc92dcd3b581670"
+ ],
+ "chain_inflow_total_usd": 0.115,
+ "chain_internal_usd": 0.005,
+ "chain_breadth_crawler_usd": 0.11,
+ "chain_external_usd": 0,
+ "genuine_external_earned_usd": 0,
+ "unlogged_external_usd": 0,
+ "unlogged_crawler_usd": 0.1,
+ "inflows": [
+  {
+   "tx": "0x74a64f1d6c2877c34496424ba2525055cad6023ab84a7ee336fcada9f6ba7582",
+   "sender": "0xfbc0eb7811d477e55261d956df39f0046e192240",
+   "amount_usd": 0.005,
+   "block": 62890906,
+   "logIndex": 7,
+   "classification": "INTERNAL",
+   "reason": "AgentCash (internal)",
+   "in_collector_ledger": true,
+   "ledger_service": "royal-ruby",
+   "blinded_spot": false
+  },
+  {
+   "tx": "0x88e8051fd49853145d487fb762c639b71694a99bd2f1946f1d4eab39c365d508",
+   "sender": "0x171d8021b98c53dcbb3c9c30cbbbeb1b01850fca",
+   "amount_usd": 0.005,
+   "block": 62893946,
+   "logIndex": 4,
+   "classification": "BREADTH_CRAWLER",
+   "reason": "flagged by tool 51 breadth-detector registry",
+   "in_collector_ledger": true,
+   "ledger_service": "royal-ruby",
+   "blinded_spot": false
+  },
+  {
+   "tx": "0x0f1c16b44afbfc6a35d33aa7a34f7d22ab2b1547ac5fc4070a3534de0b9e87ae",
+   "sender": "0x171d8021b98c53dcbb3c9c30cbbbeb1b01850fca",
+   "amount_usd": 0.005,
+   "block": 62893999,
+   "logIndex": 7,
+   "classification": "BREADTH_CRAWLER",
+   "reason": "flagged by tool 51 breadth-detector registry",
+   "in_collector_ledger": true,
+   "ledger_service": "contract-eye",
+   "blinded_spot": false
+  },
+  {
+   "tx": "0x5755f751330505d560815e18bd1d405f90f5dfab1c798fb4ae292220f0d0612c",
+   "sender": "0x171d8021b98c53dcbb3c9c30cbbbeb1b01850fca",
+   "amount_usd": 0.1,
+   "block": 62894194,
+   "logIndex": 193,
+   "classification": "BREADTH_CRAWLER",
+   "reason": "flagged by tool 51 breadth-detector registry",
+   "in_collector_ledger": false,
+   "ledger_service": null,
+   "blinded_spot": true
+  }
+ ],
+ "ledger_tx_not_in_scan_window_count": 56,
+ "note": "Money truth is the chain. The collector ledger is a secondary source; payments present on chain but absent from the ledger are blind spots, not evidence of no payment. Breadth-class payers are not demand even when chain-real. Honest external earned excludes internal + breadth."
+}
