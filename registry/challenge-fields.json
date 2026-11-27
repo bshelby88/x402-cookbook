@@ -1,0 +1,93 @@
+{
+  "tool": "challenge-fields",
+  "version": 1,
+  "canonical_payto": "0x9b8a27e03ceba490953cda8ab1291c0e13baf72f",
+  "base_usdc": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
+  "required_constructability_fields": [
+    "scheme=exact",
+    "network=eip155:8453",
+    "payTo",
+    "asset",
+    "amount|maxAmountRequired",
+    "maxTimeoutSeconds",
+    "extra.name",
+    "extra.version",
+    "resource",
+    "x402Version"
+  ],
+  "doctrine": "report drift, never change owner-gated pricing; read-only, never pays",
+  "summary": {
+    "probed": 8,
+    "constructible": 8,
+    "hard_defects": 0,
+    "warns": 1
+  },
+  "results": [
+    {
+      "name": "royal-ruby",
+      "verdict": "CONSTRUCTIBLE",
+      "http": 402,
+      "defects": [],
+      "warns": [],
+      "amount_usd": 0.005
+    },
+    {
+      "name": "contract-eye",
+      "verdict": "CONSTRUCTIBLE",
+      "http": 402,
+      "defects": [],
+      "warns": [],
+      "amount_usd": 0.005
+    },
+    {
+      "name": "nanobanana",
+      "verdict": "CONSTRUCTIBLE",
+      "http": 402,
+      "defects": [],
+      "warns": [],
+      "amount_usd": 0.01
+    },
+    {
+      "name": "gateway:law",
+      "verdict": "CONSTRUCTIBLE",
+      "http": 402,
+      "defects": [],
+      "warns": [],
+      "amount_usd": 0.005
+    },
+    {
+      "name": "gateway:ticker",
+      "verdict": "CONSTRUCTIBLE",
+      "http": 402,
+      "defects": [],
+      "warns": [
+        "price $0.001 below acquired-data winner floor $0.003 (owner-gated)"
+      ],
+      "amount_usd": 0.001
+    },
+    {
+      "name": "gateway:dispute_letter",
+      "verdict": "CONSTRUCTIBLE",
+      "http": 402,
+      "defects": [],
+      "warns": [],
+      "amount_usd": 0.01
+    },
+    {
+      "name": "gateway:image",
+      "verdict": "CONSTRUCTIBLE",
+      "http": 402,
+      "defects": [],
+      "warns": [],
+      "amount_usd": 0.005
+    },
+    {
+      "name": "gateway:contract",
+      "verdict": "CONSTRUCTIBLE",
+      "http": 402,
+      "defects": [],
+      "warns": [],
+      "amount_usd": 0.005
+    }
+  ]
+}
