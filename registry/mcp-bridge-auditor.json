@@ -1,0 +1,103 @@
+{
+  "tool": "mcp-bridge-auditor",
+  "version": 1,
+  "gateway_url": "https://raen-mcp-gateway.fly.dev/mcp",
+  "checks": [
+    {
+      "tool": "raen_law_lookup",
+      "advertised_usd": 0.005,
+      "required": [
+        "topic"
+      ],
+      "has_input_schema": true,
+      "live": {
+        "usd": 0.005,
+        "amount_atoms": "5000",
+        "scheme": "exact",
+        "network": "eip155:8453",
+        "payTo": "0x9b8a27e03CEbA490953cDa8AB1291c0E13bAf72f"
+      },
+      "flags": []
+    },
+    {
+      "tool": "raen_ticker_analysis",
+      "advertised_usd": 0.005,
+      "required": [
+        "ticker"
+      ],
+      "has_input_schema": true,
+      "live": {
+        "usd": 0.001,
+        "amount_atoms": "1000",
+        "scheme": "exact",
+        "network": "eip155:8453",
+        "payTo": "0x9b8a27e03CEbA490953cDa8AB1291c0E13bAf72f"
+      },
+      "flags": [
+        "PRICE_DRIFT"
+      ]
+    },
+    {
+      "tool": "raen_dispute_letter",
+      "advertised_usd": 0.1,
+      "required": [
+        "creditor",
+        "reason"
+      ],
+      "has_input_schema": true,
+      "live": {
+        "usd": 0.01,
+        "amount_atoms": "10000",
+        "scheme": "exact",
+        "network": "eip155:8453",
+        "payTo": "0x9b8a27e03CEbA490953cDa8AB1291c0E13bAf72f"
+      },
+      "flags": [
+        "PRICE_DRIFT"
+      ]
+    },
+    {
+      "tool": "raen_image_generate",
+      "advertised_usd": 0.01,
+      "required": [
+        "prompt"
+      ],
+      "has_input_schema": true,
+      "live": {
+        "usd": 0.01,
+        "amount_atoms": "10000",
+        "scheme": "exact",
+        "network": "eip155:8453",
+        "payTo": "0x9b8a27e03CEbA490953cDa8AB1291c0E13bAf72f"
+      },
+      "flags": []
+    },
+    {
+      "tool": "raen_contract_analysis",
+      "advertised_usd": 0.005,
+      "required": [
+        "text"
+      ],
+      "has_input_schema": true,
+      "live": {
+        "usd": 0.005,
+        "amount_atoms": "5000",
+        "scheme": "exact",
+        "network": "eip155:8453",
+        "payTo": "0x9b8a27e03CEbA490953cDa8AB1291c0E13bAf72f"
+      },
+      "flags": []
+    }
+  ],
+  "status": "DRIFT_WARN",
+  "findings": [
+    "raen_ticker_analysis: description says $0.005 but live 402 charges $0.001",
+    "raen_dispute_letter: description says $0.100 but live 402 charges $0.010"
+  ],
+  "doctrine": "report price drift, never change owner-gated pricing",
+  "tools_advertised": 5,
+  "generated_at_utc": "2026-11-27T16:1xZ",
+  "run_context": "TIFFANY CYCLE 2026-11-27 10:06 CT (16:06Z); innovation 57",
+  "honest_external_earned_usd": 0.0,
+  "buyer_count": 0
+}
