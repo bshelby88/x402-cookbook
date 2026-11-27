@@ -1,0 +1,302 @@
+{
+  "tool": "schema-parity",
+  "version": 1,
+  "walls": [
+    {
+      "name": "royal-ruby",
+      "base": "https://royal-ruby-x402.fly.dev",
+      "routes": [
+        {
+          "path": "/api/law-lookup",
+          "method": "POST",
+          "advertised_in_manifest": [],
+          "declared_in_openapi": [
+            "scope",
+            "state",
+            "topic"
+          ],
+          "openapi_required": [
+            "topic"
+          ],
+          "doc_only_fields": [],
+          "spec_only_fields": [
+            "scope",
+            "state",
+            "topic"
+          ],
+          "openapi_schema_missing_for_advertised_fields": false,
+          "payto_canonical": true,
+          "verdict": "PASS"
+        },
+        {
+          "path": "/api/validate-json",
+          "method": "POST",
+          "advertised_in_manifest": [],
+          "declared_in_openapi": [],
+          "openapi_required": [],
+          "doc_only_fields": [],
+          "spec_only_fields": [],
+          "openapi_schema_missing_for_advertised_fields": false,
+          "payto_canonical": true,
+          "verdict": "PASS"
+        }
+      ],
+      "fetch_error": null,
+      "free_routes_skipped": 7
+    },
+    {
+      "name": "contract-eye",
+      "base": "https://contract-eye-x402.fly.dev",
+      "routes": [
+        {
+          "path": "/api/analyze-contract",
+          "method": "POST",
+          "advertised_in_manifest": [
+            "focus",
+            "text"
+          ],
+          "declared_in_openapi": [],
+          "openapi_required": [],
+          "doc_only_fields": [
+            "focus",
+            "text"
+          ],
+          "spec_only_fields": [],
+          "openapi_schema_missing_for_advertised_fields": true,
+          "payto_canonical": true,
+          "verdict": "DRIFT"
+        },
+        {
+          "path": "/contract/analyze",
+          "method": "POST",
+          "advertised_in_manifest": [
+            "focus",
+            "text"
+          ],
+          "declared_in_openapi": [],
+          "openapi_required": [],
+          "doc_only_fields": [
+            "focus",
+            "text"
+          ],
+          "spec_only_fields": [],
+          "openapi_schema_missing_for_advertised_fields": true,
+          "payto_canonical": true,
+          "verdict": "DRIFT"
+        },
+        {
+          "path": "/api/analyze",
+          "method": "POST",
+          "advertised_in_manifest": [
+            "focus",
+            "text"
+          ],
+          "declared_in_openapi": [],
+          "openapi_required": [],
+          "doc_only_fields": [
+            "focus",
+            "text"
+          ],
+          "spec_only_fields": [],
+          "openapi_schema_missing_for_advertised_fields": true,
+          "payto_canonical": true,
+          "verdict": "DRIFT"
+        },
+        {
+          "path": "/api/ping",
+          "method": "POST",
+          "advertised_in_manifest": [],
+          "declared_in_openapi": [],
+          "openapi_required": [],
+          "doc_only_fields": [],
+          "spec_only_fields": [],
+          "openapi_schema_missing_for_advertised_fields": false,
+          "payto_canonical": true,
+          "verdict": "PASS"
+        }
+      ],
+      "fetch_error": null,
+      "free_routes_skipped": 0
+    },
+    {
+      "name": "nanobanana",
+      "base": "https://nanobanana-x402.fly.dev",
+      "routes": [
+        {
+          "path": "/api/generate-image",
+          "method": "POST",
+          "advertised_in_manifest": [],
+          "declared_in_openapi": [
+            "aspectRatio",
+            "prompt"
+          ],
+          "openapi_required": [
+            "prompt"
+          ],
+          "doc_only_fields": [],
+          "spec_only_fields": [
+            "aspectRatio",
+            "prompt"
+          ],
+          "openapi_schema_missing_for_advertised_fields": false,
+          "payto_canonical": true,
+          "verdict": "PASS"
+        },
+        {
+          "path": "/api/edit-image",
+          "method": "POST",
+          "advertised_in_manifest": [],
+          "declared_in_openapi": [
+            "aspectRatio",
+            "image_b64",
+            "mime_type",
+            "prompt"
+          ],
+          "openapi_required": [
+            "image_b64",
+            "prompt"
+          ],
+          "doc_only_fields": [],
+          "spec_only_fields": [
+            "aspectRatio",
+            "image_b64",
+            "mime_type",
+            "prompt"
+          ],
+          "openapi_schema_missing_for_advertised_fields": false,
+          "payto_canonical": true,
+          "verdict": "PASS"
+        }
+      ],
+      "fetch_error": null,
+      "free_routes_skipped": 0
+    },
+    {
+      "name": "raen-mcp-gateway",
+      "base": "https://raen-mcp-gateway.fly.dev",
+      "routes": [
+        {
+          "path": "/mcp",
+          "method": "POST",
+          "advertised_in_manifest": [],
+          "declared_in_openapi": [],
+          "openapi_required": [],
+          "doc_only_fields": [],
+          "spec_only_fields": [],
+          "openapi_schema_missing_for_advertised_fields": false,
+          "payto_canonical": true,
+          "verdict": "PASS"
+        }
+      ],
+      "fetch_error": null,
+      "free_routes_skipped": 5
+    },
+    {
+      "name": "shipgate402",
+      "base": "https://shipgate402.fly.dev",
+      "routes": [
+        {
+          "path": "/v1/ship-check",
+          "method": "POST",
+          "advertised_in_manifest": [
+            "expect",
+            "probe",
+            "url"
+          ],
+          "declared_in_openapi": [],
+          "openapi_required": [],
+          "doc_only_fields": [
+            "expect",
+            "probe",
+            "url"
+          ],
+          "spec_only_fields": [],
+          "openapi_schema_missing_for_advertised_fields": true,
+          "payto_canonical": true,
+          "verdict": "DRIFT"
+        },
+        {
+          "path": "/v1/ship-check/batch",
+          "method": "POST",
+          "advertised_in_manifest": [
+            "expect",
+            "probe",
+            "urls"
+          ],
+          "declared_in_openapi": [],
+          "openapi_required": [],
+          "doc_only_fields": [
+            "expect",
+            "probe",
+            "urls"
+          ],
+          "spec_only_fields": [],
+          "openapi_schema_missing_for_advertised_fields": true,
+          "payto_canonical": true,
+          "verdict": "DRIFT"
+        }
+      ],
+      "fetch_error": null,
+      "free_routes_skipped": 1
+    }
+  ],
+  "findings": [
+    {
+      "wall": "contract-eye",
+      "path": "/api/analyze-contract",
+      "severity": "DRIFT",
+      "doc_only_fields": [
+        "focus",
+        "text"
+      ],
+      "openapi_schema_missing": true,
+      "detail": "manifest advertises ['focus', 'text'] but OpenAPI declares []"
+    },
+    {
+      "wall": "contract-eye",
+      "path": "/contract/analyze",
+      "severity": "DRIFT",
+      "doc_only_fields": [
+        "focus",
+        "text"
+      ],
+      "openapi_schema_missing": true,
+      "detail": "manifest advertises ['focus', 'text'] but OpenAPI declares []"
+    },
+    {
+      "wall": "contract-eye",
+      "path": "/api/analyze",
+      "severity": "DRIFT",
+      "doc_only_fields": [
+        "focus",
+        "text"
+      ],
+      "openapi_schema_missing": true,
+      "detail": "manifest advertises ['focus', 'text'] but OpenAPI declares []"
+    },
+    {
+      "wall": "shipgate402",
+      "path": "/v1/ship-check",
+      "severity": "DRIFT",
+      "doc_only_fields": [
+        "expect",
+        "probe",
+        "url"
+      ],
+      "openapi_schema_missing": true,
+      "detail": "manifest advertises ['expect', 'probe', 'url'] but OpenAPI declares []"
+    },
+    {
+      "wall": "shipgate402",
+      "path": "/v1/ship-check/batch",
+      "severity": "DRIFT",
+      "doc_only_fields": [
+        "expect",
+        "probe",
+        "urls"
+      ],
+      "openapi_schema_missing": true,
+      "detail": "manifest advertises ['expect', 'probe', 'urls'] but OpenAPI declares []"
+    }
+  ]
+}
