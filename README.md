@@ -135,10 +135,12 @@ you settled but got no payload.
 
 46. **[Budget Guard — live-priced spend cap for autonomous buyers](recipes/46-budget-guard.md)** — the acquisition blocker no other tool removes: before an agent signs anything, price a planned basket of calls ONLY from live 402 challenges and get a deterministic AFFORDABLE / OVER_BUDGET verdict, per-wall cost, affordability frontier and a copy-ready JSON budget policy. Full 42-char canonical payTo guard, `exact`/`eip155:8453`/integer-amount enforcement, and a retry/claims reserve (default 10%) so a budgeted agent never abstains by default and never double-pays. 2026-11-26: verdict `AFFORDABLE`, 4/4 walls canonical, 0 drift ($0.005 / $0.005 / $0.01 / $0.05); snapshot `registry/budget-guard.json` + buyer card `registry/budget-guard.md`; read-only, no signing, no X-PAYMENT, no deploy.
 
+47. **[Crawlable API Origin Card — give an API-only wall a homepage buyers can read](recipes/47-crawlable-origin.md)** — fixes the discovery defect upstream of all 46 buyer tools: 402registry refused contract-eye + dispute-forge (score 18, "no crawlable homepage") because their `/` is a 404. A read-only, stdlib-only generator turns a LIVE-decoded 402 into a static crawler-readable `index.html` (semantic `<h1>`, meta description, `index,follow`, JSON-LD `WebAPI` offers with full canonical payTo / `eip155:8453` / `exact` / integer `amount`, price table, x402.json + agent-card + llms.txt links). 2026-11-27: contract-eye live unpaid probe $0.005 (5000 atoms, mixed-case full canonical payTo), 0 drift; generate + `--check` both `CANONICAL` (3337B); homoglyph payTo poison → `FAIL_DRIFT`, no page. Publishing at `/` is a deploy-lane handoff. Snapshot `registry/crawlable-origin.json` + buyer card `registry/crawlable-origin.md`; read-only, no signing, no spend.
+
+
 ## MCP registry
 
 RAEN's MCP gateway is listed at `io.github.bshelby88/raen-mcp` on the MCP Registry.
-
 ## Honesty
 
 Fleet telemetry is public and unedited: <https://settlement-collector.fly.dev/stats>. We publish real numbers, including zero revenue.

@@ -1,0 +1,115 @@
+{
+  "name": "ContractEye \u2014 x402 contract-risk API",
+  "origin": "contract-eye-x402.fly.dev",
+  "description": "Analyze contract text for risky, one-sided, or unusual clauses. POST {text, focus?} and receive a risk score with flagged clauses as JSON. $0.005 per call, Base USDC x402.",
+  "generated_utc": "2026-11-27T04:18Z",
+  "offers": [
+    {
+      "method": "POST",
+      "path": "/api/analyze-contract",
+      "price_usd": "0.005",
+      "summary": "Contract clause risk analysis (JSON)",
+      "challenge": {
+        "x402Version": 2,
+        "error": "Payment required",
+        "resource": {
+          "url": "https://contract-eye-x402.fly.dev/api/analyze-contract",
+          "description": "Analyze contract text for risky, one-sided, or unusual clauses. POST {text, focus?}, receive risk score, flagged clauses with severity/explanation/suggested edits as JSON. $0.005 per call, Base USDC x402.",
+          "mimeType": "application/json",
+          "serviceName": "contract-eye"
+        },
+        "accepts": [
+          {
+            "scheme": "exact",
+            "network": "eip155:8453",
+            "amount": "5000",
+            "asset": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
+            "payTo": "0x9b8a27e03CEbA490953cDa8AB1291c0E13bAf72f",
+            "maxTimeoutSeconds": 300,
+            "extra": {
+              "name": "USD Coin",
+              "version": "2"
+            }
+          }
+        ],
+        "extensions": {
+          "bazaar": {
+            "info": {
+              "input": {
+                "type": "http",
+                "method": "POST",
+                "bodyType": "json",
+                "body": {
+                  "text": "This agreement auto-renews every twelve months unless cancelled sixty days prior.",
+                  "focus": [
+                    "renewal",
+                    "liability"
+                  ]
+                }
+              }
+            },
+            "schema": {
+              "$schema": "https://json-schema.org/draft/2020-12/schema",
+              "type": "object",
+              "properties": {
+                "input": {
+                  "type": "object",
+                  "properties": {
+                    "type": {
+                      "type": "string",
+                      "const": "http"
+                    },
+                    "method": {
+                      "type": "string",
+                      "enum": [
+                        "POST"
+                      ]
+                    },
+                    "bodyType": {
+                      "type": "string",
+                      "enum": [
+                        "json",
+                        "form-data",
+                        "text"
+                      ]
+                    },
+                    "body": {
+                      "type": "object",
+                      "properties": {
+                        "text": {
+                          "type": "string",
+                          "minLength": 40,
+                          "description": "Contract text to analyze (up to 50k chars)"
+                        },
+                        "focus": {
+                          "type": "array",
+                          "items": {
+                            "type": "string"
+                          },
+                          "description": "Optional clause categories to focus on"
+                        }
+                      },
+                      "required": [
+                        "text"
+                      ]
+                    }
+                  },
+                  "required": [
+                    "type",
+                    "method",
+                    "bodyType",
+                    "body"
+                  ],
+                  "additionalProperties": false
+                }
+              },
+              "required": [
+                "input"
+              ]
+            }
+          }
+        }
+      }
+    }
+  ]
+}
