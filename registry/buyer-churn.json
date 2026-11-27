@@ -1,0 +1,48 @@
+{
+  "tool": "buyer-churn",
+  "innovation": 56,
+  "generated_utc": "2026-11-27T15:03:10.065109+00:00",
+  "chain_scope": "ledger from settlement-collector; price cross-checked on Base",
+  "thresholds": {
+    "lapsed_days": 7.0,
+    "reactivation_offer": "min(3 x live price, $0.05)"
+  },
+  "data_sources": {
+    "ledger_tx_count": 61,
+    "breadth_source": "live-registry",
+    "price_source": "live-402",
+    "live_price": {
+      "amount_atoms": 5000,
+      "usd": 0.005,
+      "scheme": "exact",
+      "network": "eip155:8453",
+      "payTo": "0x9b8a27e03ceba490953cda8ab1291c0e13baf72f"
+    }
+  },
+  "exclusions": {
+    "internal_tx": 58,
+    "breadth_crawler_tx": 3,
+    "breadth_addresses": [
+      "0x171d8021b98c53dcbb3c9c30cbbbeb1b01850fca",
+      "0xc9c7b38c0942914fc8ea12063bc92dcd3b581670"
+    ],
+    "note": "internal wallets + behaviour-discovered crawlers are NOT buyers; excluded before churn KPI"
+  },
+  "kpi": {
+    "genuine_external_payers": 0,
+    "active_buyers": 0,
+    "lapsed_buyers": 0,
+    "reactivation_candidates": 0,
+    "calls_per_payer": 0.0,
+    "honest_external_earned_usd": 0,
+    "collector_reported_external_usd_24h": 0.012,
+    "total_calls_tracked": 0
+  },
+  "genuine_buyers": [],
+  "verdict": "NO_GENUINE_BUYERS",
+  "method": "Retention half of the KPI: from the collector ledger, exclude internal wallets (canonical/retired/AgentCash) and behaviour-discovered breadth crawlers (tool 51/52), then aggregate genuine external payers by first/last call to flag lapse and size a LIVE-priced return credit.NO funds moved, no signing, no sends, no deploy. Read-only.",
+  "guards": {
+    "canonical_payto_drift": false,
+    "misclassified_internal_as_buyer": false
+  }
+}
