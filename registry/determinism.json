@@ -59,7 +59,7 @@
       "name": "gateway:image",
       "verdict": "STABLE",
       "probes": 3,
-      "price_usd": 0.005,
+      "price_usd": 0.01,
       "drift_fields": [],
       "spread_usd": 0.0,
       "defects": []
@@ -83,6 +83,7 @@
     "hard_drift_targets": [],
     "unstable_targets": []
   },
-  "generated_at": "2026-11-28T01:40:00Z",
-  "method": "3x identical unpaid POST per target, no X-PAYMENT, no key"
+  "generated_at": "2026-11-28T01:50:00Z",
+  "method": "3x identical unpaid POST per target, no X-PAYMENT, no key",
+  "gateway_tool_names": "authoritative tools/list names (raen_image_generate, raen_contract_analysis)"
 }
