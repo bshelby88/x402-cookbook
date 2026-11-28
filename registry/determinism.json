@@ -1,0 +1,88 @@
+{
+  "generated_by": "Innovation 65 determinism auditor",
+  "results": [
+    {
+      "name": "royal-ruby",
+      "verdict": "STABLE",
+      "probes": 3,
+      "price_usd": 0.005,
+      "drift_fields": [],
+      "spread_usd": 0.0,
+      "defects": []
+    },
+    {
+      "name": "contract-eye",
+      "verdict": "STABLE",
+      "probes": 3,
+      "price_usd": 0.005,
+      "drift_fields": [],
+      "spread_usd": 0.0,
+      "defects": []
+    },
+    {
+      "name": "nanobanana",
+      "verdict": "STABLE",
+      "probes": 3,
+      "price_usd": 0.01,
+      "drift_fields": [],
+      "spread_usd": 0.0,
+      "defects": []
+    },
+    {
+      "name": "gateway:law",
+      "verdict": "STABLE",
+      "probes": 3,
+      "price_usd": 0.005,
+      "drift_fields": [],
+      "spread_usd": 0.0,
+      "defects": []
+    },
+    {
+      "name": "gateway:ticker",
+      "verdict": "STABLE",
+      "probes": 3,
+      "price_usd": 0.001,
+      "drift_fields": [],
+      "spread_usd": 0.0,
+      "defects": []
+    },
+    {
+      "name": "gateway:dispute_letter",
+      "verdict": "STABLE",
+      "probes": 3,
+      "price_usd": 0.01,
+      "drift_fields": [],
+      "spread_usd": 0.0,
+      "defects": []
+    },
+    {
+      "name": "gateway:image",
+      "verdict": "STABLE",
+      "probes": 3,
+      "price_usd": 0.005,
+      "drift_fields": [],
+      "spread_usd": 0.0,
+      "defects": []
+    },
+    {
+      "name": "gateway:contract",
+      "verdict": "STABLE",
+      "probes": 3,
+      "price_usd": 0.005,
+      "drift_fields": [],
+      "spread_usd": 0.0,
+      "defects": []
+    }
+  ],
+  "aggregate": {
+    "probes_per_target": 3,
+    "targets": 8,
+    "stable_targets": 8,
+    "determinism_score_pct": 100.0,
+    "verdict": "DETERMINISTIC",
+    "hard_drift_targets": [],
+    "unstable_targets": []
+  },
+  "generated_at": "2026-11-28T01:40:00Z",
+  "method": "3x identical unpaid POST per target, no X-PAYMENT, no key"
+}
