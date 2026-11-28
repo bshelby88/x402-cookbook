@@ -54,10 +54,10 @@ PROBES = [
               "params": {"name": "raen_dispute_letter", "arguments": {}}}},
     {"name": "gateway:image", "url": "https://raen-mcp-gateway.fly.dev/mcp",
      "body": {"jsonrpc": "2.0", "id": 4, "method": "tools/call",
-              "params": {"name": "raen_image_gen", "arguments": {}}}},
+              "params": {"name": "raen_image_generate", "arguments": {}}}},
     {"name": "gateway:contract", "url": "https://raen-mcp-gateway.fly.dev/mcp",
      "body": {"jsonrpc": "2.0", "id": 5, "method": "tools/call",
-              "params": {"name": "raen_contract_review", "arguments": {}}}},
+              "params": {"name": "raen_contract_analysis", "arguments": {}}}},
 ]
 
 
