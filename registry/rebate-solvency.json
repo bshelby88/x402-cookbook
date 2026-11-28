@@ -1,0 +1,53 @@
+{
+  "tool": "rebate-solvency",
+  "version": 1,
+  "generated_at": "2026-11-28T03:51:21Z",
+  "verdict": "SOLVENT",
+  "promise": {
+    "found": true,
+    "advertised_rebate_usd": 0.005,
+    "evidence": [
+      "x402.json: contains 'rebate'",
+      "x402.json: contains 'free first call'",
+      "x402.json: contains 'net cost'",
+      "x402.json: contains 'charge-and-rebate'",
+      "x402.json: contains 'x-payer-address'",
+      "openapi.json: contains 'rebate'",
+      "openapi.json: contains 'free first call'",
+      "openapi.json: contains 'net cost'",
+      "openapi.json: contains 'charge-and-rebate'"
+    ]
+  },
+  "live_402": {
+    "probe_status": 402,
+    "decoded": true,
+    "x402_version": 2,
+    "scheme": "exact",
+    "network": "eip155:8453",
+    "payTo": "0x9b8a27e03ceba490953cda8ab1291c0e13baf72f",
+    "amount_usd": 0.005,
+    "max_timeout_seconds": 240
+  },
+  "rebater": {
+    "status": 200,
+    "reachable": true,
+    "service": "royal-ruby-rebater",
+    "treasury": "0xfBC0eb7811D477E55261d956dF39f0046E192240",
+    "rebatesEnabled": true,
+    "rebateCountToday": 0,
+    "dailyCap": 100
+  },
+  "treasury_role": "INTERNAL_AGENTCASH",
+  "treasury_balance": {
+    "consensus": true,
+    "clean_rpcs": 3,
+    "usdc": 11.515259,
+    "gas_eth": 0.001702552454519411
+  },
+  "rebate_per_call_usd": 0.005,
+  "notes": [
+    "SOLVENT: 2303 rebates coverable at $0.0050; float $11.5153; gas 0.001703 ETH"
+  ],
+  "hard_fail": false,
+  "read_only": true
+}
