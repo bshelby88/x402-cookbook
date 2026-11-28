@@ -35,8 +35,8 @@ python3 scripts/determinism.py --check     # exit 1 on hard drift/instability on
 | gateway `raen_law_lookup` | $0.005 | STABLE |
 | gateway `raen_ticker_analysis` | $0.001 | STABLE |
 | gateway `raen_dispute_letter` | $0.010 | STABLE |
-| gateway `raen_image_gen` | $0.005 | STABLE |
-| gateway `raen_contract_review` | $0.005 | STABLE |
+| gateway `raen_image_generate` | $0.010 | STABLE |
+| gateway `raen_contract_analysis` | $0.005 | STABLE |
 
 No price, payTo, network, scheme, asset, timeout, EIP-3009 domain or resource drift across any target. This is positive evidence against stale-machine / stale-image drift on the kept-live paid path right now — the first tool to check that axis rather than assume it.
 
