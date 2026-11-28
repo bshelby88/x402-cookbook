@@ -1,0 +1,117 @@
+{
+  "tool": "Innovation 66 - facilitator capability-discovery auditor",
+  "facilitator": "https://raen-facilitator.fly.dev",
+  "spec_path": {
+    "path": "/supported",
+    "http_status": 404,
+    "valid_contract": false,
+    "kinds": [],
+    "extensions_present": false,
+    "signers_present": false,
+    "error": "HTTP 404"
+  },
+  "raen_path": {
+    "path": "/facilitator/supported",
+    "http_status": 200,
+    "valid_contract": true,
+    "kinds": [
+      {
+        "x402Version": 2,
+        "scheme": "exact",
+        "network": "eip155:8453"
+      },
+      {
+        "x402Version": 1,
+        "scheme": "exact",
+        "network": "base"
+      }
+    ],
+    "extensions_present": true,
+    "signers_present": true,
+    "error": null,
+    "signers": {
+      "eip155:*": [
+        "0x6289b753C3e15DAbFD3d8ebc597d4462c2604a3b"
+      ]
+    }
+  },
+  "meta": {
+    "facilitatorAddress": "0x6289b753C3e15DAbFD3d8ebc597d4462c2604a3b",
+    "servedPayees": [
+      "0x9B8a27e03CEbA490953cDa8AB1291c0E13bAf72f",
+      "0x7861DB4EfC14A1ed5dd8C96c528A3796560F1393"
+    ],
+    "networks": [
+      "eip155:8453"
+    ]
+  },
+  "walls": [
+    {
+      "name": "royal-ruby",
+      "url": "https://royal-ruby-x402.fly.dev/api/ping",
+      "requirement": {
+        "x402Version": 2,
+        "scheme": "exact",
+        "network": "eip155:8453",
+        "asset": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
+        "payTo": "0x9b8a27e03ceba490953cda8ab1291c0e13baf72f",
+        "amount": "1000"
+      },
+      "error": null,
+      "kind_parity": "COVERED",
+      "payee_parity": "COVERED"
+    },
+    {
+      "name": "contract-eye",
+      "url": "https://contract-eye-x402.fly.dev/api/analyze",
+      "requirement": {
+        "x402Version": 2,
+        "scheme": "exact",
+        "network": "eip155:8453",
+        "asset": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
+        "payTo": "0x9b8a27e03CEbA490953cDa8AB1291c0E13bAf72f",
+        "amount": "5000"
+      },
+      "error": null,
+      "kind_parity": "COVERED",
+      "payee_parity": "COVERED"
+    },
+    {
+      "name": "nanobanana",
+      "url": "https://nanobanana-x402.fly.dev/api/generate-image",
+      "requirement": {
+        "x402Version": 2,
+        "scheme": "exact",
+        "network": "eip155:8453",
+        "asset": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
+        "payTo": "0x9b8a27e03ceba490953cda8ab1291c0e13baf72f",
+        "amount": "10000"
+      },
+      "error": null,
+      "kind_parity": "COVERED",
+      "payee_parity": "COVERED"
+    },
+    {
+      "name": "gateway",
+      "url": "https://raen-mcp-gateway.fly.dev/mcp",
+      "requirement": {
+        "x402Version": 2,
+        "scheme": "exact",
+        "network": "eip155:8453",
+        "asset": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
+        "payTo": "0x9b8a27e03CEbA490953cDa8AB1291c0E13bAf72f",
+        "amount": "5000"
+      },
+      "error": null,
+      "kind_parity": "COVERED",
+      "payee_parity": "COVERED"
+    }
+  ],
+  "verdict": "COMPAT_GAP",
+  "notes": [
+    "x402 spec v1+v2 section 7.3 mandates GET /supported at the facilitator root.",
+    "RAEN publishes the same kinds contract at /facilitator/supported (FastAPI prefix).",
+    "COMPAT_GAP is report-only: payment path works, spec-path discovery does not.",
+    "Pricing is owner-gated; this tool never reads a price as a defect."
+  ]
+}
