@@ -1,0 +1,94 @@
+{
+ "tool": "offer-disclosure",
+ "innovation": 64,
+ "generated_utc": "2026-11-28T00:20:17.556582+00:00",
+ "verdict": "DISCLOSURE_GAPS",
+ "walls_reachable": 4,
+ "total_gaps": 1,
+ "hard_drift_walls": [],
+ "walls": [
+  {
+   "wall": "royal-ruby",
+   "manifest_status": 200,
+   "challenge_status": 402,
+   "canonical": true,
+   "scheme": "exact",
+   "network": "eip155:8453",
+   "payTo": "0x9b8a27e03ceba490953cda8ab1291c0e13baf72f",
+   "amount": "5000",
+   "x402Version": 2,
+   "accepts_count": 1,
+   "offers": {
+    "first_call_free": "GAP",
+    "bulk_volume": "OK",
+    "redeem_recovery": "OK",
+    "free_dev_key": "N/A"
+   },
+   "gaps": [
+    "first_call_free"
+   ],
+   "retired_in_body": false
+  },
+  {
+   "wall": "contract-eye",
+   "manifest_status": 200,
+   "challenge_status": 402,
+   "canonical": true,
+   "scheme": "exact",
+   "network": "eip155:8453",
+   "payTo": "0x9b8a27e03CEbA490953cDa8AB1291c0E13bAf72f",
+   "amount": "5000",
+   "x402Version": 2,
+   "accepts_count": 1,
+   "offers": {
+    "first_call_free": "N/A",
+    "bulk_volume": "N/A",
+    "redeem_recovery": "N/A",
+    "free_dev_key": "N/A"
+   },
+   "gaps": [],
+   "retired_in_body": false
+  },
+  {
+   "wall": "nanobanana",
+   "manifest_status": 200,
+   "challenge_status": 402,
+   "canonical": true,
+   "scheme": "exact",
+   "network": "eip155:8453",
+   "payTo": "0x9b8a27e03ceba490953cda8ab1291c0e13baf72f",
+   "amount": "10000",
+   "x402Version": 2,
+   "accepts_count": 1,
+   "offers": {
+    "first_call_free": "N/A",
+    "bulk_volume": "N/A",
+    "redeem_recovery": "N/A",
+    "free_dev_key": "N/A"
+   },
+   "gaps": [],
+   "retired_in_body": false
+  },
+  {
+   "wall": "raen-mcp-gateway",
+   "manifest_status": 200,
+   "challenge_status": 402,
+   "canonical": true,
+   "scheme": "exact",
+   "network": "eip155:8453",
+   "payTo": "0x9b8a27e03CEbA490953cDa8AB1291c0E13bAf72f",
+   "amount": "5000",
+   "x402Version": 2,
+   "accepts_count": 1,
+   "offers": {
+    "first_call_free": "OK",
+    "bulk_volume": "N/A",
+    "redeem_recovery": "N/A",
+    "free_dev_key": "OK"
+   },
+   "gaps": [],
+   "retired_in_body": false
+  }
+ ],
+ "method": "one unpaid manifest GET + one unpaid 402 POST per kept-live wall; read-only"
+}
